@@ -998,6 +998,42 @@ main {
   }
 }
 
+/* Sortable table (Spending page) */
+
+.sortable-table th[data-sort] {
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.sortable-table th[data-sort]:hover {
+  color: var(--text);
+}
+
+.sortable-table th[data-sort]::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.35em;
+  width: 0.6em;
+}
+
+.sortable-table th[aria-sort="ascending"]::after {
+  content: "▲";
+  font-size: 0.7em;
+}
+
+.sortable-table th[aria-sort="descending"]::after {
+  content: "▼";
+  font-size: 0.7em;
+}
+
+.controversy-note {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
 .footer-links {
   margin: 0.5rem 0 0;
   padding: 0;

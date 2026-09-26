@@ -63,12 +63,40 @@
       <div class="container">
         <div class="page-header">
           <h1>The Spending</h1>
+          <p>Every major signing tracked on this site since the 2008 takeover, with fee, date, source and any specific reported controversy — plus cumulative spend by season.</p>
         </div>
-        <div class="section">
-          <div class="placeholder-panel">
-            <p>This page is under construction. Content and sourced data are coming in a later step.</p>
+
+        <noscript>
+          <p class="placeholder-panel">This page loads from <code>data/transfers.json</code> with JavaScript. Enable JavaScript, or read that file directly, to see the figures.</p>
+        </noscript>
+
+        <section class="section" aria-labelledby="cumulative-heading">
+          <h2 id="cumulative-heading">Cumulative spend by season</h2>
+          <p class="chart-note">Running total of the fees (in £) for the signings tracked in the table below, by the season each deal was completed. This is gross spend on incoming transfers only — it does not subtract fees received for players sold, so it is not a "net spend" figure in the accounting sense.</p>
+          <div class="chart-scroll" id="chart-cumulative"></div>
+        </section>
+
+        <section class="section" aria-labelledby="table-heading">
+          <h2 id="table-heading">Every signing, sortable</h2>
+          <p class="chart-note">Click a column heading to sort. Fees are shown in £m where reported; where sources disagree on the exact fee, the note below the fee explains the range.</p>
+          <div class="table-scroll">
+            <table class="data-table sortable-table" id="transfers-table">
+              <thead>
+                <tr>
+                  <th scope="col" data-sort="player" tabindex="0" role="button" aria-label="Sort by player">Player</th>
+                  <th scope="col" data-sort="date" tabindex="0" role="button" aria-label="Sort by date" aria-sort="ascending">Date</th>
+                  <th scope="col" data-sort="from_club" tabindex="0" role="button" aria-label="Sort by club">From</th>
+                  <th scope="col" data-sort="fee_gbp" tabindex="0" role="button" aria-label="Sort by fee">Fee</th>
+                  <th scope="col">Source</th>
+                  <th scope="col">Controversy</th>
+                </tr>
+              </thead>
+              <tbody id="transfers-table-body">
+                <tr><td colspan="6">Loading…</td></tr>
+              </tbody>
+            </table>
           </div>
-        </div>
+        </section>
       </div>
     </main>
   <footer class="site-footer">
@@ -78,5 +106,7 @@
     </div>
   </footer>
     <script src="js/main.js" defer></script>
+    <script src="js/charts.js" defer></script>
+    <script src="js/spending.js" defer></script>
   </body>
 </html>
