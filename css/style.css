@@ -1034,6 +1034,65 @@ main {
   margin-top: 0.25rem;
 }
 
+/* Guardiola quotes page */
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.quote-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-elevated);
+  padding: 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.quote-text {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--text);
+  border-left: 3px solid var(--accent);
+  padding-left: 0.9rem;
+}
+
+.quote-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.quote-date {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.quote-source {
+  margin: auto 0 0;
+  font-size: 0.85rem;
+}
+
+.editorial-note {
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 1.1rem 1.4rem;
+  max-width: 68ch;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.editorial-note p {
+  margin: 0;
+}
+
 .footer-links {
   margin: 0.5rem 0 0;
   padding: 0;

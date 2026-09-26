@@ -62,13 +62,34 @@
     <main id="main">
       <div class="container">
         <div class="page-header">
-          <h1>Guardiola</h1>
+          <h1>Guardiola — What He Said, When</h1>
+          <p>A dated, sourced record of Pep Guardiola's public comments on the case, from the charges being issued to his departure from the club.</p>
         </div>
-        <div class="section">
-          <div class="placeholder-panel">
-            <p>This page is under construction. Content and sourced data are coming in a later step.</p>
+
+        <noscript>
+          <p class="placeholder-panel">This page loads from <code>data/quotes.json</code> with JavaScript. Enable JavaScript, or read that file directly, to see the quotes.</p>
+        </noscript>
+
+        <section class="section" aria-labelledby="quotes-heading">
+          <h2 id="quotes-heading" class="visually-hidden">Quotes</h2>
+          <div class="quote-grid" id="quote-grid">
+            <p class="placeholder-panel">Loading quotes…</p>
           </div>
-        </div>
+        </section>
+
+        <section class="section" aria-labelledby="departure-heading">
+          <h2 id="departure-heading">Departure and succession</h2>
+          <div id="departure-events">
+            <p class="placeholder-panel">Loading…</p>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="note-heading">
+          <h2 id="note-heading" class="visually-hidden">Editorial note</h2>
+          <div class="editorial-note">
+            <p>Nothing reported above suggests Guardiola had knowledge of, or any role in, the conduct the Premier League's charges allege. His comments are presented here as the press reported them — as a manager speaking about his employer, not as evidence bearing on the case itself.</p>
+          </div>
+        </section>
       </div>
     </main>
   <footer class="site-footer">
@@ -78,5 +99,6 @@
     </div>
   </footer>
     <script src="js/main.js" defer></script>
+    <script src="js/guardiola.js" defer></script>
   </body>
 </html>
