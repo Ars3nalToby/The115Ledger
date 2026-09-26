@@ -882,6 +882,57 @@ main {
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 0.5rem 0.5rem 0;
+  min-height: 320px;
+}
+
+/* Reserve approximate space for content injected after a data fetch, to
+   keep cumulative layout shift low while data.json loads. */
+#timeline-list {
+  min-height: 4800px;
+}
+
+#quote-grid {
+  min-height: 1050px;
+}
+
+#departure-events {
+  min-height: 350px;
+}
+
+#tweet-grid {
+  min-height: 260px;
+}
+
+#article-list {
+  min-height: 440px;
+}
+
+#charges-explanations {
+  min-height: 900px;
+}
+
+#charges-chart {
+  min-height: 250px;
+}
+
+#uefa-history {
+  min-height: 700px;
+}
+
+#sponsorship-list {
+  min-height: 950px;
+}
+
+#cfg-structure {
+  min-height: 580px;
+}
+
+#sources-by-page {
+  min-height: 2100px;
+}
+
+#corrections-log {
+  min-height: 290px;
 }
 
 .chart-note {

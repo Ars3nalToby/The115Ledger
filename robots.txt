@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ars3naltoby.github.io/The115Ledger/sitemap.xml
