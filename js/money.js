@@ -92,7 +92,7 @@
       .sort(function (a, b) { return new Date(a.date) - new Date(b.date); });
 
     el.innerHTML = uefaEvents
-      .map(function (item) {
+      .map(function (item, i) {
         var sources = (item.sources || [])
           .map(function (s) {
             return '<a href="' + escapeHtml(s.url) + '" rel="noopener" target="_blank">' + escapeHtml(s.outlet) + "</a>";
@@ -101,8 +101,9 @@
         var response = item.club_response
           ? '<blockquote class="timeline-response">' + escapeHtml(item.club_response) + "</blockquote>"
           : "";
+        var delay = window.SiteMotion ? window.SiteMotion.staggerDelay(i, 70) : 0;
         return (
-          '<div class="charge-card">' +
+          '<div class="charge-card reveal" style="--reveal-delay: ' + delay + 'ms">' +
           "<h3>" + escapeHtml(item.title) + "</h3>" +
           '<span class="charge-meta">' + escapeHtml(item.date) + "</span>" +
           "<p>" + escapeHtml(item.summary) + "</p>" +
@@ -112,6 +113,8 @@
         );
       })
       .join("");
+
+    if (window.SiteMotion) window.SiteMotion.observeReveal(el);
   }
 
   // These *_html fields are authored by us (data/sponsorships.json, data/cfg.json),
@@ -120,12 +123,13 @@
     var el = document.getElementById("sponsorship-list");
     if (!el) return;
     el.innerHTML = sponsorships
-      .map(function (s) {
+      .map(function (s, i) {
         var allegation = s.allegation_html
           ? '<div class="sponsorship-allegation"><strong>Allegation:</strong> ' + s.allegation_html + "</div>"
           : "";
+        var delay = window.SiteMotion ? window.SiteMotion.staggerDelay(i, 90) : 0;
         return (
-          '<div class="sponsorship-card">' +
+          '<div class="sponsorship-card reveal" style="--reveal-delay: ' + delay + 'ms">' +
           "<h3>" + escapeHtml(s.sponsor) + "</h3>" +
           '<span class="sponsorship-meta">' + escapeHtml(s.covers) + " &middot; " + escapeHtml(s.signed) + "</span>" +
           "<p>" + s.reported_value_html + "</p>" +
@@ -134,6 +138,8 @@
         );
       })
       .join("");
+
+    if (window.SiteMotion) window.SiteMotion.observeReveal(el);
   }
 
   function renderCfg(cfg) {
@@ -157,6 +163,7 @@
       .join("");
 
     el.innerHTML =
+      '<div class="reveal">' +
       "<p>" + cfg.summary_html + "</p>" +
       '<div class="table-scroll"><table class="data-table"><thead><tr><th scope="col">Holder</th><th scope="col">Stake</th><th scope="col">Source</th></tr></thead><tbody>' +
       ownershipRows +
@@ -164,7 +171,10 @@
       "<h3>Member and partner clubs</h3>" +
       '<ul class="cfg-list">' + clubsHtml + "</ul>" +
       '<p class="charge-source">Source: <a href="' + escapeHtml(cfg.clubs_source_url) + '" rel="noopener" target="_blank">' +
-      escapeHtml(cfg.clubs_source) + "</a></p>";
+      escapeHtml(cfg.clubs_source) + "</a></p>" +
+      "</div>";
+
+    if (window.SiteMotion) window.SiteMotion.observeReveal(el);
   }
 
   function showFallback(ids) {

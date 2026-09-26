@@ -41,14 +41,39 @@
     return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
   }
 
-  function renderClock(status) {
+  function animateCount(el, target, duration) {
+    if (!el) return;
+    if ((window.SiteMotion && window.SiteMotion.prefersReducedMotion) || target <= 0) {
+      el.textContent = formatNumber(target);
+      return;
+    }
+    var startTime = null;
+    function step(timestamp) {
+      if (startTime === null) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      el.textContent = formatNumber(Math.round(eased * target));
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        el.textContent = formatNumber(target);
+      }
+    }
+    window.requestAnimationFrame(step);
+  }
+
+  function renderClock(status, animate) {
     var chargesEl = document.getElementById("stat-charges-days");
     var verdictEl = document.getElementById("stat-verdict-days");
     if (chargesEl && status.charges_date) {
-      chargesEl.textContent = formatNumber(daysSince(status.charges_date));
+      var chargesDays = daysSince(status.charges_date);
+      if (animate) animateCount(chargesEl, chargesDays, 1400);
+      else chargesEl.textContent = formatNumber(chargesDays);
     }
     if (verdictEl && status.verdict_reported_date) {
-      verdictEl.textContent = formatNumber(daysSince(status.verdict_reported_date));
+      var verdictDays = daysSince(status.verdict_reported_date);
+      if (animate) animateCount(verdictEl, verdictDays, 1000);
+      else verdictEl.textContent = formatNumber(verdictDays);
     }
   }
 
@@ -74,9 +99,10 @@
     var latest = sorted.slice(0, 5);
 
     container.innerHTML = "";
-    latest.forEach(function (item) {
+    latest.forEach(function (item, i) {
       var li = document.createElement("li");
-      li.className = "latest-item";
+      li.className = "latest-item reveal";
+      if (window.SiteMotion) li.style.setProperty("--reveal-delay", window.SiteMotion.staggerDelay(i, 70) + "ms");
       li.innerHTML =
         '<span class="latest-category">' + escapeHtml(item.category) + "</span>" +
         '<a class="latest-title" href="timeline.html#' + escapeHtml(item.id) + '">' + escapeHtml(item.title) + "</a>" +
@@ -84,6 +110,8 @@
         '<p class="latest-summary">' + escapeHtml(item.summary) + "</p>";
       container.appendChild(li);
     });
+
+    if (window.SiteMotion) window.SiteMotion.observeReveal(container);
   }
 
   function showFallback() {
@@ -110,12 +138,12 @@
       .then(function (data) {
         var status = data[0];
         var timeline = data[1];
-        renderClock(status);
+        renderClock(status, true);
         renderStatusBadge(status);
         renderLatest(timeline);
 
         window.setInterval(function () {
-          renderClock(status);
+          renderClock(status, false);
         }, 60 * 60 * 1000);
       })
       .catch(function () {

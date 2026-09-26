@@ -73,6 +73,83 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Smooth, subtle theme-switch transition on the surfaces that actually
+   change color, rather than a jarring instant snap. */
+body,
+.site-header,
+.stat-tile,
+.charge-card,
+.quote-card,
+.sponsorship-card,
+.tweet-fallback-card,
+.timeline-card,
+.latest-item,
+.status-badge,
+.filter-chip,
+.rules-box,
+.editorial-note,
+.data-table,
+.charges-chart,
+.chart-scroll,
+.viz-svg text {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll-reveal: elements start hidden only when JS + motion are both
+   available (see js/main.js SiteMotion). No-JS and reduced-motion users
+   see everything immediately — this is progressive enhancement only. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover lift for card-style components across the site. */
+.charge-card,
+.quote-card,
+.sponsorship-card,
+.tweet-fallback-card,
+.timeline-card,
+.latest-item,
+.stat-tile {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.charge-card:hover,
+.quote-card:hover,
+.sponsorship-card:hover,
+.tweet-fallback-card:hover,
+.timeline-card:hover,
+.latest-item:hover,
+.stat-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: var(--accent);
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -165,12 +242,26 @@ select:focus-visible {
 }
 
 .site-nav a {
+  position: relative;
   display: inline-block;
   padding: 0.4rem 0.1rem;
   text-decoration: none;
   color: var(--text-muted);
   font-size: 0.95rem;
-  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease;
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0.1rem;
+  right: 0.1rem;
+  bottom: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
 }
 
 .site-nav a:hover,
@@ -178,10 +269,18 @@ select:focus-visible {
   color: var(--text);
 }
 
+.site-nav a:hover::after,
+.site-nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
 .site-nav a[aria-current="page"] {
   color: var(--text);
-  border-bottom-color: var(--accent);
   font-weight: 600;
+}
+
+.site-nav a[aria-current="page"]::after {
+  transform: scaleX(1);
 }
 
 .header-actions {
@@ -201,28 +300,42 @@ select:focus-visible {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
 }
 
 .icon-button:hover {
   background: var(--bg-elevated);
+  border-color: var(--accent);
+}
+
+.icon-button:active {
+  transform: scale(0.92);
+}
+
+.theme-toggle {
+  position: relative;
 }
 
 .theme-toggle svg {
   width: 1.1rem;
   height: 1.1rem;
-}
-
-.theme-toggle .icon-sun,
-.theme-toggle .icon-moon {
-  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -0.55rem 0 0 -0.55rem;
+  opacity: 0;
+  transform: rotate(-50deg) scale(0.4);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
 }
 
 :root[data-theme="light"] .theme-toggle .icon-moon {
-  display: block;
+  opacity: 1;
+  transform: rotate(0) scale(1);
 }
 
 :root[data-theme="dark"] .theme-toggle .icon-sun {
-  display: block;
+  opacity: 1;
+  transform: rotate(0) scale(1);
 }
 
 .nav-toggle {
@@ -533,11 +646,17 @@ main {
   font-size: 0.85rem;
   cursor: pointer;
   line-height: 1.2;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
 }
 
 .filter-chip:hover {
   border-color: var(--accent);
   color: var(--text);
+  transform: translateY(-1px);
+}
+
+.filter-chip:active {
+  transform: translateY(0) scale(0.96);
 }
 
 .filter-chip.is-active {
@@ -767,6 +886,7 @@ main {
   height: 100%;
   background: var(--accent);
   border-radius: 3px;
+  transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .bar-value {
@@ -983,6 +1103,74 @@ main {
   width: 12px;
   height: 12px;
   border-radius: 3px;
+}
+
+/* Chart entrance animation + hover feedback. transform-box: fill-box makes
+   transform-origin resolve against each SVG shape's own geometry rather
+   than the whole viewBox, which is what lets a bar "grow from its own
+   baseline" instead of the corner of the chart. */
+.viz-bar,
+.viz-bar-group {
+  transform-box: fill-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .viz-bar {
+    animation: viz-grow 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: var(--bar-delay, 0ms);
+  }
+
+  .viz-bar-group {
+    animation: viz-grow 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: var(--bar-delay, 0ms);
+  }
+
+  @keyframes viz-grow {
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+    }
+  }
+
+  .viz-line-path {
+    animation: viz-draw 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes viz-draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .viz-point,
+  .viz-value-label,
+  .viz-legend-item {
+    opacity: 0;
+    animation: viz-fade-in 0.4s ease 0.7s forwards;
+  }
+
+  @keyframes viz-fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.viz-bar:hover,
+.viz-bar-group:hover {
+  filter: brightness(1.14);
+  cursor: pointer;
+}
+
+.viz-point {
+  transition: r 0.15s ease, filter 0.15s ease;
+  cursor: pointer;
+}
+
+.viz-point:hover {
+  filter: brightness(1.2);
 }
 
 .table-details {

@@ -130,10 +130,16 @@ window.Charts = (function () {
       })
       .join(" ");
 
+    var pathLength = 0;
+    for (var i = 1; i < points.length; i++) {
+      pathLength += Math.hypot(points[i].x - points[i - 1].x, points[i].y - points[i - 1].y);
+    }
+
     var circles = points
-      .map(function (p) {
+      .map(function (p, i) {
         return (
-          '<circle cx="' + p.x + '" cy="' + p.y + '" r="4.5" fill="var(--series-1)" stroke="var(--surface-1)" stroke-width="2">' +
+          '<circle class="viz-point" cx="' + p.x + '" cy="' + p.y + '" r="4.5" fill="var(--series-1)" stroke="var(--surface-1)" stroke-width="2" style="animation-delay:' +
+          Math.min(i * 25, 400) + 'ms">' +
           "<title>" + escapeHtml(p.s) + ": " + formatGBP(p.v) + "</title>" +
           "</circle>"
         );
@@ -149,7 +155,8 @@ window.Charts = (function () {
     var inner =
       gridlinesHtml(ticks, MARGIN_LEFT, n * CAT_WIDTH, valueToY) +
       seasonLabelsHtml(seasons, MARGIN_LEFT) +
-      '<path d="' + pathD + '" fill="none" stroke="var(--series-1)" stroke-width="2"></path>' +
+      '<path class="viz-line-path" d="' + pathD + '" fill="none" stroke="var(--series-1)" stroke-width="2" stroke-dasharray="' +
+      pathLength + '" stroke-dashoffset="' + pathLength + '"></path>' +
       circles +
       endLabel;
 
@@ -186,7 +193,8 @@ window.Charts = (function () {
         var h = MARGIN_TOP + PLOT_HEIGHT - y;
         var d = roundedTopPath(x, y, barW, h, 3);
         return (
-          '<path d="' + d + '" fill="var(--series-1)"><title>' + escapeHtml(seasons[i]) + ": " + formatGBP(v) + "</title></path>"
+          '<path class="viz-bar" d="' + d + '" fill="var(--series-1)" style="transform-origin:bottom;animation-delay:' +
+          Math.min(i * 30, 400) + 'ms"><title>' + escapeHtml(seasons[i]) + ": " + formatGBP(v) + "</title></path>"
         );
       })
       .join("");
@@ -220,22 +228,25 @@ window.Charts = (function () {
       .map(function (v, i) {
         var x = MARGIN_LEFT + i * CAT_WIDTH + 8;
         var y = valueToY(v);
-        var d, color, labelY;
+        var d, color, labelY, origin;
         if (v >= 0) {
           d = roundedTopPath(x, y, barW, zeroY - y, 3);
           color = "var(--diverging-pos)";
           labelY = y - 6;
+          origin = "bottom";
         } else {
           d = roundedBottomPath(x, zeroY, barW, y - zeroY, 3);
           color = "var(--diverging-neg)";
           labelY = y + 13;
+          origin = "top";
         }
         var label =
           '<text class="viz-value-label" x="' + (x + barW / 2) + '" y="' + labelY + '" text-anchor="middle" font-size="10">' +
           formatGBP(v) +
           "</text>";
         return (
-          '<path d="' + d + '" fill="' + color + '"><title>' + escapeHtml(seasons[i]) + ": " + formatGBP(v) + "</title></path>" +
+          '<path class="viz-bar" d="' + d + '" fill="' + color + '" style="transform-origin:' + origin + ';animation-delay:' +
+          Math.min(i * 30, 400) + 'ms"><title>' + escapeHtml(seasons[i]) + ": " + formatGBP(v) + "</title></path>" +
           label
         );
       })
@@ -300,7 +311,9 @@ window.Charts = (function () {
             "</title></path>";
           cursorY = y - GAP;
         });
-        return segs;
+        return (
+          '<g class="viz-bar-group" style="transform-origin:bottom;animation-delay:' + Math.min(i * 60, 400) + 'ms">' + segs + "</g>"
+        );
       })
       .join("");
 

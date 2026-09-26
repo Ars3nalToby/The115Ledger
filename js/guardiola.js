@@ -21,9 +21,10 @@
     });
 
     el.innerHTML = sorted
-      .map(function (q) {
+      .map(function (q, i) {
+        var delay = window.SiteMotion ? window.SiteMotion.staggerDelay(i, 70) : 0;
         return (
-          '<div class="quote-card">' +
+          '<div class="quote-card reveal" style="--reveal-delay: ' + delay + 'ms">' +
           '<blockquote class="quote-text">“' + escapeHtml(q.quote) + "”</blockquote>" +
           '<div class="quote-meta">' +
           '<span class="quote-date">' + formatDate(q.date) + "</span>" +
@@ -36,6 +37,8 @@
         );
       })
       .join("");
+
+    if (window.SiteMotion) window.SiteMotion.observeReveal(el);
   }
 
   function renderDeparture(timeline) {
@@ -55,14 +58,15 @@
       });
 
     el.innerHTML = events
-      .map(function (item) {
+      .map(function (item, i) {
         var sources = (item.sources || [])
           .map(function (s) {
             return '<a href="' + escapeHtml(s.url) + '" rel="noopener" target="_blank">' + escapeHtml(s.outlet) + "</a>";
           })
           .join(", ");
+        var delay = window.SiteMotion ? window.SiteMotion.staggerDelay(i, 90) : 0;
         return (
-          '<div class="charge-card">' +
+          '<div class="charge-card reveal" style="--reveal-delay: ' + delay + 'ms">' +
           "<h3>" + escapeHtml(item.title) + "</h3>" +
           '<span class="charge-meta">' + formatDate(item.date) + "</span>" +
           "<p>" + escapeHtml(item.summary) + "</p>" +
@@ -71,6 +75,8 @@
         );
       })
       .join("");
+
+    if (window.SiteMotion) window.SiteMotion.observeReveal(el);
   }
 
   function showFallback() {

@@ -34,8 +34,10 @@
 
     grid.innerHTML = tweets
       .map(function (tweet, i) {
+        var delay = window.SiteMotion ? window.SiteMotion.staggerDelay(i, 90) : 0;
         return (
-          '<div class="tweet-embed" id="tweet-embed-' + i + '" data-tweet-url="' + escapeHtml(tweet.tweet_url) + '">' +
+          '<div class="tweet-embed reveal" id="tweet-embed-' + i + '" data-tweet-url="' + escapeHtml(tweet.tweet_url) +
+          '" style="--reveal-delay: ' + delay + 'ms">' +
           '<blockquote class="twitter-tweet" data-dnt="true" data-theme="' + theme + '">' +
           '<a href="' + escapeHtml(tweet.tweet_url) + '"></a>' +
           "</blockquote>" +
@@ -44,6 +46,8 @@
         );
       })
       .join("");
+
+    if (window.SiteMotion) window.SiteMotion.observeReveal(grid);
 
     loadEmbeds(tweets.map(function (_, i) { return document.getElementById("tweet-embed-" + i); }));
   }
@@ -105,9 +109,10 @@
     });
 
     list.innerHTML = sorted
-      .map(function (a) {
+      .map(function (a, i) {
+        var delay = window.SiteMotion ? window.SiteMotion.staggerDelay(i, 30, 350) : 0;
         return (
-          "<li>" +
+          '<li class="reveal" style="--reveal-delay: ' + delay + 'ms">' +
           '<a class="article-title" href="' + escapeHtml(a.url) + '" rel="noopener" target="_blank">' +
           escapeHtml(a.title) +
           "</a>" +
@@ -116,6 +121,8 @@
         );
       })
       .join("");
+
+    if (window.SiteMotion) window.SiteMotion.observeReveal(list);
   }
 
   function showFetchFallback() {

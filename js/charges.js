@@ -37,7 +37,7 @@
           "<tr>" +
           '<th scope="row">' + escapeHtml(c.category) + "</th>" +
           '<td><div class="bar-cell" title="' + c.count + " of " + total + ' charges">' +
-          '<div class="bar-track"><div class="bar-fill" style="width:' + pct + '%"></div></div>' +
+          '<div class="bar-track"><div class="bar-fill" style="width:0" data-target-width="' + pct + '"></div></div>' +
           '<span class="bar-value">' + c.count + "</span>" +
           "</div></td>" +
           "</tr>"
@@ -45,10 +45,22 @@
       })
       .join("");
 
+    // Two-step render (0 -> target width) so the CSS width transition on
+    // .bar-fill actually has something to animate, instead of painting
+    // straight at its final width.
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        body.querySelectorAll(".bar-fill").forEach(function (el) {
+          el.style.width = el.getAttribute("data-target-width") + "%";
+        });
+      });
+    });
+
     explanations.innerHTML = sorted
-      .map(function (c) {
+      .map(function (c, i) {
+        var delay = window.SiteMotion ? window.SiteMotion.staggerDelay(i, 60) : 0;
         return (
-          '<div class="charge-card">' +
+          '<div class="charge-card reveal" style="--reveal-delay: ' + delay + 'ms">' +
           "<h3>" + escapeHtml(c.category) + "</h3>" +
           '<span class="charge-meta">' + c.count + " of " + total + " charges &middot; Seasons: " + escapeHtml(c.seasons) + "</span>" +
           "<p>" + escapeHtml(c.explanation) + "</p>" +
@@ -57,6 +69,8 @@
         );
       })
       .join("");
+
+    if (window.SiteMotion) window.SiteMotion.observeReveal(explanations);
   }
 
   function renderSanctionsTable(rows) {
@@ -64,9 +78,10 @@
     if (!body) return;
 
     body.innerHTML = rows
-      .map(function (r) {
+      .map(function (r, i) {
+        var delay = window.SiteMotion ? window.SiteMotion.staggerDelay(i, 50) : 0;
         return (
-          "<tr>" +
+          '<tr class="reveal" style="--reveal-delay: ' + delay + 'ms">' +
           "<td>" + escapeHtml(r.club) + "</td>" +
           "<td>" + escapeHtml(r.season) + "</td>" +
           "<td>" + escapeHtml(r.breach) + "</td>" +
@@ -77,6 +92,8 @@
         );
       })
       .join("");
+
+    if (window.SiteMotion) window.SiteMotion.observeReveal(body);
   }
 
   function showFallback() {

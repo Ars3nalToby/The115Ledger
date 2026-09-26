@@ -60,7 +60,7 @@
     var sorted = sortTransfers(state.transfers, state.sortKey, state.sortDir);
 
     body.innerHTML = sorted
-      .map(function (t) {
+      .map(function (t, i) {
         var fee = formatFeeM(t.fee_gbp, "£");
         var feeEur = formatFeeM(t.fee_eur, "€");
         var feeCell = fee ? fee + (feeEur ? " / " + feeEur : "") : "n/r";
@@ -72,8 +72,9 @@
               : "")
           : "—";
 
+        var delay = window.SiteMotion ? window.SiteMotion.staggerDelay(i, 20, 300) : 0;
         return (
-          "<tr>" +
+          '<tr class="reveal" style="--reveal-delay: ' + delay + 'ms">' +
           "<td>" + escapeHtml(t.player) + "</td>" +
           "<td>" + formatDate(t.date) + "</td>" +
           "<td>" + escapeHtml(t.from_club) + "</td>" +
@@ -84,6 +85,8 @@
         );
       })
       .join("");
+
+    if (window.SiteMotion) window.SiteMotion.observeReveal(body);
 
     document.querySelectorAll("#transfers-table th[data-sort]").forEach(function (th) {
       var key = th.getAttribute("data-sort");

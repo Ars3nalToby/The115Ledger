@@ -177,10 +177,17 @@
     }
 
     container.innerHTML = filtered
-      .map(function (item) {
-        return '<li class="timeline-entry" id="' + escapeHtml(item.id) + '">' + entryHtml(item) + "</li>";
+      .map(function (item, i) {
+        var delay = window.SiteMotion ? window.SiteMotion.staggerDelay(i, 45, 500) : 0;
+        return (
+          '<li class="timeline-entry reveal" id="' + escapeHtml(item.id) + '" style="--reveal-delay: ' + delay + 'ms">' +
+          entryHtml(item) +
+          "</li>"
+        );
       })
       .join("");
+
+    if (window.SiteMotion) window.SiteMotion.observeReveal(container);
   }
 
   function scrollToHash() {

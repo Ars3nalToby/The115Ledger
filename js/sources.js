@@ -45,7 +45,7 @@
     if (!el) return;
 
     el.innerHTML = groups
-      .map(function (group) {
+      .map(function (group, gi) {
         var entries = Array.from(group.map.entries())
           .map(function (pair) {
             return { url: pair[0], label: pair[1] };
@@ -62,8 +62,9 @@
           })
           .join("");
 
+        var delay = window.SiteMotion ? window.SiteMotion.staggerDelay(gi, 80) : 0;
         return (
-          '<div class="source-group">' +
+          '<div class="source-group reveal" style="--reveal-delay: ' + delay + 'ms">' +
           "<h3>" + escapeHtml(group.title) + "</h3>" +
           (group.note ? '<p class="chart-note">' + escapeHtml(group.note) + "</p>" : "") +
           "<ul>" + items + "</ul>" +
@@ -71,6 +72,8 @@
         );
       })
       .join("");
+
+    if (window.SiteMotion) window.SiteMotion.observeReveal(el);
   }
 
   function renderCorrections(corrections) {
@@ -82,15 +85,18 @@
     });
 
     el.innerHTML = sorted
-      .map(function (c) {
+      .map(function (c, i) {
+        var delay = window.SiteMotion ? window.SiteMotion.staggerDelay(i, 80) : 0;
         return (
-          "<li>" +
+          '<li class="reveal" style="--reveal-delay: ' + delay + 'ms">' +
           '<span class="correction-date">' + formatDate(c.date) + "</span>" +
           "<span>" + escapeHtml(c.description) + "</span>" +
           "</li>"
         );
       })
       .join("");
+
+    if (window.SiteMotion) window.SiteMotion.observeReveal(el);
   }
 
   function showFallback() {
