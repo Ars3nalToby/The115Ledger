@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guardiola — The 115 Ledger</title>
+    <meta name="description" content="Guardiola — part of The 115 Ledger, a sourced record of Manchester City's financial-rules case." />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+  </head>
+  <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">The 115 <span class="logo-accent">Ledger</span></a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="timeline.html">Timeline</a></li>
+        <li><a href="charges.html">The Charges</a></li>
+        <li><a href="spending.html">The Spending</a></li>
+        <li><a href="money.html">The Money</a></li>
+        <li><a href="guardiola.html">Guardiola</a></li>
+        <li><a href="reporting.html">The Reporting</a></li>
+        <li><a href="sources.html">Sources</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button id="theme-toggle" class="icon-button theme-toggle" type="button" aria-pressed="false" aria-label="Toggle dark and light theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <line x1="12" y1="2" x2="12" y2="4"></line>
+            <line x1="12" y1="20" x2="12" y2="22"></line>
+            <line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line>
+            <line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line>
+            <line x1="2" y1="12" x2="4" y2="12"></line>
+            <line x1="20" y1="12" x2="22" y2="12"></line>
+            <line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line>
+            <line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <button id="nav-toggle" class="icon-button nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+    <main id="main">
+      <div class="container">
+        <div class="page-header">
+          <h1>Guardiola</h1>
+        </div>
+        <div class="section">
+          <div class="placeholder-panel">
+            <p>This page is under construction. Content and sourced data are coming in a later step.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="disclaimer">Unofficial. Not affiliated with any club, league or governing body.</p>
+      <p class="footer-meta">Every factual claim on this site is sourced. See <a href="sources.html">Sources &amp; Methodology</a>.</p>
+    </div>
+  </footer>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>

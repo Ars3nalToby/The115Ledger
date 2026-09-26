@@ -1,0 +1,365 @@
+/* The 115 Ledger — base styles, layout, and theme tokens */
+
+:root {
+  --bg: #f8f7f2;
+  --bg-elevated: #ffffff;
+  --text: #1b1c1e;
+  --text-muted: #55585f;
+  --border: #dcd8cc;
+  --accent: #2c3e50;
+  --accent-strong: #17242f;
+  --accent-contrast: #ffffff;
+  --focus-ring: #b3690f;
+  --link: #1f4d7a;
+  --link-visited: #4a3f6b;
+  --header-bg: #ffffff;
+  --shadow: 0 1px 2px rgba(20, 20, 20, 0.06), 0 4px 12px rgba(20, 20, 20, 0.05);
+
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --max-width: 1120px;
+}
+
+:root[data-theme="dark"] {
+  --bg: #14161a;
+  --bg-elevated: #1c1f24;
+  --text: #e9e7e1;
+  --text-muted: #a3a7ad;
+  --border: #2e3238;
+  --accent: #8ca3bc;
+  --accent-strong: #c7d3de;
+  --accent-contrast: #14161a;
+  --focus-ring: #e0a940;
+  --link: #7fb0e0;
+  --link-visited: #b39ddb;
+  --header-bg: #1c1f24;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    --bg: #14161a;
+    --bg-elevated: #1c1f24;
+    --text: #e9e7e1;
+    --text-muted: #a3a7ad;
+    --border: #2e3238;
+    --accent: #8ca3bc;
+    --accent-strong: #c7d3de;
+    --accent-contrast: #14161a;
+    --focus-ring: #e0a940;
+    --link: #7fb0e0;
+    --link-visited: #b39ddb;
+    --header-bg: #1c1f24;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.35);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--link);
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  padding: 0.75rem 1rem;
+  z-index: 100;
+  border-radius: 0 0 6px 0;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header / nav */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logo:visited {
+  color: var(--text);
+}
+
+.logo .logo-accent {
+  color: var(--accent);
+}
+
+.site-nav {
+  flex: 1;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: 0.4rem 0.1rem;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--text);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-button {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  width: 2.25rem;
+  height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  background: var(--bg-elevated);
+}
+
+.theme-toggle svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+  display: none;
+}
+
+:root[data-theme="light"] .theme-toggle .icon-moon {
+  display: block;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 1.15rem;
+  height: 2px;
+  background: currentColor;
+}
+
+/* Mobile nav */
+
+@media (max-width: 760px) {
+  .site-nav {
+    flex-basis: 100%;
+    order: 3;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease;
+  }
+
+  .site-nav.is-open {
+    max-height: 24rem;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 0 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 0.6rem;
+  }
+
+  .site-nav a {
+    padding: 0.6rem 0.1rem;
+    display: block;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .header-inner {
+    flex-wrap: wrap;
+  }
+}
+
+/* Main content */
+
+main {
+  min-height: 60vh;
+}
+
+.page-header {
+  padding: 2.5rem 0 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.9rem;
+  letter-spacing: -0.01em;
+}
+
+.page-header p {
+  margin: 0;
+  color: var(--text-muted);
+  max-width: 60ch;
+}
+
+.hero {
+  padding: 3rem 0 2.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 62ch;
+  margin: 0 0 1.25rem;
+}
+
+.placeholder-panel {
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+  max-width: 62ch;
+}
+
+.section {
+  padding: 2rem 0;
+}
+
+/* Footer */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 3rem;
+  padding: 2rem 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.disclaimer {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.footer-meta {
+  margin: 0;
+}
+
+.footer-links {
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+}
