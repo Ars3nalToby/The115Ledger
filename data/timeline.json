@@ -1,0 +1,225 @@
+[
+  {
+    "id": "2008-takeover",
+    "date": "2008-09-01",
+    "category": "Ownership",
+    "title": "Sheikh Mansour takeover agreed",
+    "summary": "Abu Dhabi United Group (ADUG), fronted by Sheikh Mansour bin Zayed Al Nahyan, agrees to buy Manchester City. The deal is announced 1 September 2008 (legal completion followed later that month); the club signs Robinho for a then-British-record fee the same day.",
+    "status_tag": "FINAL",
+    "sources": [
+      { "outlet": "Bluemoon (fan forum, contemporaneous discussion)", "date": "2008-09-01", "url": "https://forums.bluemoon-mcfc.co.uk/threads/hh-sheikh-mansour-day-in-2008-1st-september.372629/" },
+      { "outlet": "Man City official site (Sheikh Mansour letter, retrospective)", "date": "2018-09-15", "url": "https://www.mancity.com/news/club-news/club-news/2018/september/hh-sheikh-mansour-letter-2008" }
+    ],
+    "club_response": null,
+    "verify_note": "Completion date is sometimes given as 23 Sept 2008 rather than the 1 Sept announcement date — confirm which date to anchor the timeline on before publishing."
+  },
+  {
+    "id": "2014-uefa-ffp-settlement",
+    "date": "2014-05-16",
+    "category": "UEFA",
+    "title": "UEFA FFP settlement: fine and squad cap",
+    "summary": "Manchester City (along with Paris Saint-Germain) is sanctioned by UEFA for breaching Financial Fair Play rules, agreeing a settlement of up to €60m (€20m forfeited immediately, a further €40m withheld conditional on compliance), a Champions League squad cap of 21 players, and limits on transfer spending and wage growth for two seasons.",
+    "status_tag": "FINAL",
+    "sources": [
+      { "outlet": "ABC News (Australia)", "date": "2014-05-17", "url": "https://www.abc.net.au/news/2014-05-17/psg-manchester-city-cop-hefty-fine-for-financial-fair-play/5459438" },
+      { "outlet": "Bleacher Report", "date": "2014", "url": "https://bleacherreport.com/articles/2066393-manchester-citys-punishment-for-breaches-of-uefa-ffp-regulations-announced" }
+    ],
+    "club_response": "City said it would accept the sanctions and not appeal, while stating a \"fundamental disagreement\" with UEFA's interpretation of FFP rules as they applied to players purchased before 2010 (as reported by Bleacher Report and Gulf News)."
+  },
+  {
+    "id": "2018-der-spiegel-leaks",
+    "date": "2018-11-05",
+    "category": "Media reports",
+    "title": "Der Spiegel / Football Leaks publishes sponsorship documents",
+    "summary": "Der Spiegel, drawing on the Football Leaks cache, publishes internal emails it says show Manchester City inflated declared sponsorship income from Etihad and Etisalat, allegedly disguising direct ownership-group investment as sponsorship revenue to satisfy UEFA FFP rules. The documents also contain material relating to payments to former manager Roberto Mancini.",
+    "status_tag": "ALLEGED",
+    "sources": [
+      { "outlet": "Sports Illustrated", "date": "2018-11-05", "url": "https://www.si.com/soccer/2018/11/05/web-lies-leaked-emails-reveal-how-man-city-manipulated-sponsor-contracts-cheat-ffp-rules" }
+    ],
+    "club_response": null,
+    "verify_note": "Manchester City has consistently and strongly denied wrongdoing relating to these documents; the club's exact contemporaneous November 2018 statement has not yet been located/verified with a specific source — add before publishing."
+  },
+  {
+    "id": "2020-uefa-ban",
+    "date": "2020-02-14",
+    "category": "UEFA",
+    "title": "UEFA bans City from the Champions League for two seasons",
+    "summary": "UEFA's Adjudicatory Chamber finds City committed \"serious breaches\" of FFP and club licensing rules by overstating sponsorship revenue, and bans the club from UEFA club competitions for the 2020-21 and 2021-22 seasons, plus a €30m fine.",
+    "status_tag": "SANCTION PENDING",
+    "sources": [
+      { "outlet": "ITV News", "date": "2020-02-14", "url": "https://www.itv.com/news/2020-02-14/manchester-city-banned-from-champions-league-for-two-years-by-uefa" },
+      { "outlet": "CNBC", "date": "2020-02-14", "url": "https://www.cnbc.com/2020/02/14/uefa-bans-manchester-city-from-champions-league-for-2-seasons.html" }
+    ],
+    "club_response": "City said it was \"disappointed but not surprised\" by the decision and confirmed it would appeal to the Court of Arbitration for Sport (as reported by ITV News and CNBC)."
+  },
+  {
+    "id": "2020-cas-overturn",
+    "date": "2020-07-13",
+    "category": "UEFA",
+    "title": "CAS overturns UEFA ban, cuts fine to €10m",
+    "summary": "The Court of Arbitration for Sport lifts City's two-year Champions League ban, ruling that most allegations were \"either not established or time-barred\", while finding City did fail to cooperate with UEFA's investigation — reducing the fine from €30m to €10m for that narrower finding.",
+    "status_tag": "FINAL",
+    "sources": [
+      { "outlet": "CBS Sports", "date": "2020-07-13", "url": "https://www.cbssports.com/soccer/news/manchester-citys-uefa-ban-overturned-by-cas-club-will-be-eligible-for-2020-21-champions-league-season" },
+      { "outlet": "Sky Sports (CAS reasons)", "date": "2020", "url": "https://www.skysports.com/football/news/11679/12038109/manchester-city-court-of-arbitration-for-sport-releases-reasons-for-lifting-clubs-european-ban" }
+    ],
+    "club_response": null
+  },
+  {
+    "id": "2023-02-06-charged",
+    "date": "2023-02-06",
+    "category": "Premier League case",
+    "title": "Premier League refers 115 charges to independent commission",
+    "summary": "Following a four-year investigation, the Premier League charges Manchester City with 115 alleged breaches of its financial rules: 54 counts of failing to provide accurate financial information (seasons 2009-10 to 2017-18), 14 counts of failing to disclose full details of player/manager remuneration (including former manager Roberto Mancini's pay), 7 counts of breaching Profitability and Sustainability Rules, 5 counts of breaching UEFA financial regulations, and 35 counts of failing to cooperate with the investigation (December 2018 onward).",
+    "status_tag": "CHARGED / ALLEGED",
+    "sources": [
+      { "outlet": "Sport Resolutions (case summary)", "date": "2023-02-06", "url": "https://www.sportresolutions.com/news/manchester-city-charged-by-premier-league-over-alleged-financial-rule-breaches" },
+      { "outlet": "ESPN (charges explained)", "date": "2026", "url": "https://www.espn.com/soccer/story/_/id/50027680/manchester-city-premier-league-115-financial-charges-explained" }
+    ],
+    "club_response": "\"Manchester City is surprised by the issuing of these alleged breaches of the Premier League Rules, particularly given the extensive engagement and vast amount of detailed materials that the EPL has been provided with. The club welcomes the review of this matter by an independent commission, to impartially consider the comprehensive body of irrefutable evidence that exists in support of its position. As such we look forward to this matter being put to rest once and for all.\" (Manchester City statement, 6 Feb 2023, as widely reported; re-verify exact wording against the club's original released statement before publishing verbatim.)"
+  },
+  {
+    "id": "2023-02-guardiola-condemned",
+    "date": "2023-02-08",
+    "category": "Guardiola",
+    "title": "Guardiola: \"We are already being condemned\"",
+    "summary": "At his pre-Aston Villa press conference days after the charges are announced, Guardiola says the club already feels judged in public opinion, while maintaining City's trophies were won fairly on the pitch.",
+    "status_tag": "CHARGED / ALLEGED",
+    "sources": [
+      { "outlet": "Gulf News", "date": "2023", "url": "https://gulfnews.com/sport/football/weve-already-been-condemned-says-manchester-citys-guardiola-over-charges-1.93782312" }
+    ],
+    "club_response": null,
+    "verify_note": "Exact press-conference date is an estimate based on typical pre-match press timing, not independently confirmed — check against City's actual Feb 2023 fixture list before publishing this specific a date."
+  },
+  {
+    "id": "2024-09-16-hearing-opens",
+    "date": "2024-09-16",
+    "category": "Premier League case",
+    "title": "Hearing opens in London",
+    "summary": "A three-person independent commission, appointed by the chair of the Premier League Judicial Panel, begins a hearing at the International Dispute Resolution Centre in London, expected to run around 12 weeks.",
+    "status_tag": "CHARGED / ALLEGED",
+    "sources": [
+      { "outlet": "ABC News (Australia)", "date": "2024-09-16", "url": "https://www.abc.net.au/news/2024-09-16/hearing-manchester-city-s-115-alleged-financial-breaches-begin/104357418" },
+      { "outlet": "CBS Sports", "date": "2024", "url": "https://www.cbssports.com/soccer/news/manchester-city-hearing-on-115-alleged-breaches-of-premier-league-rules-set-to-start-in-september-per-reports" }
+    ],
+    "club_response": null
+  },
+  {
+    "id": "2024-09-hearing-guardiola",
+    "date": "2024-09-13",
+    "category": "Guardiola",
+    "title": "Guardiola: \"Everyone is innocent until guilt is proven\"",
+    "summary": "Ahead of the hearing's opening, Guardiola says an independent panel will decide the case and that he is \"looking forward to the decision\".",
+    "status_tag": "CHARGED / ALLEGED",
+    "sources": [
+      { "outlet": "101 Great Goals", "date": "2024", "url": "https://www.101greatgoals.com/football/premier-league/we-are-innocent-until-guilt-is-proven-manchester-city-boss-pep-guardiola/" }
+    ],
+    "club_response": null,
+    "verify_note": "Exact press-conference date is an estimate ahead of the Sept 2024 hearing, not independently confirmed — check against City's Sept 2024 fixture list before publishing."
+  },
+  {
+    "id": "2024-12-06-closing-arguments",
+    "date": "2024-12-06",
+    "category": "Premier League case",
+    "title": "Hearing concludes with closing arguments",
+    "summary": "The hearing concludes; the commission retires to consider its written decision. No timetable is given at this point for the ruling.",
+    "status_tag": "CHARGED / ALLEGED",
+    "sources": [
+      { "outlet": "Al Jazeera (case timeline)", "date": "2026-09-25", "url": "https://www.aljazeera.com/sports/2026/9/25/timeline-man-citys-premier-league-financial-charges-to-reported-verdict" }
+    ],
+    "club_response": null
+  },
+  {
+    "id": "2024-apt-tribunal-ruling",
+    "date": "2024-10-07",
+    "category": "Premier League case",
+    "title": "City wins partial victory in separate APT rules challenge",
+    "summary": "In a legally separate dispute from the 115-charges case, an arbitration tribunal rules that parts of the Premier League's Associated Party Transactions (APT) rules — which govern sponsorship deals with parties linked to a club's owners — are unlawful, including how shareholder loans were excluded from scope, and that the Premier League's 2023 rejection of two City sponsorship deals (First Abu Dhabi Bank, Etihad Aviation Group) was procedurally unfair.",
+    "status_tag": "FINAL",
+    "sources": [
+      { "outlet": "Malay Mail", "date": "2024-10-08", "url": "https://www.malaymail.com/news/sports/2024/10/08/manchester-city-claim-partial-win-over-premier-league-on-apt-rules/152904" },
+      { "outlet": "Morgan Sports Law (legal analysis)", "date": "2024", "url": "https://morgansl.com/en/latest/manchester-city-premier-league-football-associated-party-transaction-apt-rules-void" }
+    ],
+    "club_response": null
+  },
+  {
+    "id": "2025-02-apt-rules-void",
+    "date": "2025-02-01",
+    "category": "Premier League case",
+    "title": "APT rules ruled void in full",
+    "summary": "A further tribunal judgment finds the unlawful elements of the old APT rules cannot be severed from the rest of the rulebook, rendering the whole prior version unenforceable — a further win for City in the separate APT dispute.",
+    "status_tag": "FINAL",
+    "sources": [
+      { "outlet": "Morgan Sports Law", "date": "2025", "url": "https://morgansl.com/en/latest/manchester-city-premier-league-football-associated-party-transaction-apt-rules-void" }
+    ],
+    "club_response": null,
+    "verify_note": "Only the month (February 2025) is corroborated, not the exact day — confirm before publishing."
+  },
+  {
+    "id": "2025-09-apt-settlement",
+    "date": "2025-09-01",
+    "category": "Premier League case",
+    "title": "City and Premier League settle APT dispute",
+    "summary": "With a further trial due in October 2025, City and the Premier League reach a settlement over new APT rules, avoiding a second trial.",
+    "status_tag": "FINAL",
+    "sources": [
+      { "outlet": "Sky Sports", "date": "2025", "url": "https://www.skysports.com/football/news/11095/13427191/man-city-and-premier-league-settle-dispute-over-associated-party-transaction-rules" },
+      { "outlet": "ESPN", "date": "2025", "url": "https://www.espn.com/soccer/story/_/id/46197481/manchester-city-settle-premier-league-dispute-apt-rules" }
+    ],
+    "club_response": null,
+    "verify_note": "Only the month (September 2025) is corroborated, not the exact day — confirm before publishing."
+  },
+  {
+    "id": "2026-05-guardiola-departs",
+    "date": "2026-05-22",
+    "category": "Guardiola",
+    "title": "Guardiola announces departure",
+    "summary": "Manchester City announce Guardiola will step down as manager at the end of the 2025-26 season after ten years in charge, having won 20 major trophies.",
+    "status_tag": "FINAL",
+    "sources": [
+      { "outlet": "mancity.com (club statement)", "date": "2026-05-22", "url": "https://www.mancity.com/news/mens/pep-guardiola-official-announcement-63915039" },
+      { "outlet": "Euronews", "date": "2026-05-22", "url": "https://www.euronews.com/2026/05/22/pep-guardiola-to-leave-manchester-city-bringing-close-to-10-year-trophy-laden-spell" }
+    ],
+    "club_response": null
+  },
+  {
+    "id": "2026-05-guardiola-quote",
+    "date": "2026-05-22",
+    "category": "Guardiola",
+    "title": "Guardiola: \"I trust them\"",
+    "summary": "On leaving, Guardiola says of the club's owners and leadership: \"I trust them. I spoke with them and trust how they behave and how they did\" — reported as a personal statement of confidence, not a comment on the substance of the charges.",
+    "status_tag": "CHARGED / ALLEGED",
+    "sources": [
+      { "outlet": "Yahoo Sports", "date": "2026", "url": "https://sports.yahoo.com/articles/pep-guardiola-revealed-stance-man-195043351.html" }
+    ],
+    "club_response": null
+  },
+  {
+    "id": "2026-06-maresca-appointed",
+    "date": "2026-06-29",
+    "category": "Guardiola",
+    "title": "Enzo Maresca appointed as Guardiola's successor",
+    "summary": "Manchester City appoint former Chelsea head coach Enzo Maresca, who previously worked at City as a youth coach and assistant during the 2018-19 treble season, on a three-year deal.",
+    "status_tag": "FINAL",
+    "sources": [
+      { "outlet": "Sky Sports", "date": "2026", "url": "https://www.skysports.com/football/news/13548773/enzo-maresca-man-city-appoint-former-chelsea-head-coach-as-pep-guardiolas-successor-at-etihad-stadium" },
+      { "outlet": "Al Jazeera", "date": "2026-06-29", "url": "https://www.aljazeera.com/sports/2026/6/29/enzo-maresca-appointed-man-city-manager-to-succeed-pep-guardiola" }
+    ],
+    "club_response": null,
+    "verify_note": "One source pattern suggests an announcement around 22/26 May 2026 instead; 29 June 2026 is used here as two independent outlets' datelines agree on it, but this needs a direct check against mancity.com before publishing."
+  },
+  {
+    "id": "2026-09-25-verdict-reported",
+    "date": "2026-09-25",
+    "category": "Premier League case",
+    "title": "Verdict reported: guilty on 114 of 115 charges",
+    "summary": "David Ornstein (The Athletic) reports that the independent commission has found Manchester City guilty on 114 of the 115 charges. Sanctions are undecided and the process is ongoing; City are expected to appeal. At the time of the report, City are top of the Premier League under new head coach Enzo Maresca.",
+    "status_tag": "FOUND (reported)",
+    "sources": [
+      { "outlet": "David Ornstein / The Athletic (via X)", "date": "2026-09-25", "url": "https://x.com/David_Ornstein/status/2103480016915009611" },
+      { "outlet": "CNN", "date": "2026-09-25", "url": "https://www.cnn.com/2026/09/25/sport/manchester-city-charges-premier-league" },
+      { "outlet": "Al Jazeera", "date": "2026-09-25", "url": "https://www.aljazeera.com/sports/2026/9/25/timeline-man-citys-premier-league-financial-charges-to-reported-verdict" }
+    ],
+    "club_response": "\"The Premier League process remains ongoing, with significant elements to be completed, and subject to strict confidentiality\" — Manchester City statement to The Athletic, Sept 2026, said to leave the club's position unchanged from Feb 2023 (as reported by multiple outlets summarizing The Athletic's paywalled original; re-verify exact wording directly against that piece before publishing verbatim)."
+  }
+]

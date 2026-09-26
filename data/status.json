@@ -1,0 +1,8 @@
+{
+  "charges_date": "2023-02-06",
+  "verdict_reported_date": "2026-09-25",
+  "sanction_status": "SANCTION PENDING",
+  "appeal_status": "PENDING — an appeal by Manchester City is expected (per press reporting) but no outlet has confirmed one has actually been lodged yet",
+  "last_updated": "2026-09-26",
+  "notes": "The verdict was reported by David Ornstein/The Athletic on Friday 25 Sept 2026 that Manchester City were found guilty on 114 of the 115 charges. This is a REPORTED verdict, not the commission's published written decision, so use status_tag 'FOUND (reported)' wherever this is referenced — it will need to change to 'FOUND (published decision)' once the commission's written reasons are public. The Premier League itself had not issued its own public confirmation as of 26 Sept 2026. Sources: David Ornstein via X (https://x.com/David_Ornstein/status/2103480016915009611); CNN (https://www.cnn.com/2026/09/25/sport/manchester-city-charges-premier-league); Al Jazeera (https://www.aljazeera.com/sports/2026/9/25/timeline-man-citys-premier-league-financial-charges-to-reported-verdict)."
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "club": "Everton",
+    "season": "2023-24 (assessment period: three years to end of 2021-22)",
+    "breach": "Breach of Premier League Profitability and Sustainability Rules (PSR)",
+    "sanction": "10-point deduction, reduced to 6 points on appeal",
+    "date": "2023-11-17",
+    "source_url": "https://www.premierleague.com/en/news/3960088"
+  },
+  {
+    "club": "Everton",
+    "season": "2023-24 (assessment period: three years to end of 2022-23)",
+    "breach": "Second, separate PSR breach for a later assessment period",
+    "sanction": "2-point deduction (an appeal was lodged, then withdrawn)",
+    "date": "2024-04-08",
+    "source_url": "https://www.nbcsports.com/soccer/news/everton-given-further-two-point-deduction-for-breaching-premier-league-financial-rules"
+  },
+  {
+    "club": "Nottingham Forest",
+    "season": "2023-24 (assessment period ending 2022-23)",
+    "breach": "PSR breach — exceeded the permitted loss threshold of £61m by a reported £34.5m (self-admitted)",
+    "sanction": "4-point deduction; appeal rejected",
+    "date": "2024-03-18",
+    "source_url": "https://www.premierleague.com/en/news/3936397"
+  },
+  {
+    "club": "Leicester City",
+    "season": "2023-24 Championship season (jurisdiction transferred to the Premier League after promotion)",
+    "breach": "Exceeded the permitted Profit & Sustainability loss threshold by a reported £20.8m; also found to have failed to supply annual accounts on time",
+    "sanction": "6-point deduction (immediate); both the club's and the Premier League's appeals against the ruling were dismissed",
+    "date": "2026-02-05",
+    "source_url": "https://www.premierleague.com/en/news/4581043/premier-league-statement-leicester-city-05-february-2026"
+  },
+  {
+    "club": "Leicester City",
+    "season": "2023-24 Championship season",
+    "breach": "Same case as above",
+    "sanction": "Appeal decision — sanction and scope upheld in full",
+    "date": "2026-04-08",
+    "source_url": "https://www.premierleague.com/en/news/4624942/premier-league-statement-appeal-decision-on-leicester-city-080426"
+  }
+]

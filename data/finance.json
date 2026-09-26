@@ -1,0 +1,142 @@
+[
+  {
+    "season": "2008-09",
+    "revenue_gbp": 87000000,
+    "wages": 82600000,
+    "pretax_profit": -92600000,
+    "source_url": "https://www.sportingintelligence.com/2010/01/15/revealed-massive-hike-puts-citys-wages-on-course-to-top-150102/",
+    "note": "Lower-confidence figure: sources on 2008-09 revenue conflict (£82.3m–£87m across outlets); £87m from Sporting Intelligence used as best-available pending a Companies House check."
+  },
+  {
+    "season": "2009-10",
+    "revenue_gbp": 125100000,
+    "pretax_profit": -121300000,
+    "source_url": "http://swissramble.blogspot.com/2010/10/how-manchester-city-could-break-even.html"
+  },
+  {
+    "season": "2010-11",
+    "revenue_gbp": 153200000,
+    "wages": 173970000,
+    "pretax_profit": -197500000,
+    "source_url": "https://www.mancity.com/news/club-news/club-news/archive/2011/november/mcfc-annual-report"
+  },
+  {
+    "season": "2011-12",
+    "revenue_gbp": 231100000,
+    "wages": 202000000,
+    "pretax_profit": -97900000,
+    "source_url": "https://www.cnn.com/2012/12/14/sport/football/manchester-city-losses-football/index.html"
+  },
+  {
+    "season": "2012-13",
+    "revenue_gbp": 271000000,
+    "wages": 204000000,
+    "pretax_profit": -51000000,
+    "source_url": "https://www.bloomberg.com/news/2014-01-29/manchester-city-halves-annual-loss-as-revenue-rises-to-record.html"
+  },
+  {
+    "season": "2013-14",
+    "revenue_gbp": 347000000,
+    "wages": 205000000,
+    "pretax_profit": -23000000,
+    "source_url": "https://www.foxnews.com/sports/manchester-city-losses-cut-to-36-million-after-breaching-uefa-financial-fair-play-rules",
+    "note": "Wages figure (£205m, a reported ~12% cut from 2012-13) does not fully reconcile with the £204m figure reported for 2012-13 by a different outlet; both are named sources but the two years' wage figures should be checked against Companies House accounts before being treated as certain."
+  },
+  {
+    "season": "2014-15",
+    "revenue_gbp": 351800000,
+    "matchday": 43300000,
+    "broadcast": 135400000,
+    "commercial": 173000000,
+    "pretax_profit": 10700000,
+    "source_url": "https://www.mancity.com/meta/media/xjjjtsix/2015-mancity-annual-and-financial-report.pdf"
+  },
+  {
+    "season": "2015-16",
+    "revenue_gbp": 391800000,
+    "matchday": 52500000,
+    "broadcast": 161400000,
+    "commercial": 177900000,
+    "pretax_profit": 20500000,
+    "source_url": "https://www.skysports.com/football/news/10621829/manchester-city-record-lb20-5m-profit-for-2015-16"
+  },
+  {
+    "season": "2016-17",
+    "revenue_gbp": 473400000,
+    "wages": 264100000,
+    "pretax_profit": 1088000,
+    "source_url": "https://www.irishtimes.com/sport/soccer/english-soccer/manchester-city-see-record-revenues-for-2016-17-but-wage-bill-soars-1.3284788",
+    "note": "Covers a 13-month reporting period, not 12 months, due to a change in the club's financial year-end. Not directly comparable to other seasons on a like-for-like basis."
+  },
+  {
+    "season": "2017-18",
+    "revenue_gbp": 500500000,
+    "wages": 260000000,
+    "pretax_profit": 10400000,
+    "source_url": "https://gulfnews.com/sport/football/premier-league/manchester-city-break-500m-revenue-barrier-1.2278074"
+  },
+  {
+    "season": "2018-19",
+    "revenue_gbp": 535200000,
+    "pretax_profit": 10100000,
+    "source_url": "https://bleacherreport.com/articles/2863372-manchester-city-reveal-record-535m-revenue-in-2018-19-annual-report",
+    "note": "Only a wage-to-revenue ratio (59%) was found for this season, not an absolute wage figure from a named source; wages omitted rather than computed from the ratio."
+  },
+  {
+    "season": "2019-20",
+    "revenue_gbp": 478400000,
+    "matchday": 42000000,
+    "wages": 351400000,
+    "pretax_profit": -126000000,
+    "source_url": "https://www.business-standard.com/article/sports/manchester-city-report-126-million-pound-loss-in-2019-20-121040700013_1.html"
+  },
+  {
+    "season": "2020-21",
+    "revenue_gbp": 569800000,
+    "matchday": 732000,
+    "broadcast": 297000000,
+    "commercial": 272000000,
+    "pretax_profit": 2400000,
+    "source_url": "https://sports.yahoo.com/manchester-city-sees-record-767m-222052355.html"
+  },
+  {
+    "season": "2021-22",
+    "revenue_gbp": 613000000,
+    "matchday": 54000000,
+    "broadcast": 249000000,
+    "commercial": 310000000,
+    "wages": 354000000,
+    "pretax_profit": 41700000,
+    "source_url": "https://www.mancity.com/news/club/manchester-city-2021-22-annual-report-63803405"
+  },
+  {
+    "season": "2022-23",
+    "revenue_gbp": 712800000,
+    "matchday": 71900000,
+    "broadcast": 299400000,
+    "commercial": 341400000,
+    "wages": 423000000,
+    "pretax_profit": 80400000,
+    "source_url": "https://www.mancity.com/annualreport2023/business-performance/"
+  },
+  {
+    "season": "2023-24",
+    "revenue_gbp": 715000000,
+    "matchday": 75600000,
+    "broadcast": 294700000,
+    "commercial": 344700000,
+    "wages": 412600000,
+    "pretax_profit": 73800000,
+    "source_url": "https://www.mancity.com/annualreport2024/business-performance/"
+  },
+  {
+    "season": "2024-25",
+    "revenue_gbp": 694100000,
+    "matchday": 75100000,
+    "broadcast": 279000000,
+    "commercial": 340400000,
+    "wages": 408400000,
+    "pretax_profit": -9900000,
+    "source_url": "https://www.mancity.com/annualreport2025/business-performance/"
+  }
+]

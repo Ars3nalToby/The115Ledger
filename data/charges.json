@@ -1,0 +1,37 @@
+[
+  {
+    "category": "Failing to provide accurate financial information",
+    "count": 54,
+    "seasons": "2009-10 to 2017-18",
+    "explanation": "Alleged failure to give a true and fair view of the club's financial position, including sponsorship, related-party and operating-cost income, as required by Premier League Rules.",
+    "source": "ESPN, https://www.espn.com/soccer/story/_/id/50027680/manchester-city-premier-league-115-financial-charges-explained"
+  },
+  {
+    "category": "Failing to disclose full details of player and manager remuneration",
+    "count": 14,
+    "seasons": "2009-10 to 2015-16 (players); 2009-10 to 2012-13 (manager Roberto Mancini)",
+    "explanation": "Alleged failure to include full details of manager and player pay in contracts and accounts submitted to the Premier League — reported to include payments connected to former manager Roberto Mancini.",
+    "source": "ESPN, https://www.espn.com/soccer/story/_/id/50027680/manchester-city-premier-league-115-financial-charges-explained"
+  },
+  {
+    "category": "Breaching Profitability and Sustainability Rules (PSR)",
+    "count": 7,
+    "seasons": "2015-16 to 2017-18 (as reported)",
+    "explanation": "Alleged breach of the Premier League's own Profitability and Sustainability Rules financial thresholds.",
+    "source": "ESPN, https://www.espn.com/soccer/story/_/id/50027680/manchester-city-premier-league-115-financial-charges-explained"
+  },
+  {
+    "category": "Breaching UEFA financial regulations, including Financial Fair Play",
+    "count": 5,
+    "seasons": "Not precisely dated in public reporting; overlaps with the 2012-2016 sponsorship period examined separately by UEFA and CAS",
+    "explanation": "Alleged breach of UEFA's Financial Fair Play and club licensing rules, distinct from but overlapping with the UEFA case that led to the 2020 Champions League ban (overturned on appeal by CAS in 2020).",
+    "source": "ESPN, https://www.espn.com/soccer/story/_/id/50027680/manchester-city-premier-league-115-financial-charges-explained"
+  },
+  {
+    "category": "Failing to cooperate with the investigation",
+    "count": 35,
+    "seasons": "December 2018 to February 2023",
+    "explanation": "Alleged failure to cooperate fully with the Premier League's investigation into the matters above.",
+    "source": "ESPN, https://www.espn.com/soccer/story/_/id/50027680/manchester-city-premier-league-115-financial-charges-explained; Sport Resolutions, https://www.sportresolutions.com/news/manchester-city-charged-by-premier-league-over-alleged-financial-rule-breaches"
+  }
+]
