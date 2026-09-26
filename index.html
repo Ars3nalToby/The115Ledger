@@ -64,9 +64,41 @@
         <div class="container">
           <h1>The 115 Ledger</h1>
           <p class="tagline">A fully-sourced, documentary record of Manchester City's spending, revenues and regulatory history — from the 2008 Abu Dhabi takeover to the Premier League's 115-charges case.</p>
-          <div class="placeholder-panel">
-            <p>Site under construction. The live case-status clock, timeline and data pages are coming next.</p>
+
+          <div id="status-badge" class="status-badge status-pending" role="status" aria-live="polite">
+            <span class="status-badge-fallback">Loading case status…</span>
           </div>
+
+          <div class="stat-grid" aria-label="Case clock">
+            <div class="stat-tile">
+              <p class="stat-value" id="stat-charges-days" aria-live="polite">—</p>
+              <p class="stat-label">Days since the 115 charges were issued</p>
+            </div>
+            <div class="stat-tile">
+              <p class="stat-value" id="stat-verdict-days" aria-live="polite">—</p>
+              <p class="stat-label">Days since the verdict was reported</p>
+            </div>
+          </div>
+
+          <noscript>
+            <p class="placeholder-panel">This page uses JavaScript to calculate the live case clock from <code>data/status.json</code> and to list the latest timeline entries. Enable JavaScript, or read the underlying data files directly, to see current figures.</p>
+          </noscript>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>Where the case stands today</h2>
+          <p class="case-summary">In February 2023 the Premier League charged Manchester City with 115 alleged breaches of its financial rules, covering the 2009-10 to 2017-18 seasons plus an alleged failure to cooperate with the investigation from December 2018 onward. An independent commission heard the case in London between September and December 2024. On 25 September 2026, David Ornstein of The Athletic reported that the commission had found City guilty on 114 of the 115 charges — a <strong>reported</strong> verdict, not yet the commission's own published written decision. Sanctions have not been announced and City are expected to appeal. See the full <a href="timeline.html">timeline</a> and every <a href="sources.html">source</a> behind this summary.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>Latest</h2>
+          <ul class="latest-list" id="latest-list" aria-live="polite">
+            <li class="placeholder-panel">Loading the latest timeline entries…</li>
+          </ul>
         </div>
       </section>
     </main>
@@ -77,5 +109,6 @@
     </div>
   </footer>
     <script src="js/main.js" defer></script>
+    <script src="js/home.js" defer></script>
   </body>
 </html>
