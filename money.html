@@ -63,12 +63,93 @@
       <div class="container">
         <div class="page-header">
           <h1>The Money</h1>
+          <p>Manchester City's revenue, wages and profit/loss by season since the 2008 takeover, from the club's own annual reports and reputable press coverage — plus the club's commercial deals, ownership structure and UEFA financial-rules history.</p>
         </div>
-        <div class="section">
-          <div class="placeholder-panel">
-            <p>This page is under construction. Content and sourced data are coming in a later step.</p>
+
+        <noscript>
+          <p class="placeholder-panel">The charts on this page load from <code>data/finance.json</code> with JavaScript. Enable JavaScript, or read that file directly, to see the figures.</p>
+        </noscript>
+
+        <section class="section" aria-labelledby="revenue-heading">
+          <h2 id="revenue-heading">Revenue by season</h2>
+          <p class="chart-note">Manchester City Football Club Limited's own reported revenue, 2008-09 to 2024-25. Some early seasons carry lower confidence — see <a href="sources.html">Sources &amp; Methodology</a>.</p>
+          <div class="chart-scroll" id="chart-revenue"></div>
+          <details class="table-details">
+            <summary>View as a table</summary>
+            <div class="table-scroll">
+              <table class="data-table" id="revenue-table">
+                <thead><tr><th scope="col">Season</th><th scope="col">Revenue</th><th scope="col">Source</th></tr></thead>
+                <tbody id="revenue-table-body"></tbody>
+              </table>
+            </div>
+          </details>
+        </section>
+
+        <section class="section" aria-labelledby="split-heading">
+          <h2 id="split-heading">Revenue split: matchday, broadcast, commercial</h2>
+          <p class="chart-note">Shown only for the seasons where the club reported a full split. Other seasons reported a total revenue figure only.</p>
+          <div class="chart-scroll" id="chart-split"></div>
+          <details class="table-details">
+            <summary>View as a table</summary>
+            <div class="table-scroll">
+              <table class="data-table" id="split-table">
+                <thead><tr><th scope="col">Season</th><th scope="col">Matchday</th><th scope="col">Broadcast</th><th scope="col">Commercial</th></tr></thead>
+                <tbody id="split-table-body"></tbody>
+              </table>
+            </div>
+          </details>
+        </section>
+
+        <section class="section" aria-labelledby="wages-heading">
+          <h2 id="wages-heading">Wages by season</h2>
+          <p class="chart-note">Seasons marked "n/r" were not found reported by a named source and are omitted from the bar rather than shown as zero.</p>
+          <div class="chart-scroll" id="chart-wages"></div>
+          <details class="table-details">
+            <summary>View as a table</summary>
+            <div class="table-scroll">
+              <table class="data-table" id="wages-table">
+                <thead><tr><th scope="col">Season</th><th scope="col">Wages</th></tr></thead>
+                <tbody id="wages-table-body"></tbody>
+              </table>
+            </div>
+          </details>
+        </section>
+
+        <section class="section" aria-labelledby="profit-heading">
+          <h2 id="profit-heading">Pre-tax profit / loss by season</h2>
+          <div class="chart-scroll" id="chart-profit"></div>
+          <details class="table-details">
+            <summary>View as a table</summary>
+            <div class="table-scroll">
+              <table class="data-table" id="profit-table">
+                <thead><tr><th scope="col">Season</th><th scope="col">Pre-tax profit / loss</th><th scope="col">Source</th></tr></thead>
+                <tbody id="profit-table-body"></tbody>
+              </table>
+            </div>
+          </details>
+        </section>
+
+        <section class="section" aria-labelledby="sponsorship-heading">
+          <h2 id="sponsorship-heading">Sponsorship</h2>
+          <p>Manchester City's major commercial partners connected to Abu Dhabi entities or the ownership group, and — kept clearly separate — what the Der Spiegel/Football Leaks documents and UEFA's 2020 case alleged about specific deals.</p>
+          <div id="sponsorship-list" class="sponsorship-list">
+            <p class="placeholder-panel">Loading sponsorship data…</p>
           </div>
-        </div>
+        </section>
+
+        <section class="section" aria-labelledby="cfg-heading">
+          <h2 id="cfg-heading">City Football Group structure</h2>
+          <div id="cfg-structure">
+            <p class="placeholder-panel">Loading ownership structure…</p>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="uefa-heading">
+          <h2 id="uefa-heading">UEFA Financial Fair Play history</h2>
+          <div id="uefa-history">
+            <p class="placeholder-panel">Loading UEFA history…</p>
+          </div>
+        </section>
       </div>
     </main>
   <footer class="site-footer">
@@ -78,5 +159,6 @@
     </div>
   </footer>
     <script src="js/main.js" defer></script>
+    <script src="js/money.js" defer></script>
   </body>
 </html>

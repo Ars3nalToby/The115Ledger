@@ -68,6 +68,33 @@ pass before publishing as fact. Feeds the eventual Sources & Methodology page
     (2017), Nathan Aké (2020), Julián Álvarez (2022), Mateo Kovačić (2023),
     Vitor Reis & Abdukodir Khusanov (Jan 2025), Matheus Nunes (2023). Add in a
     follow-up pass if the Spending page should be more exhaustive.
+12. **Etihad's alleged owner-funded share** (data/sponsorships.json) — two
+    secondary summaries of the Nov 2018 Der Spiegel/Football Leaks reporting
+    give slightly different figures (£59.5m vs £59.9m funded by ADUG against
+    the ~£67.5m annual fee, with £8m from Etihad directly). Pull the original
+    Der Spiegel or Guardian Nov 2018 article directly to resolve before citing
+    an exact figure elsewhere on the site.
+13. **Etisalat and First Abu Dhabi Bank sponsorship values** — no standalone
+    reported £ figure was found for either (only a combined ~£120m/4-sponsor
+    figure for Etisalat's FY2012-13 era); sponsorships.json says so explicitly
+    rather than estimating.
+14. **The reported "close to £1bn" new Etihad deal** (post-Sept-2025 APT
+    settlement) is explicitly reported as undisclosed/unconfirmed by SportsPro;
+    higher figures (up to £1.75bn) appeared only on low-tier aggregator sites
+    and were deliberately excluded.
+15. **CFG ownership percentages** (ADUG 81% / Silver Lake 18% / CMC+CITIC 1%,
+    $4.8bn 2019 valuation) rest on WebSearch snippets of SportsPro/Gulf
+    News/SI.com, not a direct primary-source read (WebFetch was blocked for
+    all of these domains in the research sandbox) — re-verify against CFG's
+    own disclosures or Companies House before treating as exact.
+16. **Montevideo City Torque and Club Bolívar's exact CFG stakes** could not
+    be confirmed — data/cfg.json lists them with "stake not confirmed" rather
+    than a guessed percentage.
+17. **CFG's Yokohama F. Marinos and Mumbai City holdings**: CLAUDE.md's
+    original seed brief listed these as current CFG clubs, but research found
+    both were divested (Mumbai City ~Dec 2025, Yokohama F. Marinos ~June
+    2026) — data/cfg.json lists them as former clubs. Re-verify the exact
+    divestment dates against CFG's own announcements if precision matters.
 
 ## Research environment note
 

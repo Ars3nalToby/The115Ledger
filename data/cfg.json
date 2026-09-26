@@ -1,0 +1,25 @@
+{
+  "summary_html": "Manchester City has been owned since August 2008 by Abu Dhabi United Group for Development and Investment (ADUG), a private investment vehicle wholly owned by Sheikh Mansour bin Zayed Al Nahyan, Deputy Prime Minister of the United Arab Emirates. Since 2013, ADUG has held its stake in the club through City Football Group (CFG), a holding company that also owns stakes in a network of clubs worldwide. CFG was valued at roughly <strong>$4.8bn</strong> when Silver Lake made its original investment in November 2019.",
+  "ownership_breakdown": [
+    { "holder": "Abu Dhabi United Group (ADUG)", "pct": "81%", "source": "SportsPro", "source_url": "https://www.sportspro.com/features/finance-investment/city-football-group-investor-profile-investment-thesis-clubs-manchester/" },
+    { "holder": "Silver Lake (US private equity)", "pct": "18%", "source": "SI.com", "source_url": "https://www.si.com/soccer/2019/11/27/man-city-football-group-equity-firm-buys-stake-ownership" },
+    { "holder": "China Media Capital & CITIC Capital", "pct": "1% (combined)", "source": "Gulf News", "source_url": "https://gulfnews.com/business/manchester-citys-owner-selling-stake-city-football-group-announces-500m-investment-by-silver-lake-1.68111230" }
+  ],
+  "clubs": [
+    { "name": "Manchester City FC", "country": "England", "stake": "100%" },
+    { "name": "New York City FC", "country": "USA", "stake": "80%" },
+    { "name": "Melbourne City FC", "country": "Australia", "stake": "100%" },
+    { "name": "Girona FC", "country": "Spain", "stake": "47%" },
+    { "name": "Palermo FC", "country": "Italy", "stake": "94.94%" },
+    { "name": "ESTAC Troyes", "country": "France", "stake": "100%" },
+    { "name": "Lommel SK", "country": "Belgium", "stake": "99%" },
+    { "name": "Shenzhen Peng City", "country": "China", "stake": "47%" },
+    { "name": "EC Bahia", "country": "Brazil", "stake": "90%" },
+    { "name": "Montevideo City Torque", "country": "Uruguay", "stake": "stake not confirmed" },
+    { "name": "Club Bolívar", "country": "Bolivia", "stake": "stake not confirmed", "note": "listed as a CFG partner club in some sources; exact relationship not independently confirmed" },
+    { "name": "Yokohama F. Marinos", "country": "Japan", "stake": "sold back to Nissan, reported completed June 2026", "note": "former CFG club — held ~20-25% from 2014, divested 2026" },
+    { "name": "Mumbai City FC", "country": "India", "stake": "exited, reported December 2025", "note": "former CFG club" }
+  ],
+  "clubs_source": "SportBusiness / SportsPro / CityAM reporting on CFG's 2025-26 divestments",
+  "clubs_source_url": "https://www.sportbusiness.com/news/cfg-sells-mumbai-stake-as-isl-uncertainty-continues/"
+}
