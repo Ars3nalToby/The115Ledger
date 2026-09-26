@@ -1,0 +1,242 @@
+[
+  {
+    "player": "Robinho",
+    "date": "2008-09-01",
+    "from_club": "Real Madrid",
+    "fee_gbp": 32.5,
+    "fee_eur": null,
+    "source_url": "https://edition.cnn.com/2008/SPORT/football/09/01/mancity.robinho/",
+    "controversy_note": "British transfer record at the time (£32.5m), signed on deadline day just after the Abu Dhabi takeover was completed.",
+    "controversy_source": "https://edition.cnn.com/2008/SPORT/football/09/01/mancity.robinho/"
+  },
+  {
+    "player": "Carlos Tevez",
+    "date": "2009-07-14",
+    "from_club": "Manchester United (contract expired; fee paid to third-party rights holders MSI/Just Sports)",
+    "fee_gbp": 25.5,
+    "fee_eur": null,
+    "source_url": "https://www.cnn.com/2009/SPORT/football/07/14/tevez.manchester.city.adebayor/index.html",
+    "controversy_note": "Tevez's economic rights were held by third-party owner Media Sports Investment (MSI, run by Kia Joorabchian) rather than by a selling club; third-party ownership of this kind was subsequently banned by the Premier League. Reported fee to secure him ranged from ~£25.5m to ~$40m depending on outlet.",
+    "controversy_source": "https://en.wikipedia.org/wiki/Media_Sport_Investment"
+  },
+  {
+    "player": "Emmanuel Adebayor",
+    "date": "2009-07-20",
+    "from_club": "Arsenal",
+    "fee_gbp": 25,
+    "fee_eur": 35,
+    "source_url": "https://www.france24.com/en/20090718-adebayor-leaves-arsenal-manchester-city-",
+    "controversy_note": null,
+    "controversy_source": null
+  },
+  {
+    "player": "Joleon Lescott",
+    "date": "2009-08-24",
+    "from_club": "Everton",
+    "fee_gbp": 22,
+    "fee_eur": null,
+    "source_url": "https://www.abc.net.au/news/2009-08-24/everton-agrees-lescott-fee-with-city/1401888",
+    "controversy_note": "Fee disputed at the time: Everton and some outlets cited £24m vs £22m reported elsewhere; treat as a range pending further sourcing.",
+    "controversy_source": "https://www.abc.net.au/news/2009-08-24/everton-agrees-lescott-fee-with-city/1401888"
+  },
+  {
+    "player": "Yaya Touré",
+    "date": "2010-07-02",
+    "from_club": "Barcelona",
+    "fee_gbp": 24,
+    "fee_eur": null,
+    "source_url": "https://www.irishnews.com/sport/soccer/on-this-day-in-2010-manchester-city-sign-yaya-toure-from-barcelona-D5AUVJ7TDBIBHGKOWZGULVYGZM/",
+    "controversy_note": "Some outlets cited a higher figure (~£28m); treat as a range pending further sourcing.",
+    "controversy_source": null
+  },
+  {
+    "player": "Sergio Agüero",
+    "date": "2011-07-28",
+    "from_club": "Atlético Madrid",
+    "fee_gbp": 38,
+    "fee_eur": 40,
+    "source_url": "https://www.aljazeera.com/amp/sports/2011/7/28/argentinas-aguero-joins-man-city",
+    "controversy_note": "Fee reported inconsistently across outlets (£31.5m–£38m / €36m–€40m); deal structured with installments and goal/appearance bonuses. Treat as a range.",
+    "controversy_source": "https://www.aljazeera.com/amp/sports/2011/7/28/argentinas-aguero-joins-man-city"
+  },
+  {
+    "player": "Samir Nasri",
+    "date": "2011-08-24",
+    "from_club": "Arsenal",
+    "fee_gbp": 25,
+    "fee_eur": 27,
+    "source_url": "https://www.aljazeera.com/sports/2011/8/23/nasri-on-his-way-to-city",
+    "controversy_note": "Bloomberg reported the fee as officially undisclosed; other outlets cited £22m–£25m and UEFA cited ~€27m. Treat as a range.",
+    "controversy_source": "https://www.bloomberg.com/news/articles/2011-08-23/arsenal-agrees-on-sale-of-samir-nasri-to-manchester-city-fee-undisclosed"
+  },
+  {
+    "player": "Kevin De Bruyne",
+    "date": "2015-08-30",
+    "from_club": "VfL Wolfsburg",
+    "fee_gbp": 54.5,
+    "fee_eur": 76,
+    "source_url": "https://www.espn.com/soccer/story/_/id/37428650/how-wolfsburg-lost-kevin-de-bruyne-man-city",
+    "controversy_note": "A club-record signing at the time; a Bundesliga transfer-fee record and, with add-ons, the second-highest fee ever paid by a British club up to that point.",
+    "controversy_source": "https://www.skysports.com/football/news/9972617/manchester-city-announce-signing-of-wolfsburg-midfielder-kevin-de-bruyne"
+  },
+  {
+    "player": "Raheem Sterling",
+    "date": "2015-07-14",
+    "from_club": "Liverpool",
+    "fee_gbp": 49,
+    "fee_eur": null,
+    "source_url": "https://www.euronews.com/2015/07/13/manchester-city-sign-raheem-sterling",
+    "controversy_note": "Made Sterling the most expensive English player in history at the time (initial fee reported as £44m, rising to £49m with add-ons).",
+    "controversy_source": "https://www.euronews.com/2015/07/13/manchester-city-sign-raheem-sterling"
+  },
+  {
+    "player": "John Stones",
+    "date": "2016-08-09",
+    "from_club": "Everton",
+    "fee_gbp": 47.5,
+    "fee_eur": null,
+    "source_url": "https://www.skysports.com/football/news/11679/10528801/john-stones-joins-manchester-city-in-47-5m-deal",
+    "controversy_note": "Made him the second most expensive defender in football history at the time, behind PSG's David Luiz.",
+    "controversy_source": "https://www.skysports.com/football/news/11679/10528801/john-stones-joins-manchester-city-in-47-5m-deal"
+  },
+  {
+    "player": "Kyle Walker",
+    "date": "2017-07-14",
+    "from_club": "Tottenham Hotspur",
+    "fee_gbp": 45,
+    "fee_eur": null,
+    "source_url": "https://www.espn.com/soccer/story/_/id/37526817/kyle-walker-completes-transfer-manchester-city-tottenham-record-deal",
+    "controversy_note": "Reported (with add-ons up to ~£54m) as a world-record fee for a defender at the time.",
+    "controversy_source": "https://www.forbes.com/sites/bobbymcmahon/2017/07/14/world-record-fee-for-defender-kyle-walker-is-a-great-piece-of-business-for-tottenham-hotspur/"
+  },
+  {
+    "player": "Aymeric Laporte",
+    "date": "2018-01-30",
+    "from_club": "Athletic Bilbao",
+    "fee_gbp": 57,
+    "fee_eur": 65,
+    "source_url": "https://www.espn.com/soccer/story/_/id/37544348/aymeric-laporte-joins-manchester-city-club-record-transfer-athletic-bilbao",
+    "controversy_note": "Was City's club-record signing in pound-sterling terms at the time (fee was his full release clause, plus a further ~€5m in development/training compensation to Athletic).",
+    "controversy_source": "https://www.espn.com/soccer/story/_/id/37544348/aymeric-laporte-joins-manchester-city-club-record-transfer-athletic-bilbao"
+  },
+  {
+    "player": "Riyad Mahrez",
+    "date": "2018-07-10",
+    "from_club": "Leicester City",
+    "fee_gbp": 60,
+    "fee_eur": null,
+    "source_url": "https://www.espn.com/soccer/story/_/id/37558039/manchester-city-sign-riyad-mahrez-leicester-city-club-record-deal",
+    "controversy_note": "Made him the most expensive African footballer in history at the time (fee could reach £75m with add-ons); also a record fee received by Leicester.",
+    "controversy_source": "https://www.espn.com/soccer/story/_/id/37558039/manchester-city-sign-riyad-mahrez-leicester-city-club-record-deal"
+  },
+  {
+    "player": "Rodri",
+    "date": "2019-07-03",
+    "from_club": "Atlético Madrid",
+    "fee_gbp": 62.8,
+    "fee_eur": 70,
+    "source_url": "https://www.itv.com/news/2019-07-04/manchester-city-break-their-club-record-transfer-fee-to-sign-rodri-from-atletico-madrid",
+    "controversy_note": "New club-record fee for Manchester City at the time; City activated his full release clause.",
+    "controversy_source": "https://www.skysports.com/football/news/11095/11756057/man-city-pay-rodri-release-clause-so-he-can-leave-atletico-madrid"
+  },
+  {
+    "player": "Rúben Dias",
+    "date": "2020-09-29",
+    "from_club": "Benfica",
+    "fee_gbp": 65,
+    "fee_eur": 68,
+    "source_url": "https://www.skysports.com/football/news/11679/12084218/ruben-dias-manchester-city-sign-benfica-defender-in-65m-deal",
+    "controversy_note": null,
+    "controversy_source": null
+  },
+  {
+    "player": "Jack Grealish",
+    "date": "2021-08-05",
+    "from_club": "Aston Villa",
+    "fee_gbp": 100,
+    "fee_eur": null,
+    "source_url": "https://www.espn.com/soccer/story/_/id/37619538/manchester-city-sign-jack-grealish-aston-villa-british-record-fee",
+    "controversy_note": "Broke the British transfer-fee record (previously held by Paul Pogba's £93.25m return to Manchester United in 2016); City activated Grealish's £100m Villa release clause.",
+    "controversy_source": "https://www.espn.com/soccer/story/_/id/37619538/manchester-city-sign-jack-grealish-aston-villa-british-record-fee"
+  },
+  {
+    "player": "Erling Haaland",
+    "date": "2022-05-10",
+    "from_club": "Borussia Dortmund",
+    "fee_gbp": 51,
+    "fee_eur": 60,
+    "source_url": "https://www.cnbc.com/2022/05/10/erling-haaland-man-city-confirm-deal-to-sign-borussia-dortmund-striker.html",
+    "controversy_note": "Fee was a fixed €60m/£51m release clause set as far back as his 2019 Salzburg-to-Dortmund move; total cost including agent fees and signing bonus was reported to rise to roughly £85.5m.",
+    "controversy_source": "https://www.skysports.com/football/news/11679/12609973/erling-haaland-q-a-how-much-have-man-city-forked-out-for-borussia-dortmund-striker"
+  },
+  {
+    "player": "Joško Gvardiol",
+    "date": "2023-08-05",
+    "from_club": "RB Leipzig",
+    "fee_gbp": 77.6,
+    "fee_eur": 90,
+    "source_url": "https://www.skysports.com/football/news/11679/12909187/josko-gvardiol-man-city-complete-gbp77-6m-signing-of-rb-leipzig-and-croatia-defender",
+    "controversy_note": "Second most expensive defender in football history at the time, behind Harry Maguire's £80m move to Manchester United (2019); Leipzig had initially sought €100m.",
+    "controversy_source": "https://www.cbssports.com/soccer/news/manchester-city-transfer-news-josko-gvardiol-officially-announced-in-record-99-million-fee-for-a-defender"
+  },
+  {
+    "player": "Jérémy Doku",
+    "date": "2023-08-25",
+    "from_club": "Stade Rennais",
+    "fee_gbp": 55.5,
+    "fee_eur": 65,
+    "source_url": "https://www.skysports.com/football/news/11679/12944980/jeremy-doku-man-city-sign-belgium-winger-from-rennes-in-lb55-5m-deal",
+    "controversy_note": null,
+    "controversy_source": null
+  },
+  {
+    "player": "Omar Marmoush",
+    "date": "2025-01-23",
+    "from_club": "Eintracht Frankfurt",
+    "fee_gbp": 59,
+    "fee_eur": 70,
+    "source_url": "https://www.skysports.com/football/news/11095/13291223/omar-marmoush-transfer-to-man-city-eintracht-frankfurt-forward-completes-january-move-for-initial-lb59m",
+    "controversy_note": null,
+    "controversy_source": null
+  },
+  {
+    "player": "Rayan Cherki",
+    "date": "2025-06-11",
+    "from_club": "Olympique Lyonnais",
+    "fee_gbp": 34,
+    "fee_eur": 36.5,
+    "source_url": "https://www.skysports.com/football/news/13380685/rayan-cherki-manchester-city-complete-lb34m-deal-to-sign-attacking-midfielder-from-lyon",
+    "controversy_note": null,
+    "controversy_source": null
+  },
+  {
+    "player": "Tijjani Reijnders",
+    "date": "2025-06-04",
+    "from_club": "AC Milan",
+    "fee_gbp": 46.3,
+    "fee_eur": 57.7,
+    "source_url": "https://www.skysports.com/football/news/11095/13379209/tijjani-reijnders-transfer-man-city-complete-lb46-3m-deal-to-sign-midfielder-from-ac-milan-on-five-year-contract",
+    "controversy_note": null,
+    "controversy_source": null
+  },
+  {
+    "player": "Antoine Semenyo",
+    "date": "2026-01-09",
+    "from_club": "AFC Bournemouth",
+    "fee_gbp": 64,
+    "fee_eur": null,
+    "source_url": "https://www.skysports.com/football/news/11095/13491956/antoine-semenyo-joins-man-city-bournemouth-forward-signs-in-lb64m-transfer-to-take-city-spending-over-lb425m-in-12-months",
+    "controversy_note": "City reportedly agreed a fee (£62.5m + £1.5m bonuses) below his £65m release clause; part of a reported >£425m spend across the preceding 12 months.",
+    "controversy_source": "https://www.skysports.com/football/news/11095/13491956/antoine-semenyo-joins-man-city-bournemouth-forward-signs-in-lb64m-transfer-to-take-city-spending-over-lb425m-in-12-months"
+  },
+  {
+    "player": "Marc Guéhi",
+    "date": "2026-01-19",
+    "from_club": "Crystal Palace",
+    "fee_gbp": 20,
+    "fee_eur": null,
+    "source_url": "https://www.skysports.com/football/news/11095/13495114/marc-guehi-man-city-sign-defender-from-crystal-palace-for-an-initial-lb20m-as-spending-reaches-lb425m-in-12-months",
+    "controversy_note": "Signed as urgent defensive cover after injuries to Rúben Dias and Joško Gvardiol in a 1-1 draw with Chelsea (4 Jan 2026); City's spending over the preceding year passed £425m.",
+    "controversy_source": "https://www.espn.com/soccer/story/_/id/47630957/marc-guehi-seals-transfer-manchester-city-crystal-palace"
+  }
+]
