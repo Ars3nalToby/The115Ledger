@@ -63,11 +63,21 @@
       <div class="container">
         <div class="page-header">
           <h1>Timeline</h1>
+          <p>Ownership, transfers, finance, UEFA, the Premier League case, Guardiola and media reports — 2008 to today, in order, every claim sourced.</p>
         </div>
+
         <div class="section">
-          <div class="placeholder-panel">
-            <p>This page is under construction. Content and sourced data are coming in a later step.</p>
+          <div class="timeline-filters" id="timeline-filters" role="group" aria-label="Filter timeline by category">
+            <button type="button" class="filter-chip is-active" data-filter="all">All</button>
           </div>
+
+          <noscript>
+            <p class="placeholder-panel">This page loads timeline entries from <code>data/timeline.json</code> with JavaScript. Enable JavaScript, or read that file directly, to see the timeline.</p>
+          </noscript>
+
+          <ol class="timeline-list" id="timeline-list" aria-live="polite">
+            <li class="placeholder-panel">Loading timeline…</li>
+          </ol>
         </div>
       </div>
     </main>
@@ -78,5 +88,6 @@
     </div>
   </footer>
     <script src="js/main.js" defer></script>
+    <script src="js/timeline.js" defer></script>
   </body>
 </html>

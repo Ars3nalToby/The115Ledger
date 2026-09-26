@@ -79,7 +79,7 @@
       li.className = "latest-item";
       li.innerHTML =
         '<span class="latest-category">' + escapeHtml(item.category) + "</span>" +
-        '<a class="latest-title" href="timeline.html">' + escapeHtml(item.title) + "</a>" +
+        '<a class="latest-title" href="timeline.html#' + escapeHtml(item.id) + '">' + escapeHtml(item.title) + "</a>" +
         '<time class="latest-date" datetime="' + escapeHtml(item.date) + '">' + formatDate(item.date) + "</time>" +
         '<p class="latest-summary">' + escapeHtml(item.summary) + "</p>";
       container.appendChild(li);
