@@ -63,12 +63,27 @@
       <div class="container">
         <div class="page-header">
           <h1>The Reporting</h1>
+          <p>The journalists and outlets whose reporting this site relies on — starting with David Ornstein's coverage of the case on X, plus the key articles behind the timeline.</p>
         </div>
-        <div class="section">
-          <div class="placeholder-panel">
-            <p>This page is under construction. Content and sourced data are coming in a later step.</p>
+
+        <section class="section" aria-labelledby="ornstein-heading">
+          <h2 id="ornstein-heading">David Ornstein on X</h2>
+          <p class="chart-note">Embedded using X's official widget where it loads; each falls back to a plain link card if the embed can't load (for example, with JavaScript or third-party scripts blocked).</p>
+          <noscript>
+            <p class="placeholder-panel">This section loads from <code>data/ornstein.json</code> with JavaScript.</p>
+          </noscript>
+          <div class="tweet-grid" id="tweet-grid">
+            <p class="placeholder-panel">Loading…</p>
           </div>
-        </div>
+        </section>
+
+        <section class="section" aria-labelledby="articles-heading">
+          <h2 id="articles-heading">Key articles</h2>
+          <p class="chart-note">Title, outlet, date and link only — no article text is reproduced here.</p>
+          <ul class="article-list" id="article-list">
+            <li class="placeholder-panel">Loading…</li>
+          </ul>
+        </section>
       </div>
     </main>
   <footer class="site-footer">
@@ -78,5 +93,6 @@
     </div>
   </footer>
     <script src="js/main.js" defer></script>
+    <script src="js/reporting.js" defer></script>
   </body>
 </html>
