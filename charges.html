@@ -62,13 +62,65 @@
     <main id="main">
       <div class="container">
         <div class="page-header">
-          <h1>The Charges</h1>
+          <h1>The 115 Charges, Explained</h1>
+          <p>In February 2023 the Premier League referred 115 alleged breaches of its financial rules to an independent commission. Here is what each category covers, what the rules allow as a sanction, and how other clubs' financial-rules cases compare.</p>
         </div>
-        <div class="section">
-          <div class="placeholder-panel">
-            <p>This page is under construction. Content and sourced data are coming in a later step.</p>
+
+        <section class="section" aria-labelledby="breakdown-heading">
+          <h2 id="breakdown-heading">Breakdown by category</h2>
+          <noscript>
+            <p class="placeholder-panel">This chart loads from <code>data/charges.json</code> with JavaScript. Enable JavaScript, or read that file directly, to see the breakdown.</p>
+          </noscript>
+          <table class="charges-chart" id="charges-chart">
+            <caption class="visually-hidden">Breakdown of the 115 Premier League charges against Manchester City, by category</caption>
+            <thead>
+              <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Charges</th>
+              </tr>
+            </thead>
+            <tbody id="charges-chart-body">
+              <tr><td colspan="2">Loading…</td></tr>
+            </tbody>
+          </table>
+
+          <div class="charges-explanations" id="charges-explanations">
+            <p class="placeholder-panel">Loading category explanations…</p>
           </div>
-        </div>
+        </section>
+
+        <section class="section" aria-labelledby="rules-heading">
+          <h2 id="rules-heading">What the rules say</h2>
+          <div class="rules-box">
+            <p>Premier League Rule <strong>W.51</strong> of the Handbook gives an independent commission a broad range of sanctions if breaches are proven: a reprimand, an unlimited fine, suspension, a <strong>points deduction</strong> (which can be applied retrospectively to a completed season), <strong>expulsion</strong> from the league, or "such other order as it thinks fit".</p>
+            <p class="rules-caveat">This wording is sourced to journalists' citations of the rule (The Athletic, BBC's Dan Roan) and a legal-industry analysis of the Premier League's disciplinary process, not a direct quotation from the current Handbook — see <a href="sources.html">Sources &amp; Methodology</a> for the citations and this caveat.</p>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="compare-heading">
+          <h2 id="compare-heading">How other clubs compare</h2>
+          <p>Everton, Nottingham Forest and Leicester City have all been sanctioned under the Premier League's Profitability and Sustainability Rules (PSR) in recent seasons. <strong>None of these cases involves the same charges as Manchester City's</strong> — City's case includes UEFA financial rules and non-cooperation charges that the others do not — but they show the range of sanctions the Premier League has actually applied.</p>
+          <noscript>
+            <p class="placeholder-panel">This table loads from <code>data/sanctions_compare.json</code> with JavaScript.</p>
+          </noscript>
+          <div class="table-scroll">
+            <table class="data-table" id="sanctions-table">
+              <thead>
+                <tr>
+                  <th scope="col">Club</th>
+                  <th scope="col">Season</th>
+                  <th scope="col">Breach</th>
+                  <th scope="col">Sanction</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Source</th>
+                </tr>
+              </thead>
+              <tbody id="sanctions-table-body">
+                <tr><td colspan="6">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
       </div>
     </main>
   <footer class="site-footer">
@@ -78,5 +130,6 @@
     </div>
   </footer>
     <script src="js/main.js" defer></script>
+    <script src="js/charges.js" defer></script>
   </body>
 </html>
