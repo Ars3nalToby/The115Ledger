@@ -1,57 +1,75 @@
-/* The 115 Ledger — base styles, layout, and theme tokens */
+/* The 115 Ledger — "investigative financial ledger" identity.
+   Paper + ink + one reserved red accent. Serif headlines, sans body,
+   monospace tabular figures for every structured number and date. */
 
 :root {
-  --bg: #f8f7f2;
-  --bg-elevated: #ffffff;
-  --text: #1b1c1e;
-  --text-muted: #55585f;
-  --border: #dcd8cc;
-  --accent: #2c3e50;
-  --accent-strong: #17242f;
-  --accent-contrast: #ffffff;
-  --focus-ring: #b3690f;
-  --link: #1f4d7a;
-  --link-visited: #4a3f6b;
-  --header-bg: #ffffff;
-  --shadow: 0 1px 2px rgba(20, 20, 20, 0.06), 0 4px 12px rgba(20, 20, 20, 0.05);
+  --bg: #f7f5ee;
+  --bg-elevated: #fffdf7;
+  --text: #1c1812;
+  --text-muted: #625c4c;
+  --border: #ddd6c2;
+  --accent: #a8342a;
+  --accent-contrast: #fffdf7;
+  --accent-tint: rgba(168, 52, 42, 0.08);
+  --ink-tint: rgba(28, 24, 18, 0.06);
+  --focus-ring: #a5710f;
+  --link: var(--text);
+  --link-visited: var(--text);
+  --header-bg: #fffdf7;
+  --shadow: 0 1px 2px rgba(20, 16, 8, 0.08), 0 6px 16px rgba(20, 16, 8, 0.06);
 
-  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  /* Validated chart palette (dataviz skill: categorical + diverging pass
+     light/dark, CVD and contrast checks). Ink-navy reads as the "black
+     ink" entry; red is the ledger's classic mark for a negative figure;
+     teal is the third categorical identity. */
+  --chart-ink: #3a5590;
+  --chart-red: #a8342a;
+  --chart-teal: #0d8a72;
+
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
   --max-width: 1120px;
 }
 
 :root[data-theme="dark"] {
-  --bg: #14161a;
-  --bg-elevated: #1c1f24;
-  --text: #e9e7e1;
-  --text-muted: #a3a7ad;
-  --border: #2e3238;
-  --accent: #8ca3bc;
-  --accent-strong: #c7d3de;
-  --accent-contrast: #14161a;
+  --bg: #14120f;
+  --bg-elevated: #1c1a15;
+  --text: #ece7da;
+  --text-muted: #a89f8a;
+  --border: #3a362a;
+  --accent: #d9564a;
+  --accent-contrast: #14120f;
+  --accent-tint: rgba(217, 86, 74, 0.16);
+  --ink-tint: rgba(236, 231, 218, 0.08);
   --focus-ring: #e0a940;
-  --link: #7fb0e0;
-  --link-visited: #b39ddb;
-  --header-bg: #1c1f24;
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.35);
+  --header-bg: #1c1a15;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 6px 16px rgba(0, 0, 0, 0.4);
+
+  --chart-ink: #5580c8;
+  --chart-red: #d9564a;
+  --chart-teal: #2fa88f;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]):not([data-theme="dark"]) {
-    --bg: #14161a;
-    --bg-elevated: #1c1f24;
-    --text: #e9e7e1;
-    --text-muted: #a3a7ad;
-    --border: #2e3238;
-    --accent: #8ca3bc;
-    --accent-strong: #c7d3de;
-    --accent-contrast: #14161a;
+    --bg: #14120f;
+    --bg-elevated: #1c1a15;
+    --text: #ece7da;
+    --text-muted: #a89f8a;
+    --border: #3a362a;
+    --accent: #d9564a;
+    --accent-contrast: #14120f;
+    --accent-tint: rgba(217, 86, 74, 0.16);
+    --ink-tint: rgba(236, 231, 218, 0.08);
     --focus-ring: #e0a940;
-    --link: #7fb0e0;
-    --link-visited: #b39ddb;
-    --header-bg: #1c1f24;
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.35);
+    --header-bg: #1c1a15;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 6px 16px rgba(0, 0, 0, 0.4);
+
+    --chart-ink: #5580c8;
+    --chart-red: #d9564a;
+    --chart-teal: #2fa88f;
   }
 }
 
@@ -73,6 +91,14 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
 /* Smooth, subtle theme-switch transition on the surfaces that actually
    change color, rather than a jarring instant snap. */
 body,
@@ -90,8 +116,7 @@ body,
 .editorial-note,
 .data-table,
 .charges-chart,
-.chart-scroll,
-.viz-svg text {
+.chart-scroll {
   transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -127,7 +152,8 @@ html {
   }
 }
 
-/* Hover lift for card-style components across the site. */
+/* Hover lift for card-style components across the site. Border darkens
+   to ink on hover — the red accent stays reserved for figures. */
 .charge-card,
 .quote-card,
 .sponsorship-card,
@@ -147,7 +173,7 @@ html {
 .stat-tile:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow);
-  border-color: var(--accent);
+  border-color: var(--text);
 }
 
 img {
@@ -157,6 +183,13 @@ img {
 
 a {
   color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
 }
 
 a:visited {
@@ -171,6 +204,24 @@ select:focus-visible {
   outline-offset: 2px;
 }
 
+/* A structured, standalone number: stat tiles, table figures, chart
+   labels, dates. Monospace + tabular figures so digits line up like a
+   ledger column. Not colored — color is reserved for genuinely "key"
+   figures (the hero timer, chart losses), applied per component below. */
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+.data-table td.num,
+.data-table th.num,
+.charges-chart td.num,
+.charges-chart th.num {
+  text-align: right;
+  white-space: nowrap;
+}
+
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -180,6 +231,7 @@ select:focus-visible {
   padding: 0.75rem 1rem;
   z-index: 100;
   border-radius: 0 0 6px 0;
+  text-decoration: none;
 }
 
 .skip-link:focus {
@@ -193,14 +245,14 @@ select:focus-visible {
   padding: 0 1.25rem;
 }
 
-/* Header / nav */
+/* Header / nav — a masthead, not an app bar */
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
   background: var(--header-bg);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--text);
 }
 
 .header-inner {
@@ -213,8 +265,10 @@ select:focus-visible {
 }
 
 .logo {
+  font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
   color: var(--text);
   text-decoration: none;
   white-space: nowrap;
@@ -236,7 +290,7 @@ select:focus-visible {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem 1.1rem;
+  gap: 0.25rem 1.2rem;
   margin: 0;
   padding: 0;
 }
@@ -247,7 +301,10 @@ select:focus-visible {
   padding: 0.4rem 0.1rem;
   text-decoration: none;
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   transition: color 0.15s ease;
 }
 
@@ -258,7 +315,7 @@ select:focus-visible {
   right: 0.1rem;
   bottom: 0;
   height: 2px;
-  background: var(--accent);
+  background: var(--text);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.2s ease;
@@ -276,7 +333,6 @@ select:focus-visible {
 
 .site-nav a[aria-current="page"] {
   color: var(--text);
-  font-weight: 600;
 }
 
 .site-nav a[aria-current="page"]::after {
@@ -292,7 +348,7 @@ select:focus-visible {
 .icon-button {
   background: transparent;
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 4px;
   color: var(--text);
   width: 2.25rem;
   height: 2.25rem;
@@ -305,7 +361,7 @@ select:focus-visible {
 
 .icon-button:hover {
   background: var(--bg-elevated);
-  border-color: var(--accent);
+  border-color: var(--text);
 }
 
 .icon-button:active {
@@ -402,7 +458,7 @@ main {
 
 .page-header h1 {
   margin: 0 0 0.5rem;
-  font-size: 1.9rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
   letter-spacing: -0.01em;
 }
 
@@ -417,7 +473,7 @@ main {
 }
 
 .hero h1 {
-  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
   margin: 0 0 0.75rem;
   letter-spacing: -0.01em;
 }
@@ -429,18 +485,22 @@ main {
   margin: 0 0 1.25rem;
 }
 
-/* Status badge (case clock, fixed hexes per the dataviz status palette — not themed) */
+/* Status badge — the ledger's own two-tone system: ink for an ongoing or
+   neutral state, red for a finding or sanction, solid fills for the two
+   "closed" endpoints (published decision / final). */
 
 .status-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.45rem 0.9rem;
-  border-radius: 999px;
+  border-radius: 3px;
   border: 1.5px solid var(--status-color, var(--border));
   background: var(--status-bg, transparent);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text);
   margin-bottom: 1.5rem;
 }
@@ -452,46 +512,40 @@ main {
   flex-shrink: 0;
 }
 
-.status-pending {
-  --status-color: #b3690f;
-  --status-bg: rgba(250, 178, 25, 0.16);
-}
-
-.status-critical {
-  --status-color: #d03b3b;
-  --status-bg: rgba(208, 59, 59, 0.14);
-}
-
+.status-pending,
 .status-appeal {
-  --status-color: #c05a33;
-  --status-bg: rgba(236, 131, 90, 0.16);
-}
-
-.status-final {
-  --status-color: #0ca30c;
-  --status-bg: rgba(12, 163, 12, 0.14);
+  --status-color: var(--text);
+  --status-bg: var(--ink-tint);
 }
 
 .status-reported {
-  --status-color: #b5502c;
-  --status-bg: rgba(236, 131, 90, 0.16);
+  --status-color: var(--accent);
+  --status-bg: var(--accent-tint);
 }
 
-:root[data-theme="dark"] .status-pending {
-  --status-color: #fab219;
+.status-critical {
+  --status-color: var(--accent);
+  --status-bg: var(--accent);
+  color: var(--accent-contrast);
 }
 
-:root[data-theme="dark"] .status-appeal {
-  --status-color: #ec835a;
+.status-critical svg {
+  color: var(--accent-contrast);
 }
 
-:root[data-theme="dark"] .status-reported {
-  --status-color: #ec835a;
+.status-final {
+  --status-color: var(--text);
+  --status-bg: var(--text);
+  color: var(--bg);
+}
+
+.status-final svg {
+  color: var(--bg);
 }
 
 .status-badge--sm {
   padding: 0.25rem 0.65rem;
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   margin-bottom: 0;
 }
 
@@ -500,7 +554,8 @@ main {
   height: 0.95rem;
 }
 
-/* Stat tiles (case clock counters) */
+/* Stat tiles — the hero clock. This IS the timer, so this is where the
+   one reserved accent colour appears. */
 
 .stat-grid {
   display: grid;
@@ -513,21 +568,24 @@ main {
 .stat-tile {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-top: 3px solid var(--accent);
+  border-radius: 4px;
   padding: 1.25rem 1.5rem;
 }
 
 .stat-value {
-  font-size: 2.5rem;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  font-size: clamp(2.6rem, 7vw, 3.6rem);
   font-weight: 600;
-  font-variant-numeric: proportional-nums;
-  line-height: 1.1;
+  line-height: 1.05;
   margin: 0;
-  color: var(--text);
+  color: var(--accent);
 }
 
 .stat-label {
-  margin: 0.4rem 0 0;
+  margin: 0.5rem 0 0;
   color: var(--text-muted);
   font-size: 0.9rem;
 }
@@ -550,7 +608,8 @@ main {
 
 .latest-item {
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-left: 3px solid var(--text);
+  border-radius: 2px;
   padding: 1rem 1.25rem;
   background: var(--bg-elevated);
 }
@@ -559,14 +618,16 @@ main {
   display: inline-block;
   font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   color: var(--text-muted);
 }
 
 .latest-title {
   display: block;
-  font-weight: 600;
-  margin: 0.25rem 0 0.15rem;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 0.3rem 0 0.25rem;
   color: var(--text);
   text-decoration: none;
 }
@@ -578,7 +639,9 @@ main {
 
 .latest-date {
   display: block;
-  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.82rem;
   color: var(--text-muted);
   margin-bottom: 0.5rem;
 }
@@ -591,7 +654,7 @@ main {
 
 .placeholder-panel {
   border: 1px dashed var(--border);
-  border-radius: 10px;
+  border-radius: 4px;
   padding: 1.5rem;
   color: var(--text-muted);
   background: var(--bg-elevated);
@@ -605,7 +668,7 @@ main {
 /* Footer */
 
 .site-footer {
-  border-top: 1px solid var(--border);
+  border-top: 2px solid var(--text);
   margin-top: 3rem;
   padding: 2rem 0;
   color: var(--text-muted);
@@ -641,16 +704,19 @@ main {
   border: 1px solid var(--border);
   background: var(--bg-elevated);
   color: var(--text-muted);
-  border-radius: 999px;
+  border-radius: 3px;
   padding: 0.4rem 0.9rem;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   cursor: pointer;
   line-height: 1.2;
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
 }
 
 .filter-chip:hover {
-  border-color: var(--accent);
+  border-color: var(--text);
   color: var(--text);
   transform: translateY(-1px);
 }
@@ -660,10 +726,9 @@ main {
 }
 
 .filter-chip.is-active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--accent-contrast);
-  font-weight: 600;
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--bg);
 }
 
 .timeline-list {
@@ -697,7 +762,7 @@ main {
   height: 16px;
   border-radius: 50%;
   background: var(--bg-elevated);
-  border: 2px solid var(--accent);
+  border: 2px solid var(--text);
   box-sizing: border-box;
 }
 
@@ -707,19 +772,21 @@ main {
 
 .timeline-entry:target .timeline-card {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--focus-ring);
+  box-shadow: 0 0 0 3px var(--accent-tint);
 }
 
 .timeline-card {
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 4px;
   background: var(--bg-elevated);
   padding: 1.25rem 1.5rem;
 }
 
 .timeline-date {
   display: block;
-  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.82rem;
   color: var(--text-muted);
   margin-bottom: 0.35rem;
 }
@@ -734,7 +801,7 @@ main {
 
 .timeline-title {
   margin: 0;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
 }
 
 .timeline-summary {
@@ -749,6 +816,7 @@ main {
   background: var(--bg);
   color: var(--text-muted);
   font-size: 0.95rem;
+  font-style: italic;
 }
 
 .timeline-response cite {
@@ -791,7 +859,9 @@ main {
   border: 0;
 }
 
-/* Generic data table (used on Charges, Spending, Money) */
+/* Generic data table (used on Charges, Spending, Money) — set like a
+   financial ledger: uppercase letterspaced headers, tabular-mono
+   figures right-aligned via .num. */
 
 .table-scroll {
   overflow-x: auto;
@@ -822,15 +892,15 @@ main {
 .data-table thead th {
   color: var(--text-muted);
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  border-bottom: 2px solid var(--border);
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--text);
   white-space: nowrap;
 }
 
 .data-table tbody tr:hover {
-  background: var(--bg-elevated);
+  background: var(--ink-tint);
 }
 
 .data-table a {
@@ -855,9 +925,10 @@ main {
 .charges-chart thead th {
   color: var(--text-muted);
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--text);
 }
 
 .charges-chart tbody th {
@@ -875,23 +946,23 @@ main {
 .bar-track {
   flex: 1;
   min-width: 4rem;
-  height: 20px;
+  height: 18px;
   background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: 2px;
   overflow: hidden;
 }
 
 .bar-fill {
   height: 100%;
-  background: var(--accent);
-  border-radius: 3px;
+  background: var(--chart-ink);
   transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .bar-value {
   min-width: 2.25rem;
   text-align: right;
+  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
   font-weight: 600;
   color: var(--text);
@@ -905,20 +976,22 @@ main {
 
 .charge-card {
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 4px;
   background: var(--bg-elevated);
   padding: 1.1rem 1.4rem;
 }
 
 .charge-card h3 {
   margin: 0 0 0.3rem;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
 }
 
 .charge-card .charge-meta {
   display: block;
   color: var(--text-muted);
-  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.82rem;
   margin-bottom: 0.5rem;
 }
 
@@ -932,8 +1005,8 @@ main {
 
 .rules-box {
   border: 1px solid var(--border);
-  border-left: 4px solid var(--accent);
-  border-radius: 8px;
+  border-left: 4px solid var(--text);
+  border-radius: 2px;
   background: var(--bg-elevated);
   padding: 1.25rem 1.5rem;
   max-width: 68ch;
@@ -952,47 +1025,23 @@ main {
   color: var(--text-muted);
 }
 
-/* Charts (hand-built inline SVG, per the dataviz reference palette) */
+/* Charts (hand-built inline SVG). Colors are drawn from the root
+   --chart-ink / --chart-red / --chart-teal tokens above, validated with
+   the dataviz skill's palette script for contrast + CVD-safety in both
+   themes. Ledger convention: ink for ordinary magnitude, red is reserved
+   for the diverging chart's loss bars (and shares a hue with one
+   categorical slot, same as the site's single reserved accent). */
 
 .viz-root {
-  color-scheme: light;
-  --surface-1: #fcfcfb;
-  --grid-line: #e4e2dc;
-  --text-primary: #1b1c1e;
-  --text-secondary: #55585f;
-  --series-1: #2a78d6;
-  --series-2: #eb6834;
-  --series-3: #1baf7a;
-  --diverging-pos: #2a78d6;
-  --diverging-neg: #e34948;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:where(:not([data-theme="light"])) .viz-root {
-    color-scheme: dark;
-    --surface-1: #1a1a19;
-    --grid-line: #33332f;
-    --text-primary: #e9e7e1;
-    --text-secondary: #a3a7ad;
-    --series-1: #3987e5;
-    --series-2: #d95926;
-    --series-3: #199e70;
-    --diverging-pos: #3987e5;
-    --diverging-neg: #e66767;
-  }
-}
-
-:root[data-theme="dark"] .viz-root {
-  color-scheme: dark;
-  --surface-1: #1a1a19;
-  --grid-line: #33332f;
-  --text-primary: #e9e7e1;
-  --text-secondary: #a3a7ad;
-  --series-1: #3987e5;
-  --series-2: #d95926;
-  --series-3: #199e70;
-  --diverging-pos: #3987e5;
-  --diverging-neg: #e66767;
+  --surface-1: var(--bg-elevated);
+  --grid-line: var(--border);
+  --text-primary: var(--text);
+  --text-secondary: var(--text-muted);
+  --series-1: var(--chart-ink);
+  --series-2: var(--chart-red);
+  --series-3: var(--chart-teal);
+  --diverging-pos: var(--chart-ink);
+  --diverging-neg: var(--chart-red);
 }
 
 .chart-scroll {
@@ -1000,7 +1049,7 @@ main {
   margin: 1rem 0;
   background: var(--surface-1);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 4px;
   padding: 0.5rem 0.5rem 0;
   min-height: 320px;
 }
@@ -1064,8 +1113,10 @@ main {
 
 .viz-svg text {
   fill: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
   font-size: 11px;
-  font-family: var(--font-body);
+  transition: fill 0.25s ease;
 }
 
 .viz-svg .viz-axis-line {
@@ -1102,7 +1153,7 @@ main {
   display: inline-block;
   width: 12px;
   height: 12px;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 /* Chart entrance animation + hover feedback. transform-box: fill-box makes
@@ -1195,28 +1246,30 @@ main {
 
 .sponsorship-card {
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 4px;
   background: var(--bg-elevated);
   padding: 1.1rem 1.4rem;
 }
 
 .sponsorship-card h3 {
   margin: 0 0 0.3rem;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
 }
 
 .sponsorship-meta {
   display: block;
   color: var(--text-muted);
-  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.82rem;
   margin-bottom: 0.5rem;
 }
 
 .sponsorship-allegation {
   margin: 0.6rem 0 0;
   padding: 0.6rem 0.9rem;
-  border-left: 3px solid var(--status-color, #b5502c);
-  background: rgba(236, 131, 90, 0.1);
+  border-left: 3px solid var(--accent);
+  background: var(--accent-tint);
   font-size: 0.92rem;
 }
 
@@ -1283,7 +1336,7 @@ main {
 
 .quote-card {
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 4px;
   background: var(--bg-elevated);
   padding: 1.4rem 1.5rem;
   display: flex;
@@ -1292,11 +1345,13 @@ main {
 
 .quote-text {
   margin: 0 0 1rem;
-  font-size: 1.1rem;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
   font-style: italic;
-  line-height: 1.5;
+  font-weight: 600;
+  line-height: 1.4;
   color: var(--text);
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--text);
   padding-left: 0.9rem;
 }
 
@@ -1310,6 +1365,8 @@ main {
 }
 
 .quote-date {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
   font-weight: 600;
   color: var(--text);
 }
@@ -1321,7 +1378,7 @@ main {
 
 .editorial-note {
   border: 1px dashed var(--border);
-  border-radius: 8px;
+  border-radius: 2px;
   padding: 1.1rem 1.4rem;
   max-width: 68ch;
   color: var(--text-muted);
@@ -1347,14 +1404,16 @@ main {
 
 .tweet-fallback-card {
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 4px;
   background: var(--bg-elevated);
   padding: 1.1rem 1.4rem;
 }
 
 .tweet-fallback-card .tweet-date {
   display: block;
-  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.82rem;
   color: var(--text-muted);
   margin-bottom: 0.5rem;
 }
@@ -1391,7 +1450,9 @@ main {
 
 .article-meta {
   color: var(--text-muted);
-  font-size: 0.88rem;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.82rem;
 }
 
 .footer-links {
@@ -1438,7 +1499,7 @@ main {
 
 .source-group h3 {
   margin: 0 0 0.5rem;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
 }
 
 .source-group ul {
@@ -1477,8 +1538,10 @@ main {
 
 .correction-date {
   display: block;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
   margin-bottom: 0.15rem;
 }

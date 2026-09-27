@@ -15,7 +15,7 @@
       body.innerHTML = finance
         .map(function (f) {
           return (
-            "<tr><td>" + escapeHtml(f.season) + "</td><td>" + formatGBP(f.revenue_gbp) + '</td><td><a href="' +
+            "<tr><td>" + escapeHtml(f.season) + '</td><td class="num">' + formatGBP(f.revenue_gbp) + '</td><td><a href="' +
             escapeHtml(f.source_url) + '" rel="noopener" target="_blank">Source</a></td></tr>'
           );
         })
@@ -41,8 +41,8 @@
       body.innerHTML = withSplit
         .map(function (f) {
           return (
-            "<tr><td>" + escapeHtml(f.season) + "</td><td>" + formatGBP(f.matchday) + "</td><td>" +
-            formatGBP(f.broadcast) + "</td><td>" + formatGBP(f.commercial) + "</td></tr>"
+            "<tr><td>" + escapeHtml(f.season) + '</td><td class="num">' + formatGBP(f.matchday) + '</td><td class="num">' +
+            formatGBP(f.broadcast) + '</td><td class="num">' + formatGBP(f.commercial) + "</td></tr>"
           );
         })
         .join("");
@@ -59,7 +59,7 @@
     if (body) {
       body.innerHTML = finance
         .map(function (f) {
-          return "<tr><td>" + escapeHtml(f.season) + "</td><td>" + formatGBP(f.wages) + "</td></tr>";
+          return "<tr><td>" + escapeHtml(f.season) + '</td><td class="num">' + formatGBP(f.wages) + "</td></tr>";
         })
         .join("");
     }
@@ -76,7 +76,7 @@
       body.innerHTML = finance
         .map(function (f) {
           return (
-            "<tr><td>" + escapeHtml(f.season) + "</td><td>" + formatGBP(f.pretax_profit) + '</td><td><a href="' +
+            "<tr><td>" + escapeHtml(f.season) + '</td><td class="num">' + formatGBP(f.pretax_profit) + '</td><td><a href="' +
             escapeHtml(f.source_url) + '" rel="noopener" target="_blank">Source</a></td></tr>'
           );
         })
@@ -149,7 +149,7 @@
     var ownershipRows = (cfg.ownership_breakdown || [])
       .map(function (o) {
         return (
-          "<tr><td>" + escapeHtml(o.holder) + "</td><td>" + escapeHtml(o.pct) + '</td><td><a href="' +
+          "<tr><td>" + escapeHtml(o.holder) + '</td><td class="num">' + escapeHtml(o.pct) + '</td><td><a href="' +
           escapeHtml(o.source_url) + '" rel="noopener" target="_blank">' + escapeHtml(o.source) + "</a></td></tr>"
         );
       })

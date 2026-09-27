@@ -86,7 +86,7 @@
           "<td>" + escapeHtml(r.season) + "</td>" +
           "<td>" + escapeHtml(r.breach) + "</td>" +
           "<td>" + escapeHtml(r.sanction) + "</td>" +
-          "<td>" + escapeHtml(r.date) + "</td>" +
+          '<td class="num">' + escapeHtml(r.date) + "</td>" +
           '<td><a href="' + escapeHtml(r.source_url) + '" rel="noopener" target="_blank">Source</a></td>' +
           "</tr>"
         );

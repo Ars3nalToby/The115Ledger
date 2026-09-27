@@ -76,9 +76,9 @@
         return (
           '<tr class="reveal" style="--reveal-delay: ' + delay + 'ms">' +
           "<td>" + escapeHtml(t.player) + "</td>" +
-          "<td>" + formatDate(t.date) + "</td>" +
+          '<td class="num">' + formatDate(t.date) + "</td>" +
           "<td>" + escapeHtml(t.from_club) + "</td>" +
-          "<td>" + feeCell + "</td>" +
+          '<td class="num">' + feeCell + "</td>" +
           '<td><a href="' + escapeHtml(t.source_url) + '" rel="noopener" target="_blank">Source</a></td>' +
           "<td>" + controversyCell + "</td>" +
           "</tr>"
