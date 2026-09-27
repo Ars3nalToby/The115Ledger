@@ -42,96 +42,126 @@
       })();
     </script>
   </head>
-  <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="logo">The 115 <span class="logo-accent">Ledger</span></a>
-      <nav class="site-nav" id="site-nav" aria-label="Primary">
-        <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="timeline.html">Timeline</a></li>
-        <li><a href="charges.html">The Charges</a></li>
-        <li><a href="spending.html">The Spending</a></li>
-        <li><a href="money.html">The Money</a></li>
-        <li><a href="guardiola.html">Guardiola</a></li>
-        <li><a href="reporting.html">The Reporting</a></li>
-        <li><a href="sources.html">Sources</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions">
-        <button id="theme-toggle" class="icon-button theme-toggle" type="button" aria-pressed="false" aria-label="Toggle dark and light theme">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="4"></circle>
-            <line x1="12" y1="2" x2="12" y2="4"></line>
-            <line x1="12" y1="20" x2="12" y2="22"></line>
-            <line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line>
-            <line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line>
-            <line x1="2" y1="12" x2="4" y2="12"></line>
-            <line x1="20" y1="12" x2="22" y2="12"></line>
-            <line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line>
-            <line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line>
-          </svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
-        <button id="nav-toggle" class="icon-button nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
-          <span></span><span></span><span></span>
-        </button>
+  <body class="landing-body">
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header landing-header">
+      <div class="header-inner">
+        <a href="index.html" class="logo">The 115 <span class="logo-accent">Ledger</span></a>
+        <div class="header-actions">
+          <button id="theme-toggle" class="icon-button theme-toggle" type="button" aria-pressed="false" aria-label="Toggle dark and light theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <line x1="12" y1="2" x2="12" y2="4"></line>
+              <line x1="12" y1="20" x2="12" y2="22"></line>
+              <line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line>
+              <line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line>
+              <line x1="2" y1="12" x2="4" y2="12"></line>
+              <line x1="20" y1="12" x2="22" y2="12"></line>
+              <line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line>
+              <line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+          <a class="button button-primary landing-header-cta" href="home.html">Enter the Ledger</a>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
     <main id="main">
-      <section class="hero">
-        <div class="container">
-          <h1>The 115 Ledger</h1>
-          <p class="tagline">A fully-sourced, documentary record of Manchester City's spending, revenues and regulatory history — from the 2008 Abu Dhabi takeover to the Premier League's 115-charges case.</p>
+      <section class="landing-hero">
+        <div class="container landing-hero-inner">
+          <p class="landing-eyebrow reveal">An independent, fully-sourced record</p>
+          <h1 class="landing-title reveal" style="--reveal-delay: 60ms">
+            115 charges.<br />One club.<br /><span class="landing-title-accent">Eleven years, and counting.</span>
+          </h1>
+          <p class="landing-lede reveal" style="--reveal-delay: 120ms">
+            Every transfer, every annual report, every ruling in Manchester City's financial-rules case — laid out
+            in one place, with a source on every claim. No invented numbers. No club crests. Just the record.
+          </p>
 
-          <div id="status-badge" class="status-badge status-pending" role="status" aria-live="polite">
-            <span class="status-badge-fallback">Loading case status…</span>
+          <div class="landing-clock reveal" style="--reveal-delay: 180ms" aria-label="Case clock">
+            <div class="landing-clock-tile">
+              <p class="landing-clock-value num" id="landing-stat-charges">—</p>
+              <p class="landing-clock-label">Days since the 115 charges were issued</p>
+            </div>
+            <div class="landing-clock-tile">
+              <p class="landing-clock-value num" id="landing-stat-verdict">—</p>
+              <p class="landing-clock-label">Days since the verdict was reported</p>
+            </div>
           </div>
 
-          <div class="stat-grid" aria-label="Case clock">
-            <div class="stat-tile reveal">
-              <p class="stat-value" id="stat-charges-days" aria-live="polite">—</p>
-              <p class="stat-label">Days since the 115 charges were issued</p>
-            </div>
-            <div class="stat-tile reveal" style="--reveal-delay: 90ms">
-              <p class="stat-value" id="stat-verdict-days" aria-live="polite">—</p>
-              <p class="stat-label">Days since the verdict was reported</p>
-            </div>
+          <div class="landing-cta-row reveal" style="--reveal-delay: 220ms">
+            <a class="button button-primary" href="home.html">Enter the Ledger →</a>
+            <a class="button button-ghost" href="sources.html">See how it's sourced</a>
           </div>
 
           <noscript>
-            <p class="placeholder-panel">This page uses JavaScript to calculate the live case clock from <code>data/status.json</code> and to list the latest timeline entries. Enable JavaScript, or read the underlying data files directly, to see current figures.</p>
+            <p class="placeholder-panel">This page uses JavaScript to calculate the live case clock. Enable JavaScript, or go straight to the <a href="home.html">Home</a> page to read the underlying data files.</p>
           </noscript>
         </div>
+        <div class="landing-stamp" aria-hidden="true">115</div>
       </section>
 
+      <div class="fact-strip-wrap reveal">
+        <div class="fact-strip" id="fact-strip" role="list" aria-label="Key facts, each sourced elsewhere on this site">
+          <span class="placeholder-panel">Loading facts…</span>
+        </div>
+      </div>
+
       <section class="section reveal">
-        <div class="container">
-          <h2>Where the case stands today</h2>
-          <p class="case-summary">In February 2023 the Premier League charged Manchester City with 115 alleged breaches of its financial rules, covering the 2009-10 to 2017-18 seasons plus an alleged failure to cooperate with the investigation from December 2018 onward. An independent commission heard the case in London between September and December 2024. On 25 September 2026, David Ornstein of The Athletic reported that the commission had found City guilty on 114 of the 115 charges — a <strong>reported</strong> verdict, not yet the commission's own published written decision. Sanctions have not been announced and City are expected to appeal. See the full <a href="timeline.html">timeline</a> and every <a href="sources.html">source</a> behind this summary.</p>
+        <div class="container landing-about">
+          <h2>What this site is</h2>
+          <p>
+            The 115 Ledger tracks Manchester City's spending, revenues and regulatory history from the 2008 Abu
+            Dhabi takeover to the Premier League's case alleging 115 breaches of its financial rules — and its
+            outcome. Every factual claim carries an outlet, a date and a link. Every major event carries the
+            club's own response. Where sources disagree on a figure, this site shows the range and says so.
+          </p>
+          <p class="landing-about-note">
+            It is not affiliated with any club, league or governing body, and it is not a fan campaign — see the
+            <a href="sources.html">full methodology and status-label glossary</a> for how every label and figure
+            on this site is decided.
+          </p>
         </div>
       </section>
 
-      <section class="section reveal">
+      <section class="section reveal" aria-labelledby="landing-chart-heading">
         <div class="container">
-          <h2>Latest</h2>
-          <ul class="latest-list" id="latest-list" aria-live="polite">
-            <li class="placeholder-panel">Loading the latest timeline entries…</li>
-          </ul>
+          <div class="landing-chart-head">
+            <h2 id="landing-chart-heading">Revenue, 2008-09 → today</h2>
+            <a href="money.html">See the full breakdown, wages and profit/loss →</a>
+          </div>
+          <div class="chart-scroll landing-chart" id="landing-chart-revenue" role="img" aria-label="Line chart of Manchester City annual revenue by season, loading">
+            <p class="placeholder-panel">Loading chart…</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" aria-labelledby="landing-explore-heading">
+        <div class="container">
+          <h2 id="landing-explore-heading">Explore the record</h2>
+          <div class="explore-grid" id="explore-grid"></div>
+        </div>
+      </section>
+
+      <section class="section reveal" aria-labelledby="landing-quotes-heading">
+        <div class="container">
+          <h2 id="landing-quotes-heading">In their own words</h2>
+          <div class="quote-preview-grid" id="quote-preview-grid">
+            <p class="placeholder-panel">Loading…</p>
+          </div>
         </div>
       </section>
     </main>
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p class="disclaimer">Unofficial. Not affiliated with any club, league or governing body.</p>
-      <p class="footer-meta">Every factual claim on this site is sourced. See <a href="sources.html">Sources &amp; Methodology</a>.</p>
-    </div>
-  </footer>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="disclaimer">Unofficial. Not affiliated with any club, league or governing body.</p>
+        <p class="footer-meta">Every factual claim on this site is sourced. See <a href="sources.html">Sources &amp; Methodology</a>. &middot; <a href="home.html">Enter the Ledger →</a></p>
+      </div>
+    </footer>
     <script src="js/main.js" defer></script>
-    <script src="js/home.js" defer></script>
+    <script src="js/charts.js" defer></script>
+    <script src="js/landing.js" defer></script>
   </body>
 </html>

@@ -31,14 +31,26 @@ python3 -m http.server 8000
 
 Any other static server works too (`npx serve`, `php -S localhost:8000`, etc).
 
+## Pages: landing vs. home
+
+`index.html` (the site's root) is a graphic, motion-forward splash page —
+it makes the pitch for the project and links into everything else. It is
+not where the live case clock or "Latest" strip lives; that's `home.html`,
+which every internal page's nav and logo link back to. If you're adding a
+new fact to the "Latest" strip or the live counters, that's `data/timeline.json`
+/ `data/status.json` as below — you don't need to touch `index.html` at all
+unless you're changing the pitch itself.
+
 ## Project structure
 
 ```
-index.html, timeline.html, charges.html, spending.html,   -> the 8 pages
+index.html             -> landing/splash page (the site's root URL)
+home.html, timeline.html, charges.html, spending.html,    -> the 8 in-app pages
 money.html, guardiola.html, reporting.html, sources.html
 css/style.css          -> all styles: layout, theme tokens, components
 js/main.js             -> shared: theme toggle, mobile nav, nav-highlight
 js/charts.js           -> shared inline-SVG chart builders (window.Charts)
+js/landing.js          -> index.html: hero clock, fact strip, explore grid, quote preview
 js/home.js             -> home.html: case clock, status badge, latest strip
 js/timeline.js         -> timeline.html: filterable timeline
 js/charges.js          -> charges.html: charge breakdown + sanctions table
