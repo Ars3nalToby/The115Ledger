@@ -1545,3 +1545,346 @@ main {
   color: var(--text-muted);
   margin-bottom: 0.15rem;
 }
+
+/* Landing page — the site's front door. More graphic and more animated
+   than the documentary pages behind it, but the same ledger identity:
+   paper + ink + the one reserved red, typography and charts only. */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.3rem;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1.5px solid var(--text);
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.button-primary {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.button-primary:visited {
+  color: var(--bg);
+}
+
+.button-primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.button-ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.button-ghost:visited {
+  color: var(--text);
+}
+
+.button-ghost:hover {
+  border-color: var(--text);
+}
+
+.landing-header .header-inner {
+  justify-content: space-between;
+}
+
+.landing-header-cta {
+  padding: 0.55rem 1.1rem;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.landing-hero {
+  position: relative;
+  padding: 3.5rem 0 3rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.landing-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 46rem;
+}
+
+.landing-eyebrow {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+}
+
+.landing-title {
+  font-size: clamp(2.4rem, 7vw, 4.2rem);
+  line-height: 1.08;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+}
+
+.landing-title-accent {
+  color: var(--accent);
+}
+
+.landing-lede {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 56ch;
+  margin: 0 0 2rem;
+}
+
+.landing-clock {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  max-width: 38rem;
+  margin: 0 0 1.75rem;
+}
+
+.landing-clock-tile {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  border-radius: 4px;
+  padding: 1.1rem 1.3rem;
+}
+
+.landing-clock-value {
+  font-size: clamp(2.4rem, 6vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.05;
+  margin: 0;
+  color: var(--accent);
+}
+
+.landing-clock-label {
+  margin: 0.4rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.landing-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+/* Big decorative "115" watermark — typography only, no imagery. Purely
+   ornamental (aria-hidden), so it's fine for it to clip or overlap. */
+.landing-stamp {
+  position: absolute;
+  top: 50%;
+  right: -2.5rem;
+  transform: translateY(-50%) rotate(-8deg);
+  font-family: var(--font-serif);
+  font-weight: 800;
+  font-size: 22rem;
+  line-height: 1;
+  color: var(--ink-tint);
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 760px) {
+  .landing-stamp {
+    display: none;
+  }
+}
+
+/* Fact ticker — a slow, pausable marquee of sourced-elsewhere facts. */
+
+.fact-strip-wrap {
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-elevated);
+  padding: 0.9rem 0;
+}
+
+.fact-strip {
+  display: flex;
+  width: max-content;
+  gap: 2.5rem;
+  padding: 0 1.25rem;
+}
+
+.fact-chip {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fact-strip {
+    animation: ticker-scroll 34s linear infinite;
+  }
+
+  .fact-strip-wrap:hover .fact-strip,
+  .fact-strip-wrap:focus-within .fact-strip {
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fact-strip-wrap {
+    overflow-x: auto;
+  }
+
+  .fact-strip {
+    width: auto;
+    flex-wrap: wrap;
+  }
+
+  /* The list is duplicated in the DOM for the marquee loop; reduced-motion
+     users get the static version, so hide the second copy. */
+  .fact-strip .fact-chip:nth-child(n + 6) {
+    display: none;
+  }
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.landing-about h2 {
+  margin: 0 0 0.75rem;
+}
+
+.landing-about p {
+  max-width: 68ch;
+  font-size: 1.05rem;
+}
+
+.landing-about-note {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.landing-chart-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.landing-chart-head h2 {
+  margin: 0;
+}
+
+.landing-chart-head a {
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.1rem;
+}
+
+.explore-card {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-elevated);
+  padding: 1.4rem 1.5rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.explore-card:visited {
+  color: var(--text);
+}
+
+.explore-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: var(--text);
+  text-decoration: none;
+}
+
+.explore-icon {
+  display: inline-flex;
+  width: 2.25rem;
+  height: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--accent-tint);
+  color: var(--accent);
+  margin-bottom: 0.85rem;
+}
+
+.explore-icon svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.explore-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+}
+
+.explore-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.quote-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.quote-preview-card {
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 2px;
+  background: var(--bg-elevated);
+  padding: 1.3rem 1.5rem;
+}
+
+.quote-preview-card blockquote {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.quote-preview-meta {
+  margin: 0 0 0.6rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.quote-preview-card a {
+  font-size: 0.9rem;
+}

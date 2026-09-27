@@ -3,21 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guardiola — The 115 Ledger</title>
-    <meta name="description" content="Guardiola — part of The 115 Ledger, a sourced record of Manchester City's financial-rules case." />
-    <link rel="canonical" href="https://ars3naltoby.github.io/The115Ledger/guardiola.html" />
+    <title>Home — The 115 Ledger</title>
+    <meta name="description" content="The case clock, current status and latest timeline entries for The 115 Ledger — a fully-sourced record of Manchester City's financial-rules case." />
+    <link rel="canonical" href="https://ars3naltoby.github.io/The115Ledger/home.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="The 115 Ledger" />
-    <meta property="og:title" content="Guardiola — The 115 Ledger" />
-    <meta property="og:description" content="Guardiola — part of The 115 Ledger, a sourced record of Manchester City's financial-rules case." />
-    <meta property="og:url" content="https://ars3naltoby.github.io/The115Ledger/guardiola.html" />
+    <meta property="og:title" content="Home — The 115 Ledger" />
+    <meta property="og:description" content="The case clock, current status and latest timeline entries for The 115 Ledger — a fully-sourced record of Manchester City's financial-rules case." />
+    <meta property="og:url" content="https://ars3naltoby.github.io/The115Ledger/home.html" />
     <meta property="og:image" content="https://ars3naltoby.github.io/The115Ledger/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="The 115 Ledger" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Guardiola — The 115 Ledger" />
-    <meta name="twitter:description" content="Guardiola — part of The 115 Ledger, a sourced record of Manchester City's financial-rules case." />
+    <meta name="twitter:title" content="Home — The 115 Ledger" />
+    <meta name="twitter:description" content="The case clock, current status and latest timeline entries for The 115 Ledger — a fully-sourced record of Manchester City's financial-rules case." />
     <meta name="twitter:image" content="https://ars3naltoby.github.io/The115Ledger/og-image.png" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="theme-color" content="#f8f7f2" media="(prefers-color-scheme: light)" />
@@ -83,37 +83,47 @@
     </div>
   </header>
     <main id="main">
-      <div class="container">
-        <div class="page-header reveal">
-          <h1>Guardiola — What He Said, When</h1>
-          <p>A dated, sourced record of Pep Guardiola's public comments on the case, from the charges being issued to his departure from the club.</p>
+      <section class="hero">
+        <div class="container">
+          <h1>The 115 Ledger</h1>
+          <p class="tagline">A fully-sourced, documentary record of Manchester City's spending, revenues and regulatory history — from the 2008 Abu Dhabi takeover to the Premier League's 115-charges case.</p>
+
+          <div id="status-badge" class="status-badge status-pending" role="status" aria-live="polite">
+            <span class="status-badge-fallback">Loading case status…</span>
+          </div>
+
+          <div class="stat-grid" aria-label="Case clock">
+            <div class="stat-tile reveal">
+              <p class="stat-value" id="stat-charges-days" aria-live="polite">—</p>
+              <p class="stat-label">Days since the 115 charges were issued</p>
+            </div>
+            <div class="stat-tile reveal" style="--reveal-delay: 90ms">
+              <p class="stat-value" id="stat-verdict-days" aria-live="polite">—</p>
+              <p class="stat-label">Days since the verdict was reported</p>
+            </div>
+          </div>
+
+          <noscript>
+            <p class="placeholder-panel">This page uses JavaScript to calculate the live case clock from <code>data/status.json</code> and to list the latest timeline entries. Enable JavaScript, or read the underlying data files directly, to see current figures.</p>
+          </noscript>
         </div>
+      </section>
 
-        <noscript>
-          <p class="placeholder-panel">This page loads from <code>data/quotes.json</code> with JavaScript. Enable JavaScript, or read that file directly, to see the quotes.</p>
-        </noscript>
+      <section class="section reveal">
+        <div class="container">
+          <h2>Where the case stands today</h2>
+          <p class="case-summary">In February 2023 the Premier League charged Manchester City with 115 alleged breaches of its financial rules, covering the 2009-10 to 2017-18 seasons plus an alleged failure to cooperate with the investigation from December 2018 onward. An independent commission heard the case in London between September and December 2024. On 25 September 2026, David Ornstein of The Athletic reported that the commission had found City guilty on 114 of the 115 charges — a <strong>reported</strong> verdict, not yet the commission's own published written decision. Sanctions have not been announced and City are expected to appeal. See the full <a href="timeline.html">timeline</a> and every <a href="sources.html">source</a> behind this summary.</p>
+        </div>
+      </section>
 
-        <section class="section" aria-labelledby="quotes-heading">
-          <h2 id="quotes-heading" class="visually-hidden">Quotes</h2>
-          <div class="quote-grid" id="quote-grid">
-            <p class="placeholder-panel">Loading quotes…</p>
-          </div>
-        </section>
-
-        <section class="section" aria-labelledby="departure-heading">
-          <h2 id="departure-heading">Departure and succession</h2>
-          <div id="departure-events">
-            <p class="placeholder-panel">Loading…</p>
-          </div>
-        </section>
-
-        <section class="section" aria-labelledby="note-heading">
-          <h2 id="note-heading" class="visually-hidden">Editorial note</h2>
-          <div class="editorial-note">
-            <p>Nothing reported above suggests Guardiola had knowledge of, or any role in, the conduct the Premier League's charges allege. His comments are presented here as the press reported them — as a manager speaking about his employer, not as evidence bearing on the case itself.</p>
-          </div>
-        </section>
-      </div>
+      <section class="section reveal">
+        <div class="container">
+          <h2>Latest</h2>
+          <ul class="latest-list" id="latest-list" aria-live="polite">
+            <li class="placeholder-panel">Loading the latest timeline entries…</li>
+          </ul>
+        </div>
+      </section>
     </main>
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -122,6 +132,6 @@
     </div>
   </footer>
     <script src="js/main.js" defer></script>
-    <script src="js/guardiola.js" defer></script>
+    <script src="js/home.js" defer></script>
   </body>
 </html>
