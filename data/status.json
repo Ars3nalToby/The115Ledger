@@ -2,7 +2,12 @@
   "charges_date": "2023-02-06",
   "verdict_reported_date": "2026-09-25",
   "sanction_status": "SANCTION PENDING",
-  "appeal_status": "PENDING — an appeal by Manchester City is expected (per press reporting) but no outlet has confirmed one has actually been lodged yet",
-  "last_updated": "2026-09-26",
-  "notes": "The verdict was reported by David Ornstein/The Athletic on Friday 25 Sept 2026 that Manchester City were found guilty on 114 of the 115 charges. This is a REPORTED verdict, not the commission's published written decision, so use status_tag 'FOUND (reported)' wherever this is referenced — it will need to change to 'FOUND (published decision)' once the commission's written reasons are public. The Premier League itself had not issued its own public confirmation as of 26 Sept 2026. Sources: David Ornstein via X (https://x.com/David_Ornstein/status/2103480016915009611); CNN (https://www.cnn.com/2026/09/25/sport/manchester-city-charges-premier-league); Al Jazeera (https://www.aljazeera.com/sports/2026/9/25/timeline-man-citys-premier-league-financial-charges-to-reported-verdict)."
+  "appeal_status": "WINDOW OPEN — per the Premier League's statement (as reported), City has until 2 October 2026 to appeal; no appeal had been confirmed as lodged by a named source as of 29 Sept 2026",
+  "last_updated": "2026-09-29",
+  "notes": "25 Sept 2026: David Ornstein/The Athletic reported City found guilty on 114 of 115 charges. 29 Sept 2026: the Premier League issued a statement on the independent commission's decision; per RTÉ, Irish News, CBS Sports and Al Jazeera it says City were found in breach on all charges relating to 2009-10 to 2017-18, that sanction will be decided at a separate hearing, and that City has until 2 Oct to appeal. Outlets differ on whether the finding covers all 115 charges. Keep status_tag 'FOUND (reported)' until the commission's written reasons are confirmed public, then retag 'FOUND (published decision)' and link the document. The statement page itself (premierleague.com/en/news/4727779) could not be opened from the research environment.",
+  "decision_statement_date": "2026-09-29",
+  "appeal_deadline": "2026-10-02",
+  "decision_headline": "Premier League statement on the commission's decision",
+  "decision_note": "As reported: breaches found on the 2009-10 to 2017-18 charges. Sanction to be decided at a separate hearing.",
+  "decision_link": "timeline.html#2026-09-29-premier-league-statement"
 }

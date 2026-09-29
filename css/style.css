@@ -2305,3 +2305,205 @@ main {
     to { transform: scaleX(1); }
   }
 }
+
+/* Decision banner (home + landing) — fixed ink slab in both themes so the
+   moment reads as a "breaking" beat. Palette: #1C1812 slab, #F7F5EE text
+   (16.2:1), #CFC8B4 muted (10.6:1), #E0655A signal red (5.2:1).
+   Choreography (ms): slab 80/560, rule 120/700, dot pulse 1800 loop,
+   kicker 220, head 300, note 380 (420 each), clock 440, bar drain 600/1200. */
+
+/* Reserve the banner's height so nothing jumps when status.json arrives. */
+.decision-slot {
+  min-height: 8.5rem;
+}
+
+.decision-slot.is-empty {
+  min-height: 0;
+}
+
+@media (max-width: 760px) {
+  .decision-slot {
+    min-height: 16.4rem;
+  }
+
+  .decision-slot.is-empty {
+    min-height: 0;
+  }
+}
+
+.decision {
+  position: relative;
+  background: #1c1812;
+  color: #f7f5ee;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.decision-rule {
+  height: 3px;
+  background: #e0655a;
+  transform-origin: left;
+}
+
+.decision-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem 1.4rem;
+  padding-top: 1.05rem;
+  padding-bottom: 1.05rem;
+}
+
+.decision-dot {
+  position: relative;
+  width: 0.8rem;
+  height: 0.8rem;
+  align-self: start;
+  margin-top: 0.35rem;
+}
+
+.decision-dot i {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #e0655a;
+}
+
+.decision-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid #e0655a;
+}
+
+.decision-kicker {
+  margin: 0 0 0.2rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  color: #e8776c;
+}
+
+.decision-head {
+  margin: 0 0 0.2rem;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.6vw, 1.45rem);
+  line-height: 1.2;
+}
+
+.decision-head a,
+.decision-head a:visited {
+  color: #f7f5ee;
+  text-decoration-color: #e0655a;
+  text-decoration-thickness: 2px;
+}
+
+.decision-note {
+  margin: 0;
+  color: #cfc8b4;
+  font-size: 0.9rem;
+  max-width: 62ch;
+}
+
+.decision-clock {
+  min-width: 11.5rem;
+  max-width: 15rem;
+}
+
+.decision-days {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 600;
+  line-height: 1;
+  color: #e0655a;
+}
+
+.decision-days-label {
+  margin: 0.25rem 0 0.5rem;
+  color: #cfc8b4;
+  font-size: 0.8rem;
+}
+
+.decision-track {
+  display: block;
+  height: 5px;
+  background: #4a4536;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.decision-fill {
+  display: block;
+  height: 100%;
+  background: #e0655a;
+  transform-origin: left;
+  transform: scaleX(var(--r, 1));
+}
+
+@media (max-width: 760px) {
+  .decision-inner {
+    grid-template-columns: auto 1fr;
+  }
+
+  .decision-clock {
+    grid-column: 1 / -1;
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .decision {
+    animation: decision-in 560ms cubic-bezier(0.16, 1, 0.3, 1) 80ms both;
+  }
+
+  .decision-rule {
+    animation: decision-rule 700ms cubic-bezier(0.65, 0, 0.35, 1) 120ms both;
+  }
+
+  .decision-kicker,
+  .decision-head,
+  .decision-note,
+  .decision-clock {
+    animation: decision-rise 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .decision-kicker { animation-delay: 220ms; }
+  .decision-head { animation-delay: 300ms; }
+  .decision-note { animation-delay: 380ms; }
+  .decision-clock { animation-delay: 440ms; }
+
+  .decision-dot::after {
+    animation: decision-pulse 1800ms cubic-bezier(0.2, 0, 0, 1) infinite;
+  }
+
+  .decision-fill {
+    animation: decision-drain 1200ms cubic-bezier(0.65, 0, 0.35, 1) 600ms both;
+  }
+
+  @keyframes decision-in {
+    from { opacity: 0; transform: translateY(-14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes decision-rule {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  @keyframes decision-rise {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes decision-pulse {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(2.7); opacity: 0; }
+  }
+
+  @keyframes decision-drain {
+    from { transform: scaleX(1); }
+    to { transform: scaleX(var(--r, 1)); }
+  }
+}

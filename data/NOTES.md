@@ -126,6 +126,30 @@ pass before publishing as fact. Feeds the eventual Sources & Methodology page
     and the remainder is paraphrased. The Feb 2023 charge-stage response still
     carries a similar "re-verify" note — not yet tidied.
 
+21. **2026-09-29 — Premier League statement on the commission's decision.**
+    Added as timeline entry 2026-09-29-premier-league-statement, tagged
+    `FOUND (reported)` (NOT "published decision"). The statement page
+    (premierleague.com/en/news/4727779) was blocked in the research
+    environment, so wording rests on coverage from RTÉ, the Irish News, CBS
+    Sports and Al Jazeera (search text, pages not opened). OPEN ITEMS before
+    treating this entry as final:
+    - **Charge count/scope conflict**: the 25 Sept Athletic report said 114
+      of 115; coverage of the 29 Sept statement says "all charges" relating to
+      2009-10 to 2017-18, and some headlines say "all 115". The site says
+      "outlets differ" rather than picking a number.
+    - **Written reasons**: confirm whether the commission's full decision is
+      published. If yes, retag `FOUND (published decision)`, link the document,
+      and update home.html's case summary and the Money page status box.
+    - **"Sham" deals / £900m**: the wording is the statement's as reported;
+      attribute it that way and re-verify against the statement itself.
+    - **Club response**: only the phrase "disappointed and surprised by the
+      opinion of the Premier League Commission" was seen; the full statement
+      was not.
+    - **Appeal deadline (2 Oct 2026)**: drives the countdown banner via
+      data/status.json (appeal_deadline). Update status.json and the banner
+      the moment an appeal is lodged or the window closes.
+    - The 25 Sept entry and its "114 of 115" headline are kept as history.
+
 ## Research environment note
 
 The research agents' WebFetch tool was blocked by the network egress proxy for

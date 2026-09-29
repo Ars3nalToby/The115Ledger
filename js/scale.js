@@ -338,11 +338,13 @@
   }
 
   function renderIsnt() {
-    var v = state.data.timeline.filter(function (e) { return e.id === "2026-09-25-verdict-reported"; })[0];
+    var v = state.data.timeline
+      .filter(function (e) { return e.club_response && e.date >= "2026-09-25"; })
+      .sort(function (a, b) { return b.date.localeCompare(a.date); })[0];
     var box = document.getElementById("scale-isnt");
     box.innerHTML =
       "<p><strong>Spending money is not against the rules.</strong> The Premier League's 115 charges are about whether City gave accurate financial information, disclosed player and manager pay in full, stayed within profitability and sustainability limits, and cooperated with the investigation. They are <em>alleged</em> breaches.</p>" +
-      '<p><span class="status-badge status-badge--sm status-reported">FOUND (reported)</span> On 25 September 2026 The Athletic reported a finding on 114 of the 115 charges. That is a reported verdict, not the commission\'s published decision, and no sanction has been announced.</p>' +
+      '<p><span class="status-badge status-badge--sm status-reported">FOUND (reported)</span> On 25 September 2026 The Athletic reported a finding on 114 of the 115 charges. On 29 September the Premier League issued a statement that, as reported, says the commission found breaches on all charges relating to 2009-10 to 2017-18 and that sanction will be decided at a separate hearing; City have until 2 October to appeal. This site has not yet confirmed that the commission\'s written reasons are public, so it does not label this a published decision.</p>' +
       (v && v.club_response
         ? '<blockquote class="timeline-response">' + escapeHtml(v.club_response) + "</blockquote>"
         : "") +

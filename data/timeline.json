@@ -222,5 +222,22 @@
       { "outlet": "The Independent (via LiveScore) — club statement", "date": "2026-09-25", "url": "https://www.livescore.com/en/news/football/premier-league/man-city-release-statement-after-premier-league-verdict-on-115-charges-the-independent/" }
     ],
     "club_response": "\"The Premier League process remains ongoing, with significant elements to be completed, and subject to strict confidentiality.\" — Manchester City statement, 25 Sept 2026, as reported by The Independent and others; the club said its position remains consistent with its earlier stance."
+  },
+  {
+    "id": "2026-09-29-premier-league-statement",
+    "date": "2026-09-29",
+    "category": "Premier League case",
+    "title": "Premier League statement on the commission's decision",
+    "summary": "The Premier League issues a statement on the independent commission's decision. As reported by RTÉ, the Irish News and Al Jazeera, it says City were found in breach on all charges relating to the 2009-10 to 2017-18 financial rules, and describes commercial deals with a number of sponsors as \"sham\" arrangements part-funded by owner ADUG, with revenues inflated and costs reduced by more than £900m over the period. Sanction will be decided at a separate hearing and City has until 2 October to appeal; outlets differ on whether the finding covers all 115 charges (the 25 September report said 114 of 115).",
+    "status_tag": "FOUND (reported)",
+    "sources": [
+      { "outlet": "Premier League — statement on Manchester City FC", "date": "2026-09-29", "url": "https://www.premierleague.com/en/news/4727779/premier-league-statement-manchester-city-fc" },
+      { "outlet": "RTÉ Sport", "date": "2026-09-29", "url": "https://www.rte.ie/sport/soccer/2026/0929/1593401-man-city-found-guilty-of-all-premier-league-charges/" },
+      { "outlet": "The Irish News", "date": "2026-09-29", "url": "https://www.irishnews.com/sport/soccer/man-city-guilty-of-all-charges-related-to-financial-breaches-premier-league-F3UVCXFRUVLCVGD322TQPOK5Q4/" },
+      { "outlet": "CBS Sports", "date": "2026-09-29", "url": "https://www.cbssports.com/soccer/news/manchester-city-breaching-premier-league-financial-regulations/" },
+      { "outlet": "Al Jazeera — what's the latest and what comes next", "date": "2026-09-29", "url": "https://www.aljazeera.com/sports/2026/9/29/man-citys-premier-league-charges-whats-the-latest-and-what-comes-next" }
+    ],
+    "club_response": "City said it was \"disappointed and surprised by the opinion of the Premier League Commission\" (as reported by RTÉ and others; the club's full statement has not been read directly). The club has consistently denied wrongdoing.",
+    "verify_note": "The statement page could not be opened from the research environment; wording is taken from coverage. Confirm: (1) exact charge count and scope; (2) whether the commission's written reasons are public (if so retag FOUND (published decision) and link the document); (3) the club's exact statement."
   }
 ]
