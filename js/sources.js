@@ -120,7 +120,8 @@
       "data/quotes.json",
       "data/ornstein.json",
       "data/articles.json",
-      "data/corrections.json"
+      "data/corrections.json",
+      "data/scale.json"
     ];
 
     Promise.all(files.map(function (f) { return fetch(f); }))
@@ -140,6 +141,7 @@
         var ornstein = data[8];
         var articles = data[9];
         var corrections = data[10];
+        var scale = data[11];
 
         var timelineMap = new Map();
         timeline.forEach(function (item) {
@@ -179,6 +181,17 @@
           addAll(moneyMap, [{ label: o.source, url: o.source_url }]);
         });
         addAll(moneyMap, [{ label: cfg.clubs_source, url: cfg.clubs_source_url }]);
+
+        (scale.references || []).forEach(function (r) {
+          addAll(moneyMap, (r.sources || []).map(function (src) { return { label: r.label + " cost / price: " + src.outlet, url: src.url }; }));
+        });
+        (scale.revenue_mix || []).forEach(function (r) {
+          addAll(moneyMap, (r.sources || []).map(function (src) { return { label: r.club + " " + r.season + " revenue mix: " + src.outlet, url: src.url }; }));
+        });
+        var ctx = scale.context || {};
+        Object.keys(ctx).forEach(function (k) {
+          addAll(moneyMap, (ctx[k].sources || []).map(function (src) { return { label: src.outlet, url: src.url }; }));
+        });
 
         var guardiolaMap = new Map();
         quotes.forEach(function (q) {

@@ -96,6 +96,36 @@ pass before publishing as fact. Feeds the eventual Sources & Methodology page
     2026) — data/cfg.json lists them as former clubs. Re-verify the exact
     divestment dates against CFG's own announcements if precision matters.
 
+18. **data/scale.json (The Money page, "The Scale" section)** — every figure
+    was confirmed via WebSearch result text only; the source pages themselves
+    could not be opened (WebFetch was blocked for Deloitte, Goal, FourFourTwo,
+    Top Gear and others). Lowest-confidence items, re-verify against primary
+    sources before treating as exact:
+    - Stadium build costs (Emirates £390m, Wembley £798m final / £757m budget,
+      Etihad £112m, Tottenham ~£1bn) are cited to Wikipedia / StadiumDB /
+      Designing Buildings / SI.com; no club or contractor primary source was
+      read. Tottenham has published no final figure (reports run higher than
+      £1bn); the low end is used on purpose.
+    - Real Madrid 2024-25 matchday (€233m) and commercial (€594m) came from
+      search snippets of Deloitte's Money League 2026 coverage; broadcast
+      (€334m) is computed as the remainder, not a reported number.
+    - Tesla Model 3 Standard £37,990 UK list price (2026) can change.
+    - City's average home attendance (52,519) is from a Wikipedia season page;
+      another compilation showed 53,636 but its season was unclear, so it was
+      not used.
+    - The press transfer-spend estimate (€3.14bn spent / €1.37bn recouped /
+      €1.77bn net) is a Sept 2023 Transfermarkt-derived figure via Football
+      Transfers. Context only; never use it for the site's own totals.
+19. **The site's own "£1.14bn" total is a floor**: it sums the 24 signings in
+    data/transfers.json only. It grows automatically as transfers are added.
+20. **2026-09-29 — verdict-reported club_response tidied**: removed an internal
+    "re-verify exact wording" note from public copy after confirming the
+    quoted sentence across multiple outlets (The Independent via LiveScore,
+    CNN, ESPN coverage). The rest of the club's statement was only seen
+    truncated in search text, so only the confirmed first sentence is quoted
+    and the remainder is paraphrased. The Feb 2023 charge-stage response still
+    carries a similar "re-verify" note — not yet tidied.
+
 ## Research environment note
 
 The research agents' WebFetch tool was blocked by the network egress proxy for

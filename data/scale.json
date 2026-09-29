@@ -1,0 +1,143 @@
+{
+  "as_of": "2026-09-29",
+  "references": [
+    {
+      "id": "etihad",
+      "label": "Etihad Stadium",
+      "plural": "Etihad Stadiums",
+      "icon": "stadium",
+      "value_gbp": 112000000,
+      "basis": "Reported build cost, 2002 (nominal, not inflation-adjusted). Built as the City of Manchester Stadium for the Commonwealth Games; City's own ground.",
+      "note": "Some sources cite £110m rather than £112m.",
+      "confidence": "medium",
+      "sources": [
+        { "outlet": "Wikipedia — City of Manchester Stadium", "url": "https://en.wikipedia.org/wiki/City_of_Manchester_Stadium" },
+        { "outlet": "StadiumDB — Etihad Stadium", "url": "https://stadiumdb.com/stadiums/eng/city_of_manchester_stadium" }
+      ]
+    },
+    {
+      "id": "emirates",
+      "label": "Emirates Stadium",
+      "plural": "Emirates Stadiums",
+      "icon": "stadium",
+      "value_gbp": 390000000,
+      "basis": "Reported build cost, opened 2006 (nominal, not inflation-adjusted). Arsenal's ground.",
+      "note": null,
+      "confidence": "medium",
+      "sources": [
+        { "outlet": "Wikipedia — Emirates Stadium", "url": "https://en.wikipedia.org/wiki/Emirates_Stadium" }
+      ]
+    },
+    {
+      "id": "wembley",
+      "label": "Wembley Stadium",
+      "plural": "Wembley Stadiums",
+      "icon": "stadium",
+      "value_gbp": 798000000,
+      "basis": "Reported final build cost, opened 2007 (nominal, not inflation-adjusted). The original budget was reported as £757m.",
+      "note": "Budget £757m; reported final cost £798m. This site uses the final figure.",
+      "confidence": "medium",
+      "sources": [
+        { "outlet": "Wikipedia — Wembley Stadium", "url": "https://en.wikipedia.org/wiki/Wembley_Stadium" },
+        { "outlet": "Designing Buildings — Wembley Stadium", "url": "https://www.designingbuildings.co.uk/wiki/Wembley_Stadium" }
+      ]
+    },
+    {
+      "id": "spurs",
+      "label": "Tottenham Hotspur Stadium",
+      "plural": "Tottenham Hotspur Stadiums",
+      "icon": "stadium",
+      "value_gbp": 1000000000,
+      "basis": "Widely reported cost of about £1bn, opened 2019 (nominal). Spurs have not published a final figure; some reports put it higher, so this is the low end and understates the comparison.",
+      "note": "Reports range from about £1bn upward; the low end is used.",
+      "confidence": "medium",
+      "sources": [
+        { "outlet": "Sports Illustrated, 5 Dec 2017", "url": "https://www.si.com/soccer/2017/12/05/spurs-stadium-set-cost-estimated-ps1bn-due-complexity-project" },
+        { "outlet": "Wikipedia — Tottenham Hotspur Stadium", "url": "https://en.wikipedia.org/wiki/Tottenham_Hotspur_Stadium" }
+      ]
+    },
+    {
+      "id": "tesla",
+      "label": "Tesla Model 3",
+      "plural": "Tesla Model 3s",
+      "icon": "car",
+      "value_gbp": 37990,
+      "basis": "UK list price of the Model 3 Standard, 2026. List prices change; check the sources for the current figure.",
+      "note": null,
+      "confidence": "medium",
+      "sources": [
+        { "outlet": "EV Powered — Model 3 Standard UK pricing", "url": "https://evpowered.co.uk/news/38000-tesla-model-3-standard-to-arrive-in-uk-in-february/" },
+        { "outlet": "carwow — Tesla Model 3", "url": "https://www.carwow.co.uk/tesla/model-3" }
+      ]
+    }
+  ],
+  "revenue_mix": [
+    {
+      "club": "Manchester City",
+      "season": "2024-25",
+      "currency": "GBP",
+      "total": 694.1,
+      "matchday": 75.1,
+      "broadcast": 278.6,
+      "commercial": 340.4,
+      "broadcast_is_remainder": false,
+      "confidence": "high",
+      "note": "From the club's own 2024-25 annual report.",
+      "sources": [
+        { "outlet": "Manchester City — Annual Report 2025, Business Performance", "url": "https://www.mancity.com/annualreport2025/business-performance/" },
+        { "outlet": "The National, 16 Dec 2025", "url": "https://www.thenationalnews.com/sport/football/2025/12/16/manchester-city-announce-revenue-of-6941m-despite-missing-out-on-silverware/" }
+      ]
+    },
+    {
+      "club": "Arsenal",
+      "season": "2024-25",
+      "currency": "GBP",
+      "total": 691.0,
+      "matchday": 153.9,
+      "broadcast": 272.8,
+      "commercial": 263.2,
+      "broadcast_is_remainder": false,
+      "confidence": "high",
+      "note": "From Arsenal's published 2024-25 results. Arsenal played 30 home fixtures that season after reaching the Champions League semi-finals, which lifts matchday income.",
+      "sources": [
+        { "outlet": "Arsenal — Financial results for 2024/25", "url": "https://www.arsenal.com/news/financial-results-for-202425-axV959A5jyCF" }
+      ]
+    },
+    {
+      "club": "Real Madrid",
+      "season": "2024-25",
+      "currency": "EUR",
+      "total": 1161,
+      "matchday": 233,
+      "broadcast": 334,
+      "commercial": 594,
+      "broadcast_is_remainder": true,
+      "confidence": "medium",
+      "note": "Total, matchday and commercial as reported from Deloitte's Football Money League 2026. Broadcast is computed here as the remainder (total minus matchday minus commercial), not a reported figure.",
+      "sources": [
+        { "outlet": "Deloitte — Football Money League 2026", "url": "https://www.deloitte.com/uk/en/services/consulting-financial/analysis/deloitte-football-money-league.html" },
+        { "outlet": "FC Business — Real Madrid tops Deloitte Football Money League", "url": "https://fcbusiness.co.uk/news/real-madrids-e1-2bn-revenue-tops-deloitte-football-money-league/" }
+      ]
+    }
+  ],
+  "context": {
+    "press_transfer_estimate": {
+      "label": "One press estimate of all fees since the 2008 takeover (Transfermarkt data, via Football Transfers, Sept 2023)",
+      "spent_eur_m": 3143.5,
+      "recouped_eur_m": 1370.5,
+      "net_eur_m": 1773,
+      "note": "Context only. A third-party estimate up to Sept 2023; it is not the club's own accounting and other compilations differ.",
+      "sources": [
+        { "outlet": "Football Transfers, Sept 2023", "url": "https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2023/09/man-city-sheikh-mansour-abu-dhabi-group-total-spending-transfer-fees-signings" }
+      ]
+    },
+    "attendance": {
+      "label": "Average home league attendance, 2024-25",
+      "value": 52519,
+      "note": "Included for balance: City's crowds are large. Attendance figures vary slightly by source.",
+      "sources": [
+        { "outlet": "Wikipedia — 2024–25 Manchester City F.C. season", "url": "https://en.wikipedia.org/wiki/2024%E2%80%9325_Manchester_City_F.C._season" }
+      ]
+    }
+  }
+}

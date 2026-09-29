@@ -55,6 +55,7 @@ js/home.js             -> home.html: case clock, status badge, latest strip
 js/timeline.js         -> timeline.html: filterable timeline
 js/charges.js          -> charges.html: charge breakdown + sanctions table
 js/money.js            -> money.html: 4 finance charts, sponsorships, CFG
+js/scale.js            -> money.html: "The Scale" (equivalences, revenue mix)
 js/spending.js         -> spending.html: sortable table + cumulative chart
 js/guardiola.js        -> guardiola.html: quote cards + departure section
 js/reporting.js        -> reporting.html: X embeds + key articles
@@ -225,6 +226,29 @@ Edit `data/sanctions_compare.json`:
   "source_url": "https://..."
 }
 ```
+
+### Update "The Scale" on the Money page
+
+`data/scale.json` feeds the equivalence cards and the revenue-mix bars at the
+top of `money.html`. The headline totals (signing fees, wages, revenue) are
+**not** stored here — they are computed live from `transfers.json` and
+`finance.json`, so adding a transfer or a season updates the page by itself.
+
+- `references` — the things the money is measured in (stadiums, a car). Each
+  needs `value_gbp` (raw pounds), a `basis` sentence saying what the price is
+  and its year (build costs are nominal, not inflation-adjusted), a
+  `confidence` flag, and `sources` (`outlet` + `url`). `icon` is `stadium` or
+  `car`. Where sources disagree, use the lower figure and say so in `note`.
+- `revenue_mix` — one row per club for the matchday/broadcast/commercial
+  comparison. Values are in millions of the row's `currency`; the page
+  compares **shares**, not amounts, because currencies and seasons differ. If
+  a figure is computed rather than reported (e.g. a remainder), set
+  `broadcast_is_remainder` to `true` and say so in `note`.
+- `context` — supporting figures shown with their sources (a press estimate
+  of all transfer fees; an attendance figure included for balance).
+
+Every entry's `sources` are picked up automatically by the Sources &
+Methodology page.
 
 ### Add a sponsorship deal
 
