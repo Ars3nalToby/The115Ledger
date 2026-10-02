@@ -228,7 +228,7 @@
     "date": "2026-09-29",
     "category": "Premier League case",
     "title": "Premier League statement on the commission's decision",
-    "summary": "The Premier League issues a statement on the independent commission's decision. As reported by RTÉ, the Irish News and Al Jazeera, it says City were found in breach on all charges relating to the 2009-10 to 2017-18 financial rules, and describes commercial deals with a number of sponsors as \"sham\" arrangements part-funded by owner ADUG, with revenues inflated and costs reduced by more than £900m over the period. Sanction will be decided at a separate hearing and City has until 2 October to appeal; outlets differ on whether the finding covers all 115 charges (the 25 September report said 114 of 115).",
+    "summary": "The Premier League issues a statement on the independent commission's decision. As reported by RTÉ, the Irish News and Al Jazeera, it says City were found in breach on all charges relating to the 2009-10 to 2017-18 financial rules, and describes commercial deals with a number of sponsors as \"sham\" arrangements part-funded by owner ADUG, with revenues inflated and costs reduced by more than £900m over the period. Sanction will be decided at a separate hearing and City has until 2 October to appeal. Later coverage (Sky Sports, Euronews, CBS Sports) specifies the finding as all but one of the charges, including three of the four cooperation charges.",
     "status_tag": "FOUND (reported)",
     "sources": [
       { "outlet": "Premier League — statement on Manchester City FC", "date": "2026-09-29", "url": "https://www.premierleague.com/en/news/4727779/premier-league-statement-manchester-city-fc" },
@@ -238,6 +238,24 @@
       { "outlet": "Al Jazeera — what's the latest and what comes next", "date": "2026-09-29", "url": "https://www.aljazeera.com/sports/2026/9/29/man-citys-premier-league-charges-whats-the-latest-and-what-comes-next" }
     ],
     "club_response": "City said it was \"disappointed and surprised by the opinion of the Premier League Commission\" (as reported by RTÉ and others; the club's full statement has not been read directly). The club has consistently denied wrongdoing.",
-    "verify_note": "The statement page could not be opened from the research environment; wording is taken from coverage. Confirm: (1) exact charge count and scope; (2) whether the commission's written reasons are public (if so retag FOUND (published decision) and link the document); (3) the club's exact statement."
+    "verify_note": "The statement pages could not be opened from the research environment; wording is taken from coverage. Charge scope resolved 2 Oct (all but one charge). Still to confirm: whether the commission's written opinion is public (if so retag FOUND (published decision) and link the document), and the club's exact statement wording."
+  },
+  {
+    "id": "2026-10-01-appeal-lodged",
+    "date": "2026-10-01",
+    "category": "Premier League case",
+    "title": "Manchester City lodge appeal against the commission's decision",
+    "summary": "City lodge a comprehensive appeal against the commission's opinion at 7pm on 1 October, a day before the deadline. The Premier League says an independent three-member Appeal Board will hear it, with a hearing expected within 12 weeks and a decision due within 30 days of the hearing ending; the hearing stays private until publication of the outcome is permitted. Sanction is still to be decided at a separate hearing.",
+    "status_tag": "UNDER APPEAL",
+    "sources": [
+      { "outlet": "Premier League — statement: appeal against decision of independent Commission", "date": "2026-10-02", "url": "https://www.premierleague.com/en/news/4729207/premier-league-statement-manchester-city-fc-appeal-decision-of-independent-commission-02-october-2026" },
+      { "outlet": "Al Jazeera", "date": "2026-10-02", "url": "https://www.aljazeera.com/sports/2026/10/2/manchester-city-appeal-premier-league-financial-ruling-england-fa" },
+      { "outlet": "Euronews", "date": "2026-10-02", "url": "https://www.euronews.com/2026/10/02/man-city-lodges-comprehensive-appeal-after-being-found-guilty-of-financial-rule-breaking" },
+      { "outlet": "Sky Sports", "date": "2026-10-02", "url": "https://www.skysports.com/football/news/13593606/man-city-lodge-appeal-premier-league-club-contest-guilty-verdict-of-independent-commission" },
+      { "outlet": "CBS Sports", "date": "2026-10-02", "url": "https://www.cbssports.com/soccer/news/manchester-city-appeal-premier-leagues-verdict-financial-rule-violations/" },
+      { "outlet": "ABC News (Australia)", "date": "2026-10-02", "url": "https://www.abc.net.au/news/2026-10-02/manchester-city-appeal-guilty-findings-after-epl-finance-probe/107223868" }
+    ],
+    "club_response": "City says that, on multiple grounds, the commission's opinion contains clear material errors of law, principle and fact and is unsafe, that the club is innocent of the accusations, and that a comprehensive body of irrefutable evidence supports its positions (as reported by Euronews and others; the club's full statement has not been read directly).",
+    "verify_note": "Statement pages could not be opened from the research environment; wording is taken from coverage. Confirm the club's exact wording and the 12-week/30-day rule text. The hearing is private, so outcome timing will only be known when published."
   }
 ]

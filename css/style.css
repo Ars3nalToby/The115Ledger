@@ -2507,3 +2507,15 @@ main {
     to { transform: scaleX(var(--r, 1)); }
   }
 }
+
+/* Sanction and appeal badges sit side by side */
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.status-row .status-badge {
+  margin-bottom: 0;
+}

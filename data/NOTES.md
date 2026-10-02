@@ -133,10 +133,11 @@ pass before publishing as fact. Feeds the eventual Sources & Methodology page
     environment, so wording rests on coverage from RTÉ, the Irish News, CBS
     Sports and Al Jazeera (search text, pages not opened). OPEN ITEMS before
     treating this entry as final:
-    - **Charge count/scope conflict**: the 25 Sept Athletic report said 114
-      of 115; coverage of the 29 Sept statement says "all charges" relating to
-      2009-10 to 2017-18, and some headlines say "all 115". The site says
-      "outlets differ" rather than picking a number.
+    - **Charge count/scope conflict — RESOLVED 2 Oct**: later coverage (Sky
+      Sports, Euronews, CBS Sports "114 violations", ESPN) says all but one of
+      the charges: every financial-rules charge for 2009-10 to 2017-18 and
+      three of four cooperation charges. The earlier "all 115" headlines were
+      imprecise (logged in data/corrections.json).
     - **Written reasons**: confirm whether the commission's full decision is
       published. If yes, retag `FOUND (published decision)`, link the document,
       and update home.html's case summary and the Money page status box.
@@ -149,6 +150,22 @@ pass before publishing as fact. Feeds the eventual Sources & Methodology page
       data/status.json (appeal_deadline). Update status.json and the banner
       the moment an appeal is lodged or the window closes.
     - The 25 Sept entry and its "114 of 115" headline are kept as history.
+
+22. **2026-10-02 — City appeal lodged.** Timeline entry
+    2026-10-01-appeal-lodged (UNDER APPEAL). Sources: the Premier League's 2
+    Oct statement page plus Al Jazeera, Euronews, Sky Sports, CBS Sports and
+    ABC News. None of these pages could be opened here; facts rest on search
+    text from several outlets agreeing. Details to re-verify against the
+    statement: lodged 7pm Thursday 1 Oct (Al Jazeera); three-member Appeal
+    Board; hearing expected within 12 weeks and decision within 30 days of the
+    hearing ending (reported rule); hearing private until the outcome may be
+    published. The banner's clock ends 24 Dec 2026, computed as 1 Oct + 84
+    days, NOT a reported date. The club's statement wording on the appeal
+    ("clear material errors of law, principle and fact", "irrefutable
+    evidence") is from coverage and is paraphrased on the site, not quoted.
+    The Appeal Board hearing is private, so outcome timing will only be known
+    once published. Still open: whether the commission's written opinion is
+    public (retag FOUND (published decision) if so).
 
 ## Research environment note
 
