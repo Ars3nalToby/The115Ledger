@@ -148,7 +148,7 @@
       cumulative.push(running);
     });
 
-    Charts.buildLineChart(el, seasons, cumulative);
+    Charts.buildLineChart(el, seasons, cumulative, { label: "Cumulative fees (named signings)" });
   }
 
   function showFallback() {

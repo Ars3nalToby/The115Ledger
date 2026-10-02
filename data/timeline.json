@@ -227,18 +227,21 @@
     "id": "2026-09-29-premier-league-statement",
     "date": "2026-09-29",
     "category": "Premier League case",
-    "title": "Premier League statement on the commission's decision",
-    "summary": "The Premier League issues a statement on the independent commission's decision. As reported by RTÉ, the Irish News and Al Jazeera, it says City were found in breach on all charges relating to the 2009-10 to 2017-18 financial rules, and describes commercial deals with a number of sponsors as \"sham\" arrangements part-funded by owner ADUG, with revenues inflated and costs reduced by more than £900m over the period. Sanction will be decided at a separate hearing and City has until 2 October to appeal. Later coverage (Sky Sports, Euronews, CBS Sports) specifies the finding as all but one of the charges, including three of the four cooperation charges.",
-    "status_tag": "FOUND (reported)",
+    "title": "Commission's decision published; Premier League statement",
+    "summary": "The Premier League publishes a redacted Core Decision of the independent commission (about 40 pages, with appendices still to follow) and a statement on it. The commission found City in breach on every charge bar one, covering all financial-rules charges for 2009-10 to 2017-18 and three of four cooperation categories, including a \"Disguised Funding Scheme\" of \"sham\" sponsorship arrangements part-funded by owner ADUG that it found overstated income by more than £830m over eight seasons (revenue inflated and costs reduced by more than £900m, per the statement). Sanction will be decided at a separate hearing; City says it is innocent and has appealed.",
+    "status_tag": "FOUND (published decision)",
     "sources": [
-      { "outlet": "Premier League — statement on Manchester City FC", "date": "2026-09-29", "url": "https://www.premierleague.com/en/news/4727779/premier-league-statement-manchester-city-fc" },
+      { "outlet": "Premier League — statement on Manchester City FC (links the redacted Core Decision)", "date": "2026-09-29", "url": "https://www.premierleague.com/en/news/4727779/premier-league-statement-manchester-city-fc" },
+      { "outlet": "Mishcon de Reya — Independent Commission publishes decision", "date": "2026-09-29", "url": "https://www.mishcon.com/news/manchester-city-independent-commission-publishes-decision-on-premier-league-charges" },
+      { "outlet": "The Independent (via Yahoo Sports) — Premier League statement in full", "date": "2026-09-29", "url": "https://sports.yahoo.com/articles/premier-league-statement-full-man-161938146.html" },
+      { "outlet": "CNN", "date": "2026-09-29", "url": "https://www.cnn.com/2026/09/29/sport/premier-league-outlines-manchester-city-rules-breaches" },
+      { "outlet": "CNBC", "date": "2026-09-30", "url": "https://www.cnbc.com/2026/09/30/manchester-city-guilty-premier-league-financial-rules.html" },
+      { "outlet": "Sky Sports", "date": "2026-09-29", "url": "https://www.skysports.com/football/news/13290810/man-city-charges-verdict-club-found-guilty-of-all-charges-related-to-serious-breaches-of-premier-league-financial-rules" },
       { "outlet": "RTÉ Sport", "date": "2026-09-29", "url": "https://www.rte.ie/sport/soccer/2026/0929/1593401-man-city-found-guilty-of-all-premier-league-charges/" },
-      { "outlet": "The Irish News", "date": "2026-09-29", "url": "https://www.irishnews.com/sport/soccer/man-city-guilty-of-all-charges-related-to-financial-breaches-premier-league-F3UVCXFRUVLCVGD322TQPOK5Q4/" },
-      { "outlet": "CBS Sports", "date": "2026-09-29", "url": "https://www.cbssports.com/soccer/news/manchester-city-breaching-premier-league-financial-regulations/" },
       { "outlet": "Al Jazeera — what's the latest and what comes next", "date": "2026-09-29", "url": "https://www.aljazeera.com/sports/2026/9/29/man-citys-premier-league-charges-whats-the-latest-and-what-comes-next" }
     ],
-    "club_response": "City said it was \"disappointed and surprised by the opinion of the Premier League Commission\" (as reported by RTÉ and others; the club's full statement has not been read directly). The club has consistently denied wrongdoing.",
-    "verify_note": "The statement pages could not be opened from the research environment; wording is taken from coverage. Charge scope resolved 2 Oct (all but one charge). Still to confirm: whether the commission's written opinion is public (if so retag FOUND (published decision) and link the document), and the club's exact statement wording."
+    "club_response": "City said it was \"disappointed and surprised by the opinion of the Premier League Commission\" (as reported by RTÉ and others) and has consistently denied wrongdoing. Its 1 October appeal statement is quoted in the entry above.",
+    "verify_note": "The Premier League and decision-PDF pages could not be opened from the research environment; details come from several outlets plus a law-firm summary (Mishcon de Reya). Per coverage the decision is 40 pages / 160 paragraphs and the appendices were unpublished as of 2 Oct. Verify the quoted £830m / £900m figures and the 'Disguised Funding Scheme' wording against the Core Decision text itself."
   },
   {
     "id": "2026-10-01-appeal-lodged",
@@ -255,7 +258,22 @@
       { "outlet": "CBS Sports", "date": "2026-10-02", "url": "https://www.cbssports.com/soccer/news/manchester-city-appeal-premier-leagues-verdict-financial-rule-violations/" },
       { "outlet": "ABC News (Australia)", "date": "2026-10-02", "url": "https://www.abc.net.au/news/2026-10-02/manchester-city-appeal-guilty-findings-after-epl-finance-probe/107223868" }
     ],
-    "club_response": "City says that, on multiple grounds, the commission's opinion contains clear material errors of law, principle and fact and is unsafe, that the club is innocent of the accusations, and that a comprehensive body of irrefutable evidence supports its positions (as reported by Euronews and others; the club's full statement has not been read directly).",
-    "verify_note": "Statement pages could not be opened from the research environment; wording is taken from coverage. Confirm the club's exact wording and the 12-week/30-day rule text. The hearing is private, so outcome timing will only be known when published."
+    "club_response": "City said the opinion \"contains clear material errors, of law, principle and fact and is unsafe\", that \"the club is innocent of the accusations made by the Premier League and a comprehensive body of irrefutable evidence exists in support of all of its positions\", and that it \"will therefore be relentless, and where necessary proactive, in any and all appropriate regulatory and legal forums\" (wording as quoted by UPI, CBS Sports, TeamTalk and others; the club's statement itself was not opened).",
+    "verify_note": "Statement pages could not be opened from the research environment; the club's wording is as quoted across several outlets. Confirm the 12-week/30-day rule text against the Premier League handbook. The hearing is private, so outcome timing will only be known when published."
+  },
+  {
+    "id": "2024-11-14-compensation-notices",
+    "date": "2024-11-14",
+    "category": "Media reports",
+    "title": "Four rivals reportedly lodge notices reserving the right to seek compensation",
+    "summary": "The Times reports that Arsenal, Liverpool, Manchester United and Tottenham have lodged legal notices reserving the right to seek compensation if City are found to have breached the rules, amid concern they could be out of time under the statute of limitations if they waited for the outcome. Coverage after the September 2026 decision says any formal proceedings are likely to wait until the appeals process is exhausted.",
+    "status_tag": "CHARGED / ALLEGED",
+    "sources": [
+      { "outlet": "Reuters (via Malay Mail) — rivals lodge claims for potential compensation", "date": "2024-11-14", "url": "https://www.malaymail.com/news/sports/2024/11/14/arsenal-liverpool-man-united-and-spurs-lodge-claims-for-potential-compensation-in-manchester-city-financial-breaches-case/156804" },
+      { "outlet": "Soccerway — Premier League clubs to seek compensation if City are found guilty", "date": "2024-11-14", "url": "https://www.soccerway.com/news/soccer-premier-league-premier-league-clubs-to-seek-compensation-if-manchester-city-are-found-guilty/ED7fdMaf" },
+      { "outlet": "Al Jazeera — what will happen to Man City after the guilty verdict", "date": "2026-09-30", "url": "https://www.aljazeera.com/sports/2026/9/30/what-will-happen-to-man-city-after-the-premier-leagues-guilty-verdict" }
+    ],
+    "club_response": null,
+    "verify_note": "Reported via The Times as relayed by wire coverage; the article pages could not be opened. The club's response, and whether any claim has since been filed, were not found. Post-verdict figures such as 'over £100m each' are speculation by commentators and are deliberately not shown."
   }
 ]

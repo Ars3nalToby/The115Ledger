@@ -2519,3 +2519,348 @@ main {
 .status-row .status-badge {
   margin-bottom: 0;
 }
+
+/* Shared chart hover layer: band + crosshair + one tooltip per chart. */
+
+.viz-root {
+  position: relative;
+}
+
+.viz-root:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.viz-band {
+  fill: var(--ink-tint);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.12s ease;
+}
+
+.viz-band.is-on {
+  opacity: 1;
+}
+
+.viz-crosshair {
+  stroke: var(--text-muted);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.viz-crosshair.is-on {
+  opacity: 1;
+}
+
+.viz-focus-dot {
+  fill: var(--series-1);
+  stroke: var(--surface-1);
+  stroke-width: 2;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.viz-focus-dot.is-on {
+  opacity: 1;
+}
+
+.viz-tip {
+  position: absolute;
+  z-index: 5;
+  min-width: 9.5rem;
+  max-width: 17rem;
+  padding: 0.55rem 0.75rem 0.6rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--text);
+  border-radius: 3px;
+  box-shadow: var(--shadow);
+  pointer-events: none;
+  font-size: 0.82rem;
+}
+
+.viz-tip[hidden] {
+  display: none;
+}
+
+.viz-tip-head {
+  margin-bottom: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.viz-tip-row {
+  display: grid;
+  grid-template-columns: 14px auto 1fr;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.18rem;
+}
+
+.viz-tip-key {
+  display: block;
+  width: 14px;
+  height: 3px;
+  border-radius: 1px;
+}
+
+.viz-tip-val {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.viz-tip-name {
+  color: var(--text-muted);
+}
+
+/* The money machine (money.html) */
+
+.mm-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.mm-tile {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--text);
+  border-radius: 4px;
+  padding: 0.9rem 1.1rem;
+}
+
+.mm-tile.is-key {
+  border-top-color: var(--accent);
+}
+
+.mm-tile-val {
+  margin: 0;
+  font-size: clamp(1.7rem, 4.4vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--text);
+}
+
+.mm-tile.is-key .mm-tile-val {
+  color: var(--accent);
+}
+
+.mm-tile-val.is-neg {
+  color: var(--chart-red);
+}
+
+.mm-tile-label {
+  margin: 0.35rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.3;
+}
+
+@media (max-width: 640px) {
+  .mm-tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
+  .mm-tile {
+    padding: 0.6rem 0.7rem;
+  }
+  .mm-tile-val {
+    font-size: 1.35rem;
+  }
+  .mm-tile-label {
+    font-size: 0.74rem;
+  }
+}
+
+.mm-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 0.7rem;
+  margin: 0 0 0.8rem;
+}
+
+.mm-btn {
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border: 1.5px solid var(--text);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.mm-btn:hover {
+  transform: translateY(-1px);
+}
+
+.mm-play {
+  background: var(--text);
+  color: var(--bg);
+  min-width: 6.4rem;
+}
+
+.mm-scrub {
+  flex: 1 1 200px;
+  min-width: 160px;
+  accent-color: var(--text);
+  cursor: pointer;
+}
+
+.mm-season {
+  min-width: 6rem;
+  font-weight: 600;
+  text-align: right;
+}
+
+.mm-stage {
+  margin-top: 0;
+  min-height: 0;
+}
+
+.mm-svg .mm-md { fill: var(--chart-ink); }
+.mm-svg .mm-br { fill: var(--chart-red); }
+.mm-svg .mm-co { fill: var(--chart-teal); }
+.mm-svg .mm-tot { fill: var(--text-muted); fill-opacity: 0.55; }
+
+.viz-legend-swatch.mm-md { background: var(--chart-ink); }
+.viz-legend-swatch.mm-br { background: var(--chart-red); }
+.viz-legend-swatch.mm-co { background: var(--chart-teal); }
+.viz-legend-swatch.mm-tot { background: var(--text-muted); opacity: 0.55; }
+
+.mm-wage {
+  stroke: var(--text);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.mm-wage-key {
+  display: inline-block;
+  width: 16px;
+  border-top: 3px solid var(--text);
+}
+
+.mm-pending {
+  fill: none;
+  stroke: var(--border);
+  stroke-dasharray: 4 4;
+}
+
+.mm-svg .mm-pending-txt,
+.mm-svg .mm-lane-label,
+.mm-svg .mm-bubble-label {
+  fill: var(--text-muted);
+  font-size: 11px;
+}
+
+.mm-svg .mm-lane-label {
+  letter-spacing: 0.08em;
+}
+
+.mm-svg .mm-bubble-label {
+  fill: var(--text);
+  font-weight: 600;
+}
+
+.mm-col {
+  cursor: pointer;
+}
+
+.mm-col.is-active .mm-md,
+.mm-col.is-active .mm-br,
+.mm-col.is-active .mm-co,
+.mm-col.is-active .mm-tot {
+  stroke: var(--text);
+  stroke-width: 1.5;
+}
+
+.mm-bubble circle {
+  fill: var(--accent-tint);
+  stroke: var(--text);
+  stroke-width: 1.6;
+  cursor: pointer;
+  transition: fill 0.15s ease;
+}
+
+.mm-bubble:hover circle {
+  fill: var(--accent);
+  fill-opacity: 0.4;
+}
+
+.mm-playhead {
+  stroke: var(--text);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 3;
+  pointer-events: none;
+}
+
+.mm-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 0.6rem 2rem;
+  margin-top: 1rem;
+  padding: 1rem 1.2rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  min-height: 11rem;
+}
+
+.mm-detail h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.6rem;
+}
+
+.mm-detail h4 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.mm-hint {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.mm-dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 1rem;
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.mm-dl dt {
+  color: var(--text-muted);
+}
+
+.mm-dl dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.mm-signings ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.92rem;
+}
+
+.mm-src {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .mm-detail {
+    grid-template-columns: 1fr;
+  }
+}

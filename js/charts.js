@@ -106,7 +106,137 @@ window.Charts = (function () {
     );
   }
 
-  function buildLineChart(container, seasons, values) {
+
+  // Hover / keyboard layer shared by every chart: a band (and crosshair on line
+  // charts) that snaps to the nearest season, plus one tooltip listing every
+  // series. Pointer and arrow keys show the same details; the table view under
+  // each chart keeps every value reachable without either.
+  var SVGNS = "http://www.w3.org/2000/svg";
+
+  function svgEl(tag, attrs) {
+    var node = document.createElementNS(SVGNS, tag);
+    Object.keys(attrs || {}).forEach(function (k) { node.setAttribute(k, attrs[k]); });
+    return node;
+  }
+
+  function attachHover(container, cfg) {
+    var svg = container.querySelector("svg.viz-svg");
+    if (!svg) return;
+    var n = cfg.n, x0 = MARGIN_LEFT, cw = CAT_WIDTH;
+
+    var band = svgEl("rect", { class: "viz-band", y: MARGIN_TOP, height: PLOT_HEIGHT, width: cw, x: 0 });
+    svg.insertBefore(band, svg.firstChild);
+    var line = null, dot = null;
+    if (cfg.crosshair) {
+      line = svgEl("line", { class: "viz-crosshair", y1: MARGIN_TOP, y2: MARGIN_TOP + PLOT_HEIGHT });
+      dot = svgEl("circle", { class: "viz-focus-dot", r: 6 });
+      svg.appendChild(line);
+      svg.appendChild(dot);
+    }
+    // Transparent catcher over the plot: a hit area far bigger than any mark.
+    svg.appendChild(svgEl("rect", { class: "viz-catcher", x: x0, y: MARGIN_TOP - 8, width: n * cw, height: PLOT_HEIGHT + 16, fill: "transparent" }));
+
+    var tip = document.createElement("div");
+    tip.className = "viz-tip";
+    tip.hidden = true;
+    container.appendChild(tip);
+    var live = document.createElement("span");
+    live.className = "visually-hidden";
+    live.setAttribute("aria-live", "polite");
+    container.appendChild(live);
+
+    var current = -1;
+
+    function hide() {
+      current = -1;
+      tip.hidden = true;
+      band.classList.remove("is-on");
+      if (line) { line.classList.remove("is-on"); dot.classList.remove("is-on"); }
+    }
+
+    function show(i, announce) {
+      i = Math.max(0, Math.min(n - 1, i));
+      var row = cfg.rows(i);
+      var cx = x0 + i * cw + cw / 2;
+      current = i;
+
+      band.setAttribute("x", cx - cw / 2);
+      band.classList.add("is-on");
+      if (line) {
+        line.setAttribute("x1", cx); line.setAttribute("x2", cx);
+        line.classList.add("is-on");
+        var dy = cfg.dotY ? cfg.dotY(i) : null;
+        if (dy === null || dy === undefined) dot.classList.remove("is-on");
+        else { dot.setAttribute("cx", cx); dot.setAttribute("cy", dy); dot.classList.add("is-on"); }
+      }
+
+      // Labels come from data files: textContent only, never innerHTML.
+      tip.textContent = "";
+      var head = document.createElement("div");
+      head.className = "viz-tip-head";
+      head.textContent = row.title;
+      tip.appendChild(head);
+      row.items.forEach(function (it) {
+        var r = document.createElement("div");
+        r.className = "viz-tip-row";
+        var key = document.createElement("span");
+        key.className = "viz-tip-key";
+        key.style.background = it.color || "var(--text-muted)";
+        var val = document.createElement("span");
+        val.className = "viz-tip-val num";
+        val.textContent = it.value;
+        var name = document.createElement("span");
+        name.className = "viz-tip-name";
+        name.textContent = it.name;
+        r.appendChild(key); r.appendChild(val); r.appendChild(name);
+        tip.appendChild(r);
+      });
+      tip.hidden = false;
+
+      var anchorY = cfg.dotY && cfg.dotY(i) != null ? cfg.dotY(i) : MARGIN_TOP + 24;
+      var px = svg.offsetLeft + cx + 14;
+      var py = svg.offsetTop + Math.max(MARGIN_TOP, anchorY - 20);
+      var tw = tip.offsetWidth;
+      if (px + tw > container.scrollWidth - 6) px = svg.offsetLeft + cx - 14 - tw;
+      tip.style.left = Math.max(4, px) + "px";
+      tip.style.top = py + "px";
+
+      if (announce) live.textContent = row.title + ": " + row.items.map(function (it) { return it.name + " " + it.value; }).join(", ");
+    }
+
+    function indexAt(e) {
+      var r = svg.getBoundingClientRect();
+      var x = (e.clientX - r.left) * (svg.viewBox.baseVal.width / r.width);
+      var i = Math.floor((x - x0) / cw);
+      return i < 0 || i >= n ? -1 : i;
+    }
+
+    function pointer(e) {
+      var i = indexAt(e);
+      if (i < 0) hide(); else if (i !== current) show(i, false);
+    }
+    container.addEventListener("pointermove", pointer);
+    container.addEventListener("pointerdown", pointer);
+    container.addEventListener("pointerleave", hide);
+
+    container.tabIndex = 0;
+    container.setAttribute("role", "group");
+    container.setAttribute("aria-label", (cfg.label || "Chart") + ". Use the left and right arrow keys to read each season; the table below lists every value.");
+    container.addEventListener("keydown", function (e) {
+      var i = current < 0 ? n - 1 : current;
+      if (e.key === "ArrowRight") i += 1;
+      else if (e.key === "ArrowLeft") i -= 1;
+      else if (e.key === "Home") i = 0;
+      else if (e.key === "End") i = n - 1;
+      else if (e.key === "Escape") { hide(); return; }
+      else return;
+      e.preventDefault();
+      show(i, true);
+    });
+    container.addEventListener("blur", hide);
+  }
+
+  function buildLineChart(container, seasons, values, opts) {
     var n = seasons.length;
     var width = MARGIN_LEFT + n * CAT_WIDTH + MARGIN_RIGHT;
     var height = MARGIN_TOP + PLOT_HEIGHT + MARGIN_BOTTOM;
@@ -162,9 +292,16 @@ window.Charts = (function () {
 
     container.innerHTML = svgWrap(width, height, inner);
     container.classList.add("viz-root");
+    attachHover(container, {
+      n: n, crosshair: true, label: (opts && opts.label) || "Chart",
+      dotY: function (i) { return values[i] === null ? null : valueToY(values[i]); },
+      rows: function (i) {
+        return { title: seasons[i], items: [{ name: (opts && opts.label) || "Value", value: values[i] === null ? "not reported" : formatGBP(values[i]), color: "var(--series-1)" }] };
+      }
+    });
   }
 
-  function buildBarChart(container, seasons, values) {
+  function buildBarChart(container, seasons, values, opts) {
     var n = seasons.length;
     var width = MARGIN_LEFT + n * CAT_WIDTH + MARGIN_RIGHT;
     var height = MARGIN_TOP + PLOT_HEIGHT + MARGIN_BOTTOM;
@@ -203,9 +340,15 @@ window.Charts = (function () {
 
     container.innerHTML = svgWrap(width, height, inner);
     container.classList.add("viz-root");
+    attachHover(container, {
+      n: n, label: (opts && opts.label) || "Chart",
+      rows: function (i) {
+        return { title: seasons[i], items: [{ name: (opts && opts.label) || "Value", value: values[i] === null ? "not reported" : formatGBP(values[i]), color: "var(--series-1)" }] };
+      }
+    });
   }
 
-  function buildDivergingBarChart(container, seasons, values) {
+  function buildDivergingBarChart(container, seasons, values, opts) {
     var n = seasons.length;
     var width = MARGIN_LEFT + n * CAT_WIDTH + MARGIN_RIGHT;
     var height = MARGIN_TOP + PLOT_HEIGHT + MARGIN_BOTTOM;
@@ -271,9 +414,16 @@ window.Charts = (function () {
 
     container.innerHTML = svgWrap(width, height, inner);
     container.classList.add("viz-root");
+    attachHover(container, {
+      n: n, label: (opts && opts.label) || "Chart",
+      rows: function (i) {
+        var v = values[i];
+        return { title: seasons[i], items: [{ name: (opts && opts.label) || "Value", value: formatGBP(v), color: v >= 0 ? "var(--diverging-pos)" : "var(--diverging-neg)" }] };
+      }
+    });
   }
 
-  function buildStackedBarChart(container, seasons, seriesRows, seriesDefs) {
+  function buildStackedBarChart(container, seasons, seriesRows, seriesDefs, opts) {
     var n = seasons.length;
     var width = MARGIN_LEFT + n * CAT_WIDTH + MARGIN_RIGHT;
     var height = MARGIN_TOP + PLOT_HEIGHT + MARGIN_BOTTOM;
@@ -335,6 +485,17 @@ window.Charts = (function () {
 
     container.innerHTML = svgWrap(width, height, inner) + legend;
     container.classList.add("viz-root");
+    attachHover(container, {
+      n: n, label: (opts && opts.label) || "Revenue split",
+      rows: function (i) {
+        var row = seriesRows[i];
+        var items = seriesDefs.map(function (def, idx) {
+          return { name: def.label, value: formatGBP(row[def.key] || 0), color: "var(--series-" + (idx + 1) + ")" };
+        });
+        items.push({ name: "Total", value: formatGBP(totals[i]), color: "var(--text-primary)" });
+        return { title: seasons[i], items: items };
+      }
+    });
   }
 
   return {
