@@ -56,6 +56,8 @@ js/timeline.js         -> timeline.html: filterable timeline
 js/charges.js          -> charges.html: charge breakdown + sanctions table
 js/money.js            -> money.html: 4 finance charts, sponsorships, CFG
 js/scale.js            -> money.html: "The Scale" (equivalences, revenue mix)
+js/machine.js          -> money.html: "Watch the money move" season replay (revenue columns, wage ticks,
+                          signing bubbles; built from finance.json + transfers.json, no extra data file)
 js/spending.js         -> spending.html: sortable table + cumulative chart
 js/guardiola.js        -> guardiola.html: quote cards + departure section
 js/reporting.js        -> reporting.html: X embeds + key articles

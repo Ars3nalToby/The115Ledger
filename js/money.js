@@ -8,7 +8,7 @@
     var seasons = finance.map(function (f) { return f.season; });
     var values = finance.map(function (f) { return f.revenue_gbp; });
     var el = document.getElementById("chart-revenue");
-    if (el) Charts.buildLineChart(el, seasons, values);
+    if (el) Charts.buildLineChart(el, seasons, values, { label: "Revenue" });
 
     var body = document.getElementById("revenue-table-body");
     if (body) {
@@ -34,7 +34,7 @@
       { key: "commercial", label: "Commercial" }
     ];
     var el = document.getElementById("chart-split");
-    if (el) Charts.buildStackedBarChart(el, seasons, withSplit, seriesDefs);
+    if (el) Charts.buildStackedBarChart(el, seasons, withSplit, seriesDefs, { label: "Revenue split" });
 
     var body = document.getElementById("split-table-body");
     if (body) {
@@ -53,7 +53,7 @@
     var seasons = finance.map(function (f) { return f.season; });
     var values = finance.map(function (f) { return f.wages != null ? f.wages : null; });
     var el = document.getElementById("chart-wages");
-    if (el) Charts.buildBarChart(el, seasons, values);
+    if (el) Charts.buildBarChart(el, seasons, values, { label: "Wages" });
 
     var body = document.getElementById("wages-table-body");
     if (body) {
@@ -69,7 +69,7 @@
     var seasons = finance.map(function (f) { return f.season; });
     var values = finance.map(function (f) { return f.pretax_profit; });
     var el = document.getElementById("chart-profit");
-    if (el) Charts.buildDivergingBarChart(el, seasons, values);
+    if (el) Charts.buildDivergingBarChart(el, seasons, values, { label: "Pre-tax profit / loss" });
 
     var body = document.getElementById("profit-table-body");
     if (body) {

@@ -137,7 +137,7 @@
     if (!el) return;
     var seasons = finance.map(function (f) { return f.season; });
     var values = finance.map(function (f) { return f.revenue_gbp; });
-    Charts.buildLineChart(el, seasons, values);
+    Charts.buildLineChart(el, seasons, values, { label: "Revenue" });
   }
 
   function renderExplore() {

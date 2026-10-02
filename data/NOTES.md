@@ -138,9 +138,12 @@ pass before publishing as fact. Feeds the eventual Sources & Methodology page
       the charges: every financial-rules charge for 2009-10 to 2017-18 and
       three of four cooperation charges. The earlier "all 115" headlines were
       imprecise (logged in data/corrections.json).
-    - **Written reasons**: confirm whether the commission's full decision is
-      published. If yes, retag `FOUND (published decision)`, link the document,
-      and update home.html's case summary and the Money page status box.
+    - **Written reasons — RESOLVED 2 Oct**: the Premier League published a
+      redacted Core Decision (about 40 pages, 160 paragraphs per coverage) on
+      29 Sept; appendices still to follow. Entry retagged
+      `FOUND (published decision)` (logged in corrections.json). The PDF is
+      linked from the Premier League statement page, which is cited as the
+      source; the PDF itself could not be opened here.
     - **"Sham" deals / £900m**: the wording is the statement's as reported;
       attribute it that way and re-verify against the statement itself.
     - **Club response**: only the phrase "disappointed and surprised by the
@@ -166,6 +169,31 @@ pass before publishing as fact. Feeds the eventual Sources & Methodology page
     The Appeal Board hearing is private, so outcome timing will only be known
     once published. Still open: whether the commission's written opinion is
     public (retag FOUND (published decision) if so).
+
+23. **2026-10-02 — latest-news check.** Confirmed across several outlets
+    (Sky, CNN, CNBC, ESPN, Al Jazeera, a Mishcon de Reya summary, the
+    Independent's "statement in full" via Yahoo, UPI/CBS/TeamTalk for City's
+    wording): redacted Core Decision published 29 Sept; all charges bar
+    Charge 4(B); "Disguised Funding Scheme" and a Fordham image-rights
+    arrangement described as sham and ADUG-funded; income overstated by more
+    than £830m over eight seasons (Commission, per Mishcon) / revenue inflated
+    and costs reduced by more than £900m (Premier League statement). Third-
+    party analyst figures (e.g. £855m income / £66m costs on theesk.org) were
+    NOT used. Not found: a sanction-hearing date (the Premier League wants it
+    concluded as soon as possible; a fan site says "within weeks" — not used);
+    the commission's appendices; any confirmed compensation claim. The Nov 2024
+    compensation notices (Arsenal, Liverpool, Man United, Tottenham, via The
+    Times) are on the timeline as reported; post-verdict "£100m each" figures
+    are commentator speculation and deliberately omitted. Unverified from
+    here: all Premier League and decision-PDF pages (egress blocked).
+
+## Money page interactivity (2 Oct 2026)
+
+`js/machine.js` derives everything from `finance.json` and `transfers.json`;
+it adds no figures of its own. Seasons with no published accounts (2025-26)
+show a dashed "n/p" column rather than an estimate, and wages are summed only
+over seasons with a reported figure. The hover/crosshair layer in `js/charts.js`
+(`attachHover`) shows exactly the values already in each chart's table view.
 
 ## Research environment note
 
