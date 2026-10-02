@@ -118,7 +118,7 @@
       "£" + Math.round(totalSpendM) + "m+ in transfer fees recorded in this ledger since 2008",
       latestFinance ? Charts.formatGBP(latestFinance.revenue_gbp) + " revenue, season " + latestFinance.season : null,
       "Hearing opened 16 Sept 2024 in London",
-      "Reported guilty on 114 of 115 charges — The Athletic, 25 Sept 2026"
+      "City lodged an appeal on 1 Oct 2026; hearing expected within 12 weeks; sanction still to be decided (as reported)"
     ].filter(Boolean);
 
     var chipsHtml = facts

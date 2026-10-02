@@ -96,6 +96,77 @@ pass before publishing as fact. Feeds the eventual Sources & Methodology page
     2026) — data/cfg.json lists them as former clubs. Re-verify the exact
     divestment dates against CFG's own announcements if precision matters.
 
+18. **data/scale.json (The Money page, "The Scale" section)** — every figure
+    was confirmed via WebSearch result text only; the source pages themselves
+    could not be opened (WebFetch was blocked for Deloitte, Goal, FourFourTwo,
+    Top Gear and others). Lowest-confidence items, re-verify against primary
+    sources before treating as exact:
+    - Stadium build costs (Emirates £390m, Wembley £798m final / £757m budget,
+      Etihad £112m, Tottenham ~£1bn) are cited to Wikipedia / StadiumDB /
+      Designing Buildings / SI.com; no club or contractor primary source was
+      read. Tottenham has published no final figure (reports run higher than
+      £1bn); the low end is used on purpose.
+    - Real Madrid 2024-25 matchday (€233m) and commercial (€594m) came from
+      search snippets of Deloitte's Money League 2026 coverage; broadcast
+      (€334m) is computed as the remainder, not a reported number.
+    - Tesla Model 3 Standard £37,990 UK list price (2026) can change.
+    - City's average home attendance (52,519) is from a Wikipedia season page;
+      another compilation showed 53,636 but its season was unclear, so it was
+      not used.
+    - The press transfer-spend estimate (€3.14bn spent / €1.37bn recouped /
+      €1.77bn net) is a Sept 2023 Transfermarkt-derived figure via Football
+      Transfers. Context only; never use it for the site's own totals.
+19. **The site's own "£1.14bn" total is a floor**: it sums the 24 signings in
+    data/transfers.json only. It grows automatically as transfers are added.
+20. **2026-09-29 — verdict-reported club_response tidied**: removed an internal
+    "re-verify exact wording" note from public copy after confirming the
+    quoted sentence across multiple outlets (The Independent via LiveScore,
+    CNN, ESPN coverage). The rest of the club's statement was only seen
+    truncated in search text, so only the confirmed first sentence is quoted
+    and the remainder is paraphrased. The Feb 2023 charge-stage response still
+    carries a similar "re-verify" note — not yet tidied.
+
+21. **2026-09-29 — Premier League statement on the commission's decision.**
+    Added as timeline entry 2026-09-29-premier-league-statement, tagged
+    `FOUND (reported)` (NOT "published decision"). The statement page
+    (premierleague.com/en/news/4727779) was blocked in the research
+    environment, so wording rests on coverage from RTÉ, the Irish News, CBS
+    Sports and Al Jazeera (search text, pages not opened). OPEN ITEMS before
+    treating this entry as final:
+    - **Charge count/scope conflict — RESOLVED 2 Oct**: later coverage (Sky
+      Sports, Euronews, CBS Sports "114 violations", ESPN) says all but one of
+      the charges: every financial-rules charge for 2009-10 to 2017-18 and
+      three of four cooperation charges. The earlier "all 115" headlines were
+      imprecise (logged in data/corrections.json).
+    - **Written reasons**: confirm whether the commission's full decision is
+      published. If yes, retag `FOUND (published decision)`, link the document,
+      and update home.html's case summary and the Money page status box.
+    - **"Sham" deals / £900m**: the wording is the statement's as reported;
+      attribute it that way and re-verify against the statement itself.
+    - **Club response**: only the phrase "disappointed and surprised by the
+      opinion of the Premier League Commission" was seen; the full statement
+      was not.
+    - **Appeal deadline (2 Oct 2026)**: drives the countdown banner via
+      data/status.json (appeal_deadline). Update status.json and the banner
+      the moment an appeal is lodged or the window closes.
+    - The 25 Sept entry and its "114 of 115" headline are kept as history.
+
+22. **2026-10-02 — City appeal lodged.** Timeline entry
+    2026-10-01-appeal-lodged (UNDER APPEAL). Sources: the Premier League's 2
+    Oct statement page plus Al Jazeera, Euronews, Sky Sports, CBS Sports and
+    ABC News. None of these pages could be opened here; facts rest on search
+    text from several outlets agreeing. Details to re-verify against the
+    statement: lodged 7pm Thursday 1 Oct (Al Jazeera); three-member Appeal
+    Board; hearing expected within 12 weeks and decision within 30 days of the
+    hearing ending (reported rule); hearing private until the outcome may be
+    published. The banner's clock ends 24 Dec 2026, computed as 1 Oct + 84
+    days, NOT a reported date. The club's statement wording on the appeal
+    ("clear material errors of law, principle and fact", "irrefutable
+    evidence") is from coverage and is paraphrased on the site, not quoted.
+    The Appeal Board hearing is private, so outcome timing will only be known
+    once published. Still open: whether the commission's written opinion is
+    public (retag FOUND (published decision) if so).
+
 ## Research environment note
 
 The research agents' WebFetch tool was blocked by the network egress proxy for

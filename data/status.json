@@ -2,7 +2,21 @@
   "charges_date": "2023-02-06",
   "verdict_reported_date": "2026-09-25",
   "sanction_status": "SANCTION PENDING",
-  "appeal_status": "PENDING — an appeal by Manchester City is expected (per press reporting) but no outlet has confirmed one has actually been lodged yet",
-  "last_updated": "2026-09-26",
-  "notes": "The verdict was reported by David Ornstein/The Athletic on Friday 25 Sept 2026 that Manchester City were found guilty on 114 of the 115 charges. This is a REPORTED verdict, not the commission's published written decision, so use status_tag 'FOUND (reported)' wherever this is referenced — it will need to change to 'FOUND (published decision)' once the commission's written reasons are public. The Premier League itself had not issued its own public confirmation as of 26 Sept 2026. Sources: David Ornstein via X (https://x.com/David_Ornstein/status/2103480016915009611); CNN (https://www.cnn.com/2026/09/25/sport/manchester-city-charges-premier-league); Al Jazeera (https://www.aljazeera.com/sports/2026/9/25/timeline-man-citys-premier-league-financial-charges-to-reported-verdict)."
+  "appeal_status": "UNDER APPEAL",
+  "last_updated": "2026-10-02",
+  "notes": "25 Sept 2026: David Ornstein/The Athletic reported City found guilty on 114 of 115 charges. 29 Sept: the Premier League issued a statement on the independent commission's decision. 1 Oct (7pm): City lodged an appeal against the commission's opinion; per ESPN, Sky Sports, Euronews, CBS Sports, Al Jazeera and the Premier League's own 2 Oct statement, City were found guilty of all but one of the charges (all financial-rules charges for 2009-10 to 2017-18 and three of four cooperation charges), the appeal goes to an independent three-member Appeal Board, a hearing is expected within 12 weeks and a decision is due within 30 days of the hearing ending. Sanction is to be decided separately. Keep status_tag 'FOUND (reported)' until the commission's written opinion is confirmed public, then retag 'FOUND (published decision)' and link it. The Premier League statement pages (premierleague.com/en/news/4727779 and /4729207) could not be opened from the research environment; wording is taken from coverage. 12-week window end (24 Dec 2026) is computed as 1 Oct + 84 days.",
+  "appeal_detail": "City lodged an appeal against the commission's findings on 1 October 2026 (per the club and the Premier League, as reported). An independent three-member Appeal Board will hear it; the hearing is expected within 12 weeks and stays private until publication of the outcome is permitted. Sanction is still to be decided at a separate hearing.",
+  "banner": {
+    "date": "2026-10-01",
+    "label": "APPEAL LODGED",
+    "headline": "Manchester City appeal the commission's decision",
+    "note": "Lodged 1 October. An independent three-member board will hear it, with a hearing expected within 12 weeks. Sanction is still to be decided.",
+    "link": "timeline.html#2026-10-01-appeal-lodged",
+    "clock": {
+      "start": "2026-10-01",
+      "end": "2026-12-24",
+      "label": "days left in the 12-week window for the appeal hearing",
+      "ended": "The 12-week window has passed. See the timeline for the latest."
+    }
+  }
 }

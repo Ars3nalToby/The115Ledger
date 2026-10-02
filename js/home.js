@@ -87,6 +87,20 @@
     };
     el.className = "status-badge " + meta.cls;
     el.innerHTML = (ICONS[meta.icon] || "") + "<span>" + escapeHtml(meta.label) + "</span>";
+
+    // Sanction and appeal are tracked separately, so each gets its own badge.
+    var appeal = STATUS_META[status.appeal_status];
+    if (appeal && !document.getElementById("appeal-badge")) {
+      var row = document.createElement("div");
+      row.className = "status-row";
+      el.parentNode.insertBefore(row, el);
+      row.appendChild(el);
+      var ab = document.createElement("div");
+      ab.id = "appeal-badge";
+      ab.className = "status-badge " + appeal.cls;
+      ab.innerHTML = (ICONS[appeal.icon] || "") + "<span>" + escapeHtml(appeal.label) + "</span>";
+      row.appendChild(ab);
+    }
   }
 
   function renderLatest(timeline) {

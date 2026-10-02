@@ -93,6 +93,34 @@
           <p class="placeholder-panel">The charts on this page load from <code>data/finance.json</code> with JavaScript. Enable JavaScript, or read that file directly, to see the figures.</p>
         </noscript>
 
+        <section class="section scale" aria-labelledby="scale-heading">
+          <p class="scale-kicker">The scale</p>
+          <h2 id="scale-heading">How big is the money, really?</h2>
+          <p class="scale-lede">Big numbers stop meaning anything. So here are City's, measured in things you can picture. Everything below is computed from this site's own sourced data files — nothing is rounded up or remembered from memory.</p>
+
+          <div class="scale-hero" id="scale-hero">
+            <p class="placeholder-panel">Loading the numbers…</p>
+          </div>
+
+          <div class="scale-tabs" id="scale-tabs" role="group" aria-label="Choose what to measure"></div>
+          <div class="scale-equiv" id="scale-equiv"></div>
+          <p class="visually-hidden" id="scale-summary" aria-live="polite"></p>
+          <div class="scale-caveat" id="scale-caveat"></div>
+        </section>
+
+        <section class="section scale" aria-labelledby="mix-heading">
+          <p class="scale-kicker">Where it comes from</p>
+          <h2 id="mix-heading">Who actually pays for it?</h2>
+          <p class="scale-lede">Clubs like Real Madrid and Arsenal are funded in large part by full stadiums and global commercial deals. This is how each pound of City's 2024-25 revenue arrived, next to the same split at two rivals.</p>
+          <div class="mix" id="mix"></div>
+          <div class="scale-caveat" id="mix-caveat"></div>
+        </section>
+
+        <section class="section scale" aria-labelledby="isnt-heading">
+          <h2 id="isnt-heading">What this is, and what it isn't</h2>
+          <div class="rules-box scale-isnt" id="scale-isnt"></div>
+        </section>
+
         <section class="section" aria-labelledby="revenue-heading">
           <h2 id="revenue-heading">Revenue by season</h2>
           <p class="chart-note">Manchester City Football Club Limited's own reported revenue, 2008-09 to 2024-25. Some early seasons carry lower confidence — see <a href="sources.html">Sources &amp; Methodology</a>.</p>
@@ -184,5 +212,6 @@
     <script src="js/main.js" defer></script>
     <script src="js/charts.js" defer></script>
     <script src="js/money.js" defer></script>
+    <script src="js/scale.js" defer></script>
   </body>
 </html>
